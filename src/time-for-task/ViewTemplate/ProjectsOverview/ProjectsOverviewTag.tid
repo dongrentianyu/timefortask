@@ -1,0 +1,4 @@
+title: $:/tags/TFT/ProjectsOverview
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEcharts $:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable
+
+Tiddler with this tag will show in the section under sidebar IntentionTower tab, become one of the tabs on the bottom of this tab.

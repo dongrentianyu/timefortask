@@ -1,0 +1,22 @@
+title: $:/plugins/mabuqian/time-for-task/Settings/Fields
+caption: Fields
+tags: $:/tags/intention-tower-knowledge-graph/Settings
+order: 3
+
+!! 动态表格字段值，可在下面编辑
+
+[[人生意义|$:/plugins/mabuqian/time-for-task/Config/defaultFields-IntentionDynamicTable]]的值：{{$:/plugins/mabuqian/time-for-task/Config/defaultFields-IntentionDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/defaultFields-IntentionDynamicTable" field="text" tag=input class="w-100" />
+
+[[优先任务列表|$:/plugins/mabuqian/time-for-task/Config/defaultFields-PriorityTaskDynamicTable]]的值：{{$:/plugins/mabuqian/time-for-task/Config/defaultFields-PriorityTaskDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/defaultFields-PriorityTaskDynamicTable" field="text" tag=input class="w-100" />
+
+[[项目列表|$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable]]的值：{{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable" field="text" tag=input class="w-100" />
+
+[[任务列表|$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable]]的值：{{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable" field="text" tag=input class="w-100" />

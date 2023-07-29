@@ -1,0 +1,14 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderIntention
+tags: $:/tags/ViewTemplate
+
+\import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
+
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[current]tag{$:/plugins/mabuqian/time-for-task/Config/intention-tag}then<graphRootTiddler>]">
+
+  <<create-project-under-current-tiddler>>
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderIntention]] -[enlist{$:/config/ViewTemplate/UnderIntention}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts" >>
+
+  </$list>
+</$let>

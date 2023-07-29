@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderIntention/AddIntention
+caption: {{$:/core/images/tag-button}} 添加意义
+tags: $:/tags/TFT/UnderIntention
+
+{{||$:/core/ui/EditTemplate/tags}}

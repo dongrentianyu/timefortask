@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/AddProject
+caption: {{$:/core/images/tag-button}} 添加所在项目
+tags: $:/tags/TFT/UnderTask
+
+{{||$:/core/ui/EditTemplate/tags}}

@@ -1,0 +1,15 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject
+tags: $:/tags/ViewTemplate
+
+\import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
+
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[current]tag{$:/plugins/mabuqian/time-for-task/Config/project-tft}then<graphRootTiddler>]">
+
+  <<create-task-under-current-tiddler>>
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderProject]] [all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderProject}] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable" >>
+
+  </$list>
+</$let>
+ 

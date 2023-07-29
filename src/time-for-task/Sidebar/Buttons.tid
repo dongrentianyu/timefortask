@@ -1,0 +1,15 @@
+title: $:/plugins/mabuqian/time-for-task/Sidebar/Buttons
+
+\import [[$:/plugins/mabuqian/time-for-task/EditTemplate/title]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
+
+<div class="tft-sidebar-create-task">
+
+  <<simple-title-edit "$:/state/TFT/PageLayout/create-tiddler-title" >>
+
+</div>
+
+<div class="tft-sidebar-buttons">
+  <<create-task-without-parent>>
+  <<create-project-without-parent>>
+  <<create-intention-without-parent>>
+</div>

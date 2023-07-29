@@ -1,0 +1,21 @@
+title: $:/plugins/mabuqian/time-for-task/Sidebar/ProjectList
+
+\define project-list-item()
+\whitespace trim
+<div class="tft-sidebar-project-list-item">
+  <$link to=<<currentTiddler>> tooltip=<<currentTiddler>>>
+    <<currentTiddler>>
+  </$link>
+</div>
+\end
+
+\define project-list()
+\whitespace trim
+<div class="tft-sidebar-project-list">
+  <$list
+    filter="[{$:/plugins/mabuqian/time-for-task/Config/project-tft}] +[tagging[]filter<filter-is-new-task>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]"
+  >
+    <<project-list-item>>
+  </$list>
+</div>
+\end

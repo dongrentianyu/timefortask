@@ -1,0 +1,30 @@
+/* can't use css variable in tid file, because it will become -— , maybe triggers --- syntax?
+Have to move them into a css file like this */
+div.tft-sidebar-container {
+  height: 100%;
+}
+
+.tft-sidebar-project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tft-sidebar-project-list-item {
+  padding: 5px 0;
+  margin: 5px;
+  word-wrap: break-word;
+	word-break: break-all;
+}
+
+.tft-sidebar-buttons {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tft-sidebar-buttons button {
+  padding: 15px 20px;
+}
+.tft-sidebar-create-task .tc-edit-texteditor {
+  width: 100%;
+}

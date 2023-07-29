@@ -1,0 +1,15 @@
+title: $:/plugins/mabuqian/time-for-task/ControlPanel/Settings
+caption: TFT
+tags: $:/tags/ControlPanel/SettingsTab
+
+
+
+<!-- 改成可config来控制，避免出现无法更新内容的情况 -->
+<!-- 删除了原来定义的checkbox宏 -->
+<!-- These settings let you customise the behaviour of intention-tower-knowledge-graph plugin. -->
+
+这些设置让你可以自定义 TFT 插件。
+
+---
+
+<<tabs "[all[shadows+tiddlers]tag[$:/tags/intention-tower-knowledge-graph/Settings]sort[order]]" "$:/plugins/mabuqian/time-for-task/Settings/Tags" "$:/state/tab/intention-tower-knowledge-graph/Settings" "tc-vertical">>

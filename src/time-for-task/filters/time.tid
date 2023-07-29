@@ -1,0 +1,3 @@
+title: $:/plugins/mabuqian/time-for-task/filters/time
+
+\define getTimeForEntry() [{!!startDate}format:date[TIMESTAMP]] :map[<..currentTiddler>get[endDate]format:date[TIMESTAMP]subtract<currentTiddler>]

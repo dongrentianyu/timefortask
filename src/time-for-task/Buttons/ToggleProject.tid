@@ -1,0 +1,33 @@
+caption: {{$:/plugins/mabuqian/time-for-task/Images/SetAsProject}} 项目转换按钮
+title: $:/plugins/mabuqian/time-for-task/Buttons/ToggleProject
+tags: $:/tags/ViewToolbar
+description: 项目转换按钮
+
+\whitespace trim
+
+<$list filter="[<currentTiddler>tag{$:/plugins/mabuqian/time-for-task/Config/task-tft}!tag{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
+  <$button tooltip="设为项目，并收藏到侧边栏意义之塔Tab里" aria-label="设为项目，并收藏到侧边栏意义之塔Tab里" class=<<tv-config-toolbar-class>> >
+    <$action-listops $tft={{$:/plugins/mabuqian/time-for-task/Config/project-tft}} />
+    <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+      {{$:/plugins/mabuqian/time-for-task/Images/SetAsProject}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>match[yes]]">
+      <span class="tc-btn-text">
+        <$text text="设为项目"/>
+      </span>
+    </$list>
+  </$button>
+</$list>
+<$list filter="[<currentTiddler>tag{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
+  <$button tooltip="去掉项目标签，并从侧边栏意义之塔Tab里去掉" aria-label="去掉项目标签，并从侧边栏意义之塔Tab里去掉" class=<<tv-config-toolbar-class>> >
+    <$action-listops $tft="+[!match{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" />
+    <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+      {{$:/plugins/mabuqian/time-for-task/Images/SetAsNotProject}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>match[yes]]">
+      <span class="tc-btn-text">
+        <$text text="去掉项目标签"/>
+      </span>
+    </$list>
+  </$button>
+</$list>

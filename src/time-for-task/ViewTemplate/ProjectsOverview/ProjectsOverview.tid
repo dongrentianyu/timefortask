@@ -1,0 +1,4 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview
+
+<!-- similar to $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject -->
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]] -[enlist{$:/config/ViewTemplate/ProjectsOverview}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" >>
