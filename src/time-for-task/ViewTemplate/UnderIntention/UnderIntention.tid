@@ -8,7 +8,7 @@ tags: $:/tags/ViewTemplate
 
   <<create-project-under-current-tiddler>>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderIntention]] -[enlist{$:/config/ViewTemplate/UnderIntention}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts" >>
+  {{||$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable}}
 
   </$list>
 </$let>

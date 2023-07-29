@@ -1,0 +1,9 @@
+created: 20230729074017994
+description: Add a short description text here and replace the icon below
+icon: {{$:/core/images/spiral}}
+modified: 20230729074051636
+tags: $:/tags/wikilabs/fieldswitcher
+title: $:/config/wikilabs/field-editor/schema
+type: text/vnd.tiddlywiki
+
+schema

@@ -16,7 +16,7 @@ title: $:/plugins/mabuqian/time-for-task/filters/leaf-task
 
 <!-- // TODO: try replace with in-tagtree-of -->
 <!-- projects are tasks, so getting all projects under current (intention), then get those is in new task state  -->
-\define get-non-completed-leaf-projects() [in-tagtree-of<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}filter<filter-is-new-task>]
+\define get-non-completed-leaf-projects() [in-tagtree-of<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]
 <!-- for each child (in tagtree of current tiddler), remove out all that is not leaf, and get those is in new task state -->
 \define get-non-completed-leaf-tasks() [in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>]
 <!--

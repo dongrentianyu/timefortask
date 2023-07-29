@@ -2,5 +2,7 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/AddProject
 caption: {{$:/core/images/tag-button}} 添加所在项目
 tags: $:/tags/TFT/UnderTask
 
-<$edit-text  field="tft_up"/><p/>
+<$edit-text  field="tft_up" tag=input class="w-100"/><p/>
 ''tft_up'' 的值：{{!!tft_up}}
+
+<$link>{{!!tft_up}}</$link>

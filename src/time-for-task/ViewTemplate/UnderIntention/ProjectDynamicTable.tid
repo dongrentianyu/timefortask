@@ -2,6 +2,6 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 项目列表
 tags: $:/tags/TFT/UnderIntention
 
-\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
+<!-- \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]  <<get-non-completed-leaf-projects>> -->
 
-<$macrocall $name=aggregation caption="项目列表" filter=<<get-non-completed-leaf-projects>> defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable}} class="w-100" state="TFT-ProjectDynamicTable-state" />
+<$macrocall $name=aggregation caption="项目列表" filter="[tag<currentTiddler>has[tft]]" defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable}} class="w-100" state="TFT-ProjectDynamicTable-state" />

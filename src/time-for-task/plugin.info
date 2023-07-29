@@ -1,10 +1,10 @@
 {
   "title": "$:/plugins/mabuqian/time-for-task",
   "author": "mabuqian",
-  "description": "",
+  "description": "time only for task",
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",
   "version": "0.0.1",
-  "dependents": ["$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar", "$:/plugins/xp/aggregation","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"],
+  "dependents": ["$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/xp/aggregation"],
   "list": "readme ControlPanel/Settings TMO tree"
 }

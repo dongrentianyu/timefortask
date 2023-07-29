@@ -1,0 +1,22 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/task-echarts
+caption: 任务图表
+tags: $:/tags/TFT/UnderTask
+
+\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
+
+\define echarts-with-subfilter()
+<$echarts
+  $tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEchartsAddon"
+  currentTiddler=<<currentTiddler>>
+  tiddlerSource="[[$(currentTiddler)$]] [[$(currentTiddler)$]tagstree[]]"
+  dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
+/>
+\end
+
+<!-- Show all parent tags of current tiddler (all tiddlers that with current tiddler in the tags tree), that with Task, Intention, and Project, but exclude these meta tags themselves -->
+<$list filter="[all[current]tagstree[]!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] :or[all[current]tagstree[]!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/task-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/project-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" counter="counter1">
+  <$link><<currentTiddler>></$link>
+  <$list filter="[<counter1-last>match[no]]"> / </$list>
+</$list>
+
+<<echarts-with-subfilter>>

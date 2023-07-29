@@ -4,31 +4,7 @@ tags: $:/tags/TFT/UnderTask
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
 
-\define echarts-with-subfilter()
-<$echarts
-  $tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEchartsAddon"
-  currentTiddler=<<currentTiddler>>
-  tiddlerSource="[[$(currentTiddler)$]] [[$(currentTiddler)$]tagstree[]]"
-  dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
-/>
-\end
 
-<!-- Show all parent tags of current tiddler (all tiddlers that with current tiddler in the tags tree), that with Task, Intention, and Project, but exclude these meta tags themselves -->
-<$list filter="[all[current]tagstree[]!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] :or[all[current]tagstree[]!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/task-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/project-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" counter="counter1">
-  <$link><<currentTiddler>></$link>
-  <$list filter="[<counter1-last>match[no]]"> / </$list>
-</$list>
-
-<details>
-<summary>子任务、前置任务及后续任务</summary>
-<fieldset>
- <legend>当前子任务</legend>
- <div class="tft-sidebar-project-list">
- <$list filter="[tag<currentTiddler>]">
- <$link><<currentTiddler>></$link>&nbsp;&nbsp;
- </$list>
- </div>
- </fieldset>
  <fieldset>
  <legend>前置任务</legend>
  <div class="tft-sidebar-project-list">
@@ -45,13 +21,3 @@ tags: $:/tags/TFT/UnderTask
  </$list>
  </div>
  </fieldset>
- </details>
-<<echarts-with-subfilter>>
-
-<$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]match[0]then[yes]]">
-  暂无子任务 <<create-task-under-current-tiddler>>
-</$list>
-
-<$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
-  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/mabuqian/time-for-task/Config/task-tft}} subfilter="[filter<filter-is-new-task>]" />
-</$list>
