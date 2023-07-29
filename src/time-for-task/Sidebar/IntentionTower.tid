@@ -1,6 +1,7 @@
 title: $:/plugins/mabuqian/time-for-task/Sidebar/IntentionTower
 caption: TFT
 description: TFT任务管理
+list-after: $:/core/ui/SideBar/More
 tags: $:/tags/SideBar
 type: text/vnd.tiddlywiki
 

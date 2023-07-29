@@ -1,5 +1,0 @@
-title: $:/plugins/mabuqian/time-for-task/ViewTemplate/CalendarEntry
-caption: {{$:/plugins/linonetwo/tw-calendar/tiddlywiki-ui/Images/GoToCalendarImage}} 日历记录
-tags: $:/tags/TFT/UnderTask
-
-<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/CalendarEntry]] -[enlist{$:/config/ViewTemplate/CalendarEntry}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/AddCalendarEntryToday" >>

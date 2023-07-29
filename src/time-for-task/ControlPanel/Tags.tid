@@ -7,13 +7,13 @@ order: 1
 \whitespace trim
 <div class="tft-setting-tags-item">
   <$let
-    currentTiddler="$:/plugins/mabuqian/time-for-task/Config/$typeName$-tag"
+    currentTiddler="$:/plugins/mabuqian/time-for-task/Config/$typeName$-tft"
     palette={{$:/palette}}
     tempTitle=<<qualify "edit-$typeName$">>
     tabIndex={{$:/config/EditTabIndex}}
     cancelPopups="yes"
   >
-    <$macrocall $name="tag" tag={{$:/plugins/mabuqian/time-for-task/Config/$typeName$-tag}} />
+    <$macrocall $name="tag" tag={{$:/plugins/mabuqian/time-for-task/Config/$typeName$-tft}} />
 
     <$edit-text tiddler=<<tempTitle>> tag="input" field="text" placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} />
 
@@ -42,9 +42,3 @@ order: 1
 任务：<<single-text-tag-editor task>>
 
 ''修改了任务标签后，原先带有`任务`标签的条目并不会自动修改过来，需要手动修改处理。''
-
-!!! 新建日历记录时的标签
-
-在新建和一个任务相关的日历项目时，可以设置自动添加日历项目的类型标签，例如「解决问题」。
-
-日历记录额外标签：<<single-text-tag-editor default-calendar-entry>>

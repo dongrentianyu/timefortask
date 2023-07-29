@@ -4,7 +4,9 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
   <$button tooltip="点击创建子任务">
    <$set name="tags" filter="[<currentTiddler>] [enlist{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">
        <$action-createtiddler $message="tm-new-tiddler" 
-       tags=<<tags>> 
+       tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
+       super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
+       tft_up=<<currentTiddler>>
        tmo_taskState="New"
        tmo_priority="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
@@ -19,7 +21,8 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
   <$button tooltip="点击创建后续任务">
    <$set name="tags" filter="[enlist{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">
        <$action-createtiddler $message="tm-new-tiddler" 
-       tags=<<tags>> 
+       tft=<<tags>> 
+       super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
        tmo_taskState="New"
        tmo_priority=""
        tmo_dependency=<<currentTiddler>> >
@@ -32,12 +35,13 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
 
 \define create-project-under-current-tiddler()
   <$button tooltip="点击创建新项目">
-    <$set name="tags" filter="[<currentTiddler>] [enlist{$:/plugins/mabuqian/time-for-task/Config/project-tft}] [enlist{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">
-      <$action-createtiddler tags=<<tags>> tmo_taskState="New">
+      <$action-createtiddler 
+          tft={{$:/plugins/mabuqian/time-for-task/Config/project-tft}}
+          tft_up=<<currentTiddler>>
+          tmo_taskState="New">
          <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
         {{$:/plugins/mabuqian/time-for-task/Images/Project}} 新项目
-    </$set>
   </$button>
 \end
 
@@ -57,8 +61,9 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
   <$button tooltip="点击创建新任务">
     <$action-createtiddler
       $basetitle={{$:/state/TFT/PageLayout/create-tiddler-title}}
-      tags={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
+      tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
       tmo_taskState="New"
+      super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
       tmo_priority=""
      >
       <<after-create-tiddler-without-parent>>
@@ -71,7 +76,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
   <$button tooltip="点击创建新项目">
     <$action-createtiddler
       $basetitle={{$:/state/TFT/PageLayout/create-tiddler-title}}
-      tags={{{ [{$:/plugins/mabuqian/time-for-task/Config/project-tft}addsuffix[ ]addsuffix{$:/plugins/mabuqian/time-for-task/Config/task-tft}] }}}
+      tft={{$:/plugins/mabuqian/time-for-task/Config/project-tft}}
       tmo_taskState="New"
      >
       <<after-create-tiddler-without-parent>>
@@ -84,7 +89,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
   <$button tooltip="点击创建新意义条目">
     <$action-createtiddler
       $basetitle={{$:/state/TFT/PageLayout/create-tiddler-title}}
-      tags={{$:/plugins/mabuqian/time-for-task/Config/intention-tag}}
+      tft={{$:/plugins/mabuqian/time-for-task/Config/intention-tft}}
      >
       <<after-create-tiddler-without-parent>>
      </$action-createtiddler>

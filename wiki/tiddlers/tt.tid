@@ -1,7 +1,16 @@
 created: 20230729023907851
-modified: 20230729023907851
-tags: 任务
+modified: 20230729030056870
+super-tag: 任务
+tags: 
+tft: 任务
 title: tt
-tmo_priority: 
-tmo_taskState: New
+tmo_abilityCarrierInvolvement: 
+tmo_dueDate: 
+tmo_importance: 1
+tmo_involvedPersons: 
+tmo_priority: High
+tmo_subTaskOrdering: 
+tmo_superTask: 
+tmo_taskState: Running
+tmo_urgency: 4
 type: text/vnd.tiddlywiki

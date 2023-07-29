@@ -1,6 +1,9 @@
 title: $:/plugins/mabuqian/time-for-task/filters/leaf-task
 
-\define filter-is-new-task() [<currentTiddler>tag{$:/plugins/mabuqian/time-for-task/Config/task-tft}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
+<!--
+  原来用的tag，改成了用tft字段来筛选 
+-->
+\define filter-is-new-task() [<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
 
 \define has-length() [length[]compare:integer:gt[0]]
 
@@ -13,7 +16,7 @@ title: $:/plugins/mabuqian/time-for-task/filters/leaf-task
 
 <!-- // TODO: try replace with in-tagtree-of -->
 <!-- projects are tasks, so getting all projects under current (intention), then get those is in new task state  -->
-\define get-non-completed-leaf-projects() [in-tagtree-of<currentTiddler>tag{$:/plugins/mabuqian/time-for-task/Config/project-tft}filter<filter-is-new-task>]
+\define get-non-completed-leaf-projects() [in-tagtree-of<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}filter<filter-is-new-task>]
 <!-- for each child (in tagtree of current tiddler), remove out all that is not leaf, and get those is in new task state -->
 \define get-non-completed-leaf-tasks() [in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>]
 <!--
@@ -22,4 +25,4 @@ get all project first, and for each project, run same logic as get-non-completed
 If some project is sub project of others, this may introduce duplication, so deduplicate by `unique[]` at last.
 Then `!sortsub:integer` to sort by priority from 3 to 1
 -->
-\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/mabuqian/time-for-task/Config/project-tft}filter<filter-is-new-task>] :map:flat[all[tiddlers]in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]
+\define get-all-non-completed-leaf-tasks() [all[tiddlers]tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}filter<filter-is-new-task>] :map:flat[all[tiddlers]in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]

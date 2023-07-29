@@ -4,7 +4,7 @@ tags: $:/tags/ViewTemplate
 \import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
 
 <$let graphRootTiddler=<<currentTiddler>> >
-  <$list filter="[all[current]tag{$:/plugins/mabuqian/time-for-task/Config/intention-tag}then<graphRootTiddler>]">
+  <$list filter="[all[current]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}then<graphRootTiddler>]">
 
   <<create-project-under-current-tiddler>>
 

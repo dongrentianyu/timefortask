@@ -14,7 +14,7 @@ tags: $:/tags/TFT/UnderTask
 \end
 
 <!-- Show all parent tags of current tiddler (all tiddlers that with current tiddler in the tags tree), that with Task, Intention, and Project, but exclude these meta tags themselves -->
-<$list filter="[all[current]tagstree[]!is[system]tag{$:/plugins/mabuqian/time-for-task/Config/task-tft}] :or[all[current]tagstree[]!is[system]tag{$:/plugins/mabuqian/time-for-task/Config/intention-tag}] -[{$:/plugins/mabuqian/time-for-task/Config/task-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/project-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/intention-tag}]" counter="counter1">
+<$list filter="[all[current]tagstree[]!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] :or[all[current]tagstree[]!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/task-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/project-tft}] -[{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" counter="counter1">
   <$link><<currentTiddler>></$link>
   <$list filter="[<counter1-last>match[no]]"> / </$list>
 </$list>

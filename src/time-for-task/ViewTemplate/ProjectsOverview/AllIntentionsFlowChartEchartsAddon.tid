@@ -1,7 +1,7 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/AllIntentionsFlowChartEchartsAddon
 type: text/vnd.tiddlywiki
 
-<$set name="intentionTagColor" filter="[{$:/plugins/mabuqian/time-for-task/Config/intention-tag}get[color]]" emptyValue="#EF96F5" >
+<$set name="intentionTagColor" filter="[{$:/plugins/mabuqian/time-for-task/Config/intention-tft}get[color]]" emptyValue="#EF96F5" >
 <$set name="tiddlerSourceFilter" value=<<tiddlerSource>> emptyValue="[all[tiddlers]]">
 `{
   "title": {
@@ -21,7 +21,7 @@ type: text/vnd.tiddlywiki
       "edgeSymbol": ["circle", "arrow"],
       "edgeSymbolSize": [4, 10],
       "data": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/mabuqian/time-for-task/Config/intention-tag}]" variable="intentionName">
+        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionName">
           <$set name="color" filter="[<intentionName>get[color]]" emptyValue=<<intentionTagColor>> >
         `       {
                   "name": "`<<intentionName>>`",
@@ -34,8 +34,8 @@ type: text/vnd.tiddlywiki
         </$list>
       `],
       "links": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/mabuqian/time-for-task/Config/intention-tag}]" variable="intentionNameTo">
-          <$list filter="[<intentionNameTo>taggingtree[]tag{$:/plugins/mabuqian/time-for-task/Config/intention-tag}]" variable="intentionNameFrom">
+        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionNameTo">
+          <$list filter="[<intentionNameTo>taggingtree[]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionNameFrom">
           `       {
                     "source": "`<<intentionNameFrom>>`",
                     "target": "`<<intentionNameTo>>`"
