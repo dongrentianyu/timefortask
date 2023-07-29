@@ -8,7 +8,7 @@ tags: $:/tags/ViewTemplate
 
   <<create-task-under-current-tiddler>>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderProject]] [all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderProject}] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable" >>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderProject]] -[enlist{$:/config/ViewTemplate/UnderProject}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable" >>
 
   </$list>
 </$let>
