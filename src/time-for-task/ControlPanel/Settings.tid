@@ -12,4 +12,4 @@ tags: $:/tags/ControlPanel/SettingsTab
 
 ---
 
-<<tabs "[all[shadows+tiddlers]tag[$:/tags/intention-tower-knowledge-graph/Settings]sort[order]]" "$:/plugins/mabuqian/time-for-task/Settings/Tags" "$:/state/tab/intention-tower-knowledge-graph/Settings" "tc-vertical">>
+<<tabs "[all[shadows+tiddlers]tag[$:/tags/intention-tower-knowledge-graph/Settings]sort[order]]" "$:/plugins/mabuqian/time-for-task/Settings/Tags" "$:/state/tab/intention-tower-knowledge-graph/Settings" >>

@@ -12,7 +12,7 @@ tags: $:/tags/ViewTemplate
   <<counts-number-of-completions>>&nbsp;
   </div>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext" "tc-vertical">>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext" >>
 
   </$list>
 </$let>

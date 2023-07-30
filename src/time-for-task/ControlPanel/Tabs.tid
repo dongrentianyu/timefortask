@@ -38,16 +38,6 @@ order: 2
 
 </$list>
 
-[[CalendarEntry|$:/tags/TFT/CalendarEntry]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/CalendarEntry]]
-
-<$edit-text tiddler="$:/config/ViewTemplate/CalendarEntry" field="text" tag=textarea class="w-100" />
-
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/TFT/CalendarEntry]]">
-
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
-
-</$list>
-
 [[ProjectsOverview|$:/tags/TFT/ProjectsOverview]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/ProjectsOverview]]
 
 <$edit-text tiddler="$:/config/ViewTemplate/ProjectsOverview" field="text" tag=textarea class="w-100" />
@@ -57,4 +47,3 @@ order: 2
 <$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
 
 </$list>
-

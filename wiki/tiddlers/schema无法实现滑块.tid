@@ -1,0 +1,11 @@
+created: 20230729173208139
+modified: 20230729173237768
+super-tag: 任务
+tags: schema
+tft: 任务
+title: schema无法实现滑块
+tmo_taskState: New
+tmo_timeSpent: 30
+type: text/vnd.tiddlywiki
+
+这个估计得用react用代码来写了。

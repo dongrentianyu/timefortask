@@ -1,0 +1,11 @@
+created: 20230729173346523
+modified: 20230729173457125
+super-tag: 任务
+tags: schema
+tft: 任务
+title: 不能编辑与选择同时进行
+tmo_taskState: Terminated
+tmo_timeSpent: 30
+type: text/vnd.tiddlywiki
+
+不知道能不能用react实现，但在太微里，纯调用schema的话，应该不能既编辑又选择。也做不到滑块。

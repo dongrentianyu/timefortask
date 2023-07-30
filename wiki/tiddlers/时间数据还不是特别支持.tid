@@ -1,0 +1,11 @@
+created: 20230729173243316
+modified: 20230729173330379
+super-tag: 任务
+tags: schema
+tft: 任务
+title: 时间数据还不是特别支持
+tmo_taskState: New
+tmo_timeSpent: 30
+type: text/vnd.tiddlywiki
+
+比如常见的识别出40分钟，两个小时这种，还没有一个特别统一的方案。
