@@ -1,12 +1,8 @@
-created: 20230729154911525
-modified: 20230729155537178
-super-tag: time 任务
-tags: 
-time_end: 23:54
-time_major: 生活
-time_record: 正常记录
-time_start: 23:50
+created: 20230730073742592
+modified: 20230730073829416
+super-tag: time
+time_day: 2023-07-30
+time_form: events
 title: 新条目
-tmo_priority: High
-tmo_taskState: New
+tmo_timeSpent: 60
 type: text/vnd.tiddlywiki

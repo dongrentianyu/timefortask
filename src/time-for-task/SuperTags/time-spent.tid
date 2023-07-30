@@ -1,0 +1,39 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/time-spent
+tags: $:/tags/ViewTemplate
+
+<$list filter="[<currentTiddler>has[tmo_timeSpent]!prefix[$:/]]">
+
+<style>
+ datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 100%;
+ }
+ option {
+  padding: 0;
+ }
+ input[type="range"] {
+  width: 100%;
+  margin: 10px;
+ }
+</style>
+<$range tiddler=<<currentTiddler>> field="tmo_timeSpent" min="0" max="180" default="1" increment="5" list="tickmarks"/>
+<datalist id="tickmarks">
+  <option value="0" label="0"></option>
+	<option value="1" label="15"></option>
+	<option value="2" label="30"></option>
+    <option value="3" label="45"></option>
+	<option value="4" label="60"></option>
+	<option value="5" label="75"></option>
+	<option value="6" label="90"></option>
+	<option value="7" label="105"></option>
+	<option value="8" label="120"></option>
+	<option value="9" label="135"></option>
+	<option value="10" label="150"></option>
+	<option value="11" label="165"></option>
+	<option value="12" label="180"></option>
+</datalist>
+
+</$list>

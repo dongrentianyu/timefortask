@@ -1,0 +1,7 @@
+title: time
+type: text/vnd.tiddlywiki
+tags: $:/TraitTag/Time
+
+这是一个提供「time」相关表单字段的「[[超级标签|https://tiddly-gittly.github.io/super-tag/]]」。如果修改了那就是{{$:/plugins/mabuqian/time-for-task/Config/time-tft}}。
+
+这个条目所带的[[$:/TraitTag/Time]]超级标签没有打包进插件里去。因为这是一个非常个人化的表单内容。可以学习一下super tag插件，然后尝试自定义。

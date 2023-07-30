@@ -1,0 +1,8 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/time-day-view
+tags: $:/tags/ViewTemplate
+
+<$list filter="[all[current]time_form[days]]">
+
+{{||$:/plugins/mabuqian/time-for-task/ViewTemplate/DaysDynamicTable}}
+
+</$list>
