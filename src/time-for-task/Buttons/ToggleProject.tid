@@ -8,6 +8,7 @@ description: 项目转换按钮
 <$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}!tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
   <$button tooltip="设为项目" aria-label="设为项目" class=<<tv-config-toolbar-class>> >
     <$action-setfield tft={{$:/plugins/mabuqian/time-for-task/Config/project-tft}} />
+    <$action-setfield super-tag={{$:/plugins/mabuqian/time-for-task/Config/project-tft}} />
     <$list filter="[<tv-config-toolbar-icons>match[yes]]">
       {{$:/plugins/mabuqian/time-for-task/Images/SetAsProject}}
     </$list>
@@ -15,12 +16,14 @@ description: 项目转换按钮
       <span class="tc-btn-text">
         <$text text="设为项目"/>
       </span>
-    </$list>
+    </$list> 
   </$button>
 </$list>
 <$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
   <$button tooltip="把项目改成任务" aria-label="把项目改成任务" class=<<tv-config-toolbar-class>> >
+   <$set name="super-tag" filter="[{$:/plugins/mabuqian/time-for-task/Config/time-tft}] [{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">
     <$action-setfield tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}} />
+    <$action-setfield super-tag=<<super-tag>> />
     <$list filter="[<tv-config-toolbar-icons>match[yes]]">
       {{$:/plugins/mabuqian/time-for-task/Images/SetAsNotProject}}
     </$list>
@@ -29,5 +32,6 @@ description: 项目转换按钮
         <$text text="把项目改成任务"/>
       </span>
     </$list>
+    </$set>
   </$button>
 </$list>
