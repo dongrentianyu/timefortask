@@ -26,5 +26,24 @@ div.tft-sidebar-container {
   padding: 15px 20px;
 }
 .tft-sidebar-create-task .tc-edit-texteditor {
-  width: 100%;
+  width: 80%;
+  height: 35px;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #666;
+  background-color: #e2e1e4 !important ;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+.tc-edit-texteditor:focus {
+  border-color: #6a67ce;
+  outline: none;
+}
+.tc-edit-texteditor::placeholder {
+  color: #999;
 }
