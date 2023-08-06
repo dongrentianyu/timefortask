@@ -2,4 +2,15 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderIntention/AddIntentio
 caption: {{$:/core/images/tag-button}} 添加意义
 tags: $:/tags/TFT/UnderIntention
 
-{{||$:/core/ui/EditTemplate/tags}}
+<$select tiddler='$:/state/tft/meaning' field='testing' multiple size='8' class="w-50">
+<$list filter='[tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]'>
+<option><$view field='title'/></option>
+</$list>
+</$select>
+
+<$button>
+<$action-setfield  tags={{{ [[$:/state/tft/meaning]get[testing]] }}}   />
+确认添加
+</$button>
+
+<$edit-text  field="tags" class="w-50" tag=textarea/>
