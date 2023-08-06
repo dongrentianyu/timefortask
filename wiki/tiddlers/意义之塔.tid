@@ -1,0 +1,7 @@
+created: 20230806164255266
+modified: 20230806164302223
+tags: 
+title: 意义之塔
+type: text/vnd.tiddlywiki
+
+<$transclude tiddler="$:/plugins/mabuqian/time-for-task/Sidebar/IntentionTower" mode="block"/>
