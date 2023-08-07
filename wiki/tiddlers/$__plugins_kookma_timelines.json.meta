@@ -1,0 +1,11 @@
+author: Mohammad Rahmani
+core-version: >=5.2.3
+dependents: 
+description: Graphical representation of a period of time
+list: readme license history
+name: Timelines
+plugin-type: plugin
+source: https://github.com/kookma/TW-Timelines
+title: $:/plugins/kookma/timelines
+type: application/json
+version: 1.3.0

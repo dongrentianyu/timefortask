@@ -1,0 +1,10 @@
+caption: bubble-chart-outline-outline
+category: Charts
+collection: Outline
+library: IconPark
+library_version: 1.3.0
+tags: $:/tags/Image Icons Images SVG
+title: $:/plugins/mabuqian/time-for-task/Images/idea
+type: text/vnd.tiddlywiki
+
+<svg width="22pt" height="22pt" class="tc-image-ipk-bubble-chart-outline tc-image-button" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" fill="black" fill-opacity="0.01"/><circle cx="34" cy="14" r="9" fill="none" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="25" r="7" fill="none" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="29" cy="37" r="5" fill="none" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>

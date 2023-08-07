@@ -16,3 +16,6 @@ title: $:/plugins/mabuqian/time-for-task/Sidebar/Buttons
  <<create-day-event>>
  <<create-day>>
 </div>
+<div class="tft-sidebar-buttons">
+<<create-idea-without-parent>>
+</div>

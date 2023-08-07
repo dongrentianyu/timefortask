@@ -53,6 +53,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
 <$let currentTiddler=<<createTiddler-title>> >
   <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
   <$action-sendmessage $message="tm-auto-save-wiki" />
+  <$action-sendmessage $message="tm-edit-tiddler" $param=<<currentTiddler>> />
  </$let>
  <$action-setfield
   $tiddler="$:/state/TFT/PageLayout/create-tiddler-title"
@@ -162,5 +163,17 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
      <$action-navigate $to=<<createTiddler-title>>/>
      </$action-createtiddler>
      {{$:/plugins/mabuqian/time-for-task/Images/days}} 一天
+  </$button>
+\end
+
+\define create-idea-without-parent()
+  <$button tooltip="点击创建想法条目">
+    <$action-createtiddler
+      $basetitle={{$:/state/TFT/PageLayout/create-tiddler-title}}
+      tft={{$:/plugins/mabuqian/time-for-task/Config/idea-tft}}
+     >
+      <<after-create-tiddler-without-parent>>
+     </$action-createtiddler>
+     {{$:/plugins/mabuqian/time-for-task/Images/idea}} 想法
   </$button>
 \end

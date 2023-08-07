@@ -1,0 +1,68 @@
+created: 20230807135236391
+modified: 20230807135326067
+super-tag: time 任务
+tft: 任务
+title: 实现拖拽效果
+tmo_taskState: New
+tmo_timeSpent: 30
+type: text/vnd.tiddlywiki
+
+
+```
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/test
+
+<style>
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 10px;
+grid-row-gap: px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 1 / 4 / 2 / 5; }
+.div5 { grid-area: 1 / 5 / 2 / 6; }
+</style>
+
+<div class="parent">
+<div class="div1">
+<$list filter="[tmo_taskState[New]]">
+
+<$link><<currentTiddler>></$link>
+
+</$list>
+</div>
+<div class="div2">
+<$list filter="[tmo_taskState[Running]]">
+
+<$link><<currentTiddler>></$link>
+
+</$list>
+</div>
+<div class="div3">
+<$list filter="[tmo_taskState[Completed]]">
+
+<$link><<currentTiddler>></$link>
+
+</$list>
+</div>
+<div class="div4">
+<$list filter="[tmo_taskState[Archived]]">
+
+<$link><<currentTiddler>></$link>
+
+</$list>
+</div>
+<div class="div5">
+<$list filter="[tmo_taskState[Terminated]]">
+
+<$link><<currentTiddler>></$link>
+
+</$list>
+</div>
+</div>
+```
+
+因为还不能很好地实现拖拽效果，就只有先放弃了。

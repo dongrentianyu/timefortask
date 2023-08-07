@@ -4,20 +4,16 @@ tags: $:/tags/TFT/UnderTask
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
 
-
- <fieldset>
- <legend>前置任务</legend>
+ 前置任务
  <div class="tft-sidebar-project-list">
  <$list filter="[enlist{!!tmo_dependency}]">
  <$link><<currentTiddler>></$link>&nbsp;&nbsp;
  </$list>
  </div>
- </fieldset>
- <fieldset>
- <legend>后续任务</legend>
+
+后续任务
  <div class="tft-sidebar-project-list">
  <$list filter="[tmo_dependency<currentTiddler>]">
  <$link><<currentTiddler>></$link>&nbsp;&nbsp;
  </$list>
  </div>
- </fieldset>
