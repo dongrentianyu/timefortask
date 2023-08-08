@@ -1,0 +1,15 @@
+title: $:/plugins/mabuqian/time-for-task/button-templates
+type: text/vnd.tiddlywiki
+
+<$select tiddler='$:/state/button-templates' tooltip='选择创建的模板'>
+<option value='$:/plugins/mabuqian/time-for-task/5w1h-templates'>{{$:/plugins/mabuqian/time-for-task/5w1h-templates!!caption}}</option>
+<option value='$:/plugins/mabuqian/time-for-task/issue-templates'>{{$:/plugins/mabuqian/time-for-task/issue-templates!!caption}}</option>
+</$select>
+
+<$button>
+<$action-setfield $field="text" $value={{{ [[$:/state/button-templates]get[text]get[text]] }}}   />
+<$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
+<$action-sendmessage $message="tm-auto-save-wiki" />
+<$action-sendmessage $message="tm-edit-tiddler" $param=<<currentTiddler>> />
+确认添加
+</$button>

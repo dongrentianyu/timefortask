@@ -1,0 +1,28 @@
+title: $:/plugins/mabuqian/time-for-task/5w1h-templates
+caption: 5w1h简化版
+type: text/vnd.tiddlywiki
+
+<<det 
+"这是一个什么样的任务？能详细描述一下对这个任务的看法吗？" 
+"
+">>
+
+<<det 
+"大概安排什么时间去完成？" 
+"
+">>
+
+<<det 
+"为什么要去做这件事？" 
+"
+">>
+
+<<det 
+"想要采取什么方式去实现呢？" 
+"
+">>
+
+<<det 
+"有没有其他的替代方式呢？" 
+"
+">>

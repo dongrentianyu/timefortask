@@ -51,9 +51,9 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
 \define after-create-tiddler-without-parent()
 <$action-navigate $to=<<createTiddler-title>>/>
 <$let currentTiddler=<<createTiddler-title>> >
+  <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
   <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
   <$action-sendmessage $message="tm-auto-save-wiki" />
-  <$action-sendmessage $message="tm-edit-tiddler" $param=<<currentTiddler>> />
  </$let>
  <$action-setfield
   $tiddler="$:/state/TFT/PageLayout/create-tiddler-title"
