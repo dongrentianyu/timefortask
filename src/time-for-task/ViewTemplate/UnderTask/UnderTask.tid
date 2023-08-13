@@ -1,4 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderTask
+list-after: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
 tags: $:/tags/ViewTemplate
 
 \import [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
@@ -8,11 +9,18 @@ tags: $:/tags/ViewTemplate
 
   <!-- 先用已有的样式，后面如果内容比较多再做样式处理 -->
   <div class="tft-sidebar-project-list-item">
+  <<create-task-under-current-tiddler>>&nbsp;
+  <<create-idea-under-current-tiddler>>&nbsp;
   <<create-next-task-under-current-tiddler>>&nbsp;
   <<counts-number-of-completions>>&nbsp;
   </div>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext" >>
+<details>
+  <summary>查看更多信息</summary>
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext" "$:/state/tft/UnderTask" "tc-vertical">>
+
+</details>
 
   </$list>
 </$let>

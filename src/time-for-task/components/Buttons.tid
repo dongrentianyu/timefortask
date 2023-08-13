@@ -6,13 +6,26 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        <$action-createtiddler $message="tm-new-tiddler" 
        tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
        super-tag=<<super-tag>>
-       tags=<<currentTiddler>>
+       tags={{!!tags}}
        tmo_taskState="New"
        tmo_timeSpent="30"
        tmo_priority="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新子任务
+    </$set>
+  </$button>
+\end
+
+\define create-idea-under-current-tiddler()
+  <$button tooltip="点击创建新想法">
+   <$set name="tags" filter="[<currentTiddler>] [enlist{!!tags}] ">
+       <$action-createtiddler $message="tm-new-tiddler" 
+       tft={{$:/plugins/mabuqian/time-for-task/Config/idea-tft}}
+       tags=<<tags>> >
+       <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
+       </$action-createtiddler>
+       {{$:/plugins/mabuqian/time-for-task/Images/idea}} 想法
     </$set>
   </$button>
 \end

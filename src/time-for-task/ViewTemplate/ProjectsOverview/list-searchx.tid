@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/list-searchx
+caption: 查询条目
+tags: $:/tags/TFT/ProjectsOverview
+
+<<list-searchx filter:"[!is[system]]" class:"alert alert-secondary" placeholder:"请输入查询条目的名称" >>

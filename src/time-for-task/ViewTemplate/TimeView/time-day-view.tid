@@ -1,4 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/time-day-view
+list-after: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
 tags: $:/tags/ViewTemplate
 
 <$list filter="[all[current]time_form[days]]">

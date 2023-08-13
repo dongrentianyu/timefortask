@@ -1,4 +1,9 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview
 
 <!-- similar to $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject -->
-<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]] -[enlist{$:/config/ViewTemplate/ProjectsOverview}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" >>
+<details>
+  <summary>查看更多信息</summary>
+  
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]] -[enlist{$:/config/ViewTemplate/ProjectsOverview}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" "$:/state/tft/ProjectsOverview" "tc-vertical">>
+
+</details>

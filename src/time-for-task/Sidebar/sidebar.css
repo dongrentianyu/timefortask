@@ -23,7 +23,7 @@ div.tft-sidebar-container {
   justify-content: space-between;
 }
 .tft-sidebar-buttons button {
-  padding: 15px 20px;
+  padding: 15px;
 }
 .tft-sidebar-create-task .tc-edit-texteditor {
   width: 80%;
@@ -46,4 +46,21 @@ div.tft-sidebar-container {
 }
 .tc-edit-texteditor::placeholder {
   color: #999;
+}
+.tft-search {
+  width: 80%;
+  height: 35px;
+  position: relative;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #e2e1e4 !important ;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.search-input {
+  flex-grow: 1;
+  padding: 5px 10px; 
+  font-size: 14px;
+  border: none;
+  background: transparent;
 }
