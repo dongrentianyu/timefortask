@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/Settings/Tags
 caption: Tags
-tags: $:/tags/intention-tower-knowledge-graph/Settings
+tags: $:/tags/time-for-task/Settings
 order: 1
 
 \define single-text-tag-editor(typeName)
@@ -40,5 +40,7 @@ order: 1
 项目：<<single-text-tag-editor project>>
 
 任务：<<single-text-tag-editor task>>
+
+想法：<<single-text-tag-editor idea>>
 
 ''修改了任务标签后，原先带有`任务`标签的条目并不会自动修改过来，需要手动修改处理。''

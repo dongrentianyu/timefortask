@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/Settings/Fields
 caption: Fields
-tags: $:/tags/intention-tower-knowledge-graph/Settings
+tags: $:/tags/time-for-task/Settings
 order: 3
 
 !! 动态表格字段值，可在下面编辑
@@ -20,3 +20,11 @@ order: 3
 [[任务列表|$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable]]的值：{{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable}}
 
 <$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable" field="text" tag=input class="w-100" />
+
+[[想法列表|$:/plugins/mabuqian/time-for-task/Config/defaultFields-ideaDynamicTable]]的值：{{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ideaDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/defaultFields-ideaDynamicTable" field="text" tag=input class="w-100" />
+
+[[展示任务的值|$:/plugins/mabuqian/time-for-task/Config/presentation-limit]]的值：{{$:/plugins/mabuqian/time-for-task/Config/presentation-limit}}
+
+<$edit-text tiddler="$:/plugins/mabuqian/time-for-task/Config/presentation-limit" field="text" tag=input class="w-100" />
