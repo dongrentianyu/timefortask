@@ -5,7 +5,7 @@ title: $:/plugins/mabuqian/time-for-task/filters/leaf-task
 -->
 \define filter-is-new-task() [<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
 
-\define filter-is-new-project() [tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}!field:tmo_projectState[Completed]!field:tmo_projectState[Archived]!field:tmo_projectState[Terminated]!field:tmo_projectState[Suspended]]
+\define filter-is-new-project() [tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}!field:tmo_projectState[Completed]!field:tmo_projectState[Archived]!field:tmo_projectState[Terminated]!field:tmo_projectState[Suspended]filter<filter-is-not-leaf>]
 
 \define has-length() [length[]compare:integer:gt[0]]
 

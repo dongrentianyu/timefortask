@@ -7,7 +7,7 @@ tags: $:/tags/ViewTemplate
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}then<graphRootTiddler>]">
 
-  <<create-task-under-current-tiddler>>&nbsp;
+  <<create-task-under-project>>&nbsp;
   <<create-idea-under-current-tiddler>>&nbsp;
 
  <details>
