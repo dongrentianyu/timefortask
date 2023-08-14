@@ -13,8 +13,8 @@ type: text/vnd.tiddlywiki
 
 <!-- <<project-list>> 先注释起来，这个应该是列出优先级的任务条目，但我现在采用下面的方式来使用。未来可能会删除。-->
 
-{{$:/plugins/mabuqian/time-for-task/ViewTemplate/presentation}}
-
 </$scrollable>
 
 {{$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview}}
+
+{{$:/plugins/mabuqian/time-for-task/ViewTemplate/presentation}}

@@ -6,7 +6,7 @@ caption: 一个项目，两个任务
 \define get-non-completed-leaf-tasks-presentation() [tag<currentTiddler>filter<filter-is-new-task>limit{$:/plugins/mabuqian/time-for-task/Config/presentation-limit}] 
 
 <$presentation $height="600">
-<$list filter="[tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]">
+<$list filter=<<filter-is-new-project>> >
 <$slide tiddlerTitle={{!!title}} backgroundColor=<<colour background>> >
 
 <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
