@@ -1,0 +1,8 @@
+caption: all-out
+collection: material
+library: svg-icon
+tags: $:/tags/Image Icons Images SVG
+title: $:/plugins/mabuqian/time-for-task/Images/ToggleTask
+type: text/vnd.tiddlywiki
+
+<svg class="tc-image-all-out tc-image-button" width="22pt" height="22pt" viewBox="0 0 32 32"><path d="M24 0l8 8V0zm8 24l-8 8h8zM8 32l-8-8v8zM0 8l8-8H0zm25.9-1.9C20.43.63 11.57.63 6.1 6.1s-5.47 14.33 0 19.8 14.33 5.47 19.8 0 5.47-14.33 0-19.8zm-2.2 17.6c-4.25 4.25-11.15 4.25-15.4 0s-4.25-11.15 0-15.4 11.15-4.25 15.4 0 4.25 11.15 0 15.4z"/></svg>
