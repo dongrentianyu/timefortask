@@ -6,3 +6,4 @@ list-before: $:/config/TiddlerIconFilters/default
 [tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}then[$:/plugins/mabuqian/time-for-task/Images/Task]]
 [tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}then[$:/plugins/mabuqian/time-for-task/Images/Motivation]]
 [tft{$:/plugins/mabuqian/time-for-task/Config/idea-tft}then[$:/plugins/mabuqian/time-for-task/Images/idea]]
+[tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}then[$:/plugins/mabuqian/time-for-task/Images/resonance]]

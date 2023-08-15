@@ -154,6 +154,18 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
   </$button>
 \end
 
+\define create-resonance-without-parent()
+  <$button tooltip="点击创建新回路">
+    <$action-createtiddler
+      $basetitle={{$:/state/TFT/PageLayout/create-tiddler-title}}
+      tft={{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}}
+     >
+      <<after-create-tiddler-without-parent>>
+     </$action-createtiddler>
+     {{$:/plugins/mabuqian/time-for-task/Images/resonance}} 新回路
+  </$button>
+\end
+
 \define counts-number-of-completions()
 <$button tooltip="点击增加完成次数，默认递增为1，可修改tmo_repeatInterval字段来改变间隔次数">
 <$action-listops $field="tmo_repeatInterval" $filter="[all[current]get[tmo_repeatInterval]else[1]]"/>

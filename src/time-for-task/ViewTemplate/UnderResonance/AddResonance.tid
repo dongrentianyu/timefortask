@@ -1,0 +1,31 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderResonance/AddResonance
+caption: {{$:/core/images/tag-button}} 添加回路
+tags: $:/tags/TFT/UnderResonance
+
+<style>
+.parent {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 10px;
+grid-row-gap: 0px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+</style>
+<div class="parent">
+<div class="div1">
+<$select tiddler='$:/state/tft/meaning' field='testing' multiple size='8' class="w-100">
+<$list filter='[tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]'>
+<option><$view field='title'/></option>
+</$list>
+</$select>
+<$button>
+<$action-setfield  tags={{{ [[$:/state/tft/meaning]get[testing]] }}}   />
+确认添加
+</$button>
+</div>
+<div class="div2">
+<$edit-text  field="tags" class="w-100" tag=textarea/>
+</div>
+</div>

@@ -1,0 +1,20 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderResonance
+list-after: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
+tags: $:/tags/ViewTemplate
+
+\import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
+
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[current]tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}then<graphRootTiddler>]">
+
+  <<create-project-under-current-tiddler>>
+
+  <details>
+  <summary>查看更多信息</summary>
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderResonance]] -[enlist{$:/config/ViewTemplate/UnderResonance}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable" "$:/state/tft/UnderResonance" "tc-vertical">>
+
+  </details>
+
+  </$list>
+</$let>
