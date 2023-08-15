@@ -43,6 +43,6 @@ order: 1
 
 想法：<<single-text-tag-editor idea>>
 
-回路：<<single-text-tag-editor resonance-tft>>
+回路：<<single-text-tag-editor resonance>>
 
 ''修改了任务标签后，原先带有`任务`标签的条目并不会自动修改过来，需要手动修改处理。''

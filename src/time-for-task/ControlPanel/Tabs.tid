@@ -47,3 +47,13 @@ order: 2
 <$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
 
 </$list>
+
+[[ProjectsOverview/table|$:/tags/TFT/ProjectsOverview/table]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/ProjectsOverview/table]]
+
+<$edit-text tiddler="$:/config/ViewTemplate/ProjectsOverview/table" field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/table]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>

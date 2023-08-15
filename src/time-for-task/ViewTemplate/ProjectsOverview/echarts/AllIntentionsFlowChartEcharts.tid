@@ -1,5 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/AllIntentionsFlowChartEcharts
-caption: {{$:/plugins/mabuqian/time-for-task/Images/Motivation}} 意义之塔
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Motivation}} 意义之塔图谱
 tags: $:/tags/TFT/ProjectsOverview
 
 <$echarts $tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/AllIntentionsFlowChartEchartsAddon" dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" />
