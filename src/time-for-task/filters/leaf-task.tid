@@ -5,7 +5,7 @@ title: $:/plugins/mabuqian/time-for-task/filters/leaf-task
 -->
 \define filter-is-new-task() [<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
 
-\define filter-is-new-project() [tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}!field:tmo_projectState[Completed]!field:tmo_projectState[Archived]!field:tmo_projectState[Terminated]!field:tmo_projectState[Suspended]filter<filter-is-not-leaf>]
+\define filter-is-new-project() [tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}!field:tmo_projectState[Completed]!field:tmo_projectState[Archived]!field:tmo_projectState[Terminated]!field:tmo_projectState[Suspended]filter<filter-is-not-leaf>sort<projectCompareByPriority>]
 
 \define has-length() [length[]compare:integer:gt[0]]
 
@@ -15,6 +15,8 @@ title: $:/plugins/mabuqian/time-for-task/filters/leaf-task
 \define filter-is-not-leaf() [all[current]tagging[]filter<filter-is-new-task>]
 
 \define compareByPriority() [get[tmo_priority]match[High]then[3]] :else[get[tmo_priority]match[Medium]then[2]] :else[get[tmo_priority]match[Low]then[1]] :else[[2]]
+
+\define projectCompareByPriority() [get[tmo_projectPriority]match[High]then[3]] :else[get[tmo_projectPriority]match[Medium]then[2]] :else[get[tmo_projectPriority]match[Low]then[1]] :else[[2]]
 
 <!-- // TODO: try replace with in-tagtree-of -->
 <!-- projects are tasks, so getting all projects under current (intention), then get those is in new task state  -->

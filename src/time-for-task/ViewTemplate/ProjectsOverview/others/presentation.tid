@@ -3,7 +3,7 @@ caption: 一个项目，两个任务
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
 
-\define get-non-completed-leaf-tasks-presentation() [tag<currentTiddler>filter<filter-is-new-task>limit{$:/plugins/mabuqian/time-for-task/Config/presentation-limit}] 
+\define get-non-completed-leaf-tasks-presentation() [tag<currentTiddler>filter<filter-is-new-task>limit{$:/plugins/mabuqian/time-for-task/Config/presentation-limit}!sortsub:number<compareByPriority>]
 
 <$presentation $height="600">
 <$list filter=<<filter-is-new-project>> >
