@@ -1,0 +1,4 @@
+title: $:/tags/TFT/ProjectsOverview/table
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskCompletedDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ideaDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ResonanceDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/sidebar-ProjectDynamicTable
+
+使用这个标签来展示列表内容

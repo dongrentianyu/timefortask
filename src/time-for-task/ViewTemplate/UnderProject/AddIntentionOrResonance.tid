@@ -1,5 +1,5 @@
-title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/AddIntention
-caption: {{$:/core/images/tag-button}} 添加意义
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/AddIntentionOrResonance
+caption: {{$:/core/images/tag-button}} 添加意义或回路
 tags: $:/tags/TFT/UnderProject
 
 <style>
@@ -16,7 +16,7 @@ grid-row-gap: 0px;
 <div class="parent">
 <div class="div1">
 <$select tiddler='$:/state/tft/meaning' field='testing' multiple size='8' class="w-100">
-<$list filter='[tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]'>
+<$list filter='[tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] [tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]'>
 <option><$view field='title'/></option>
 </$list>
 </$select>

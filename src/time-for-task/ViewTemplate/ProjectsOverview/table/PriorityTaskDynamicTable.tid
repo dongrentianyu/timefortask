@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 优先任务列表
-tags: $:/tags/TFT/ProjectsOverview
+tags: $:/tags/TFT/ProjectsOverview/table
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
 <!--先注释起来，看后期还用不用。不用可能就删除了。
