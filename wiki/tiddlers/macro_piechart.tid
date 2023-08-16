@@ -1,0 +1,7 @@
+created: 20210901044446730
+modified: 20230816142446280
+tags: $:/tags/Macro dount
+title: macro/piechart
+type: text/vnd.tiddlywiki
+
+\define piechart(pct:50) <div class="progress-pie-color" data-value="$pct$"></div>

@@ -5,7 +5,7 @@ tags: gumo插件开发
 tft: 任务
 title: 把按钮放在副标题中
 tmo_estimatedSpent: 60
-tmo_taskState: New
+tmo_taskState: Running
 tmo_timeSpent: 30
 type: text/vnd.tiddlywiki
 

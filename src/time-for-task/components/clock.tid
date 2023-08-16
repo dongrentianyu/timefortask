@@ -1,0 +1,4 @@
+title: $:/plugins/mabuqian/time-for-task/Components/clock
+type: text/vnd.tiddlywiki
+
+<$echarts $text={{$:/plugins/mabuqian/time-for-task/Components/clock-data}} $height="600px"/>
