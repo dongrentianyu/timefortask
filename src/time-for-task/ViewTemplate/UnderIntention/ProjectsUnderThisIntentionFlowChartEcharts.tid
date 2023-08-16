@@ -3,11 +3,14 @@ caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 此意义的意义
 tags: $:/tags/TFT/UnderIntention
 
 \define echarts-with-subfilter()
-<$echarts
-  $tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEchartsAddon"
-  currentTiddler=<<currentTiddler>>
-  tiddlerSource="[all[tiddlers]tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}in-tagtree-of:inclusive[$(currentTiddler)$]] :or[[$(currentTiddler)$]tagstree[]tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]"
-  dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
+<$echarts 
+$tiddler="$:/plugins/Gk0Wk/echarts/addons/TheBrain.js" 
+aliasField="caption" 
+levels=1 
+$height=800px
+focussedTiddler=<<currentTiddler>>
+graphTitle={{!!title}}
+dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" 
 />
 \end
 

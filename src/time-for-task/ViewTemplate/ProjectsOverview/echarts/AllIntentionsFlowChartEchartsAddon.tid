@@ -21,7 +21,7 @@ type: text/vnd.tiddlywiki
       "edgeSymbol": ["circle", "arrow"],
       "edgeSymbolSize": [4, 10],
       "data": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionName">
+        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] [subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]" variable="intentionName">
           <$set name="color" filter="[<intentionName>get[color]]" emptyValue=<<intentionTagColor>> >
         `       {
                   "name": "`<<intentionName>>`",
@@ -35,7 +35,7 @@ type: text/vnd.tiddlywiki
       `],
       "links": [`
         <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionNameTo">
-          <$list filter="[<intentionNameTo>taggingtree[]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionNameFrom">
+          <$list filter="[<intentionNameTo>taggingtree[]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] [subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]" variable="intentionNameFrom">
           `       {
                     "source": "`<<intentionNameFrom>>`",
                     "target": "`<<intentionNameTo>>`"

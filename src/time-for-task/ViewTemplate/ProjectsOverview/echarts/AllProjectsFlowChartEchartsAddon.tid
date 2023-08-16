@@ -37,7 +37,7 @@ type: text/vnd.tiddlywiki
         `
           </$set>
         </$list>
-        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="intentionName">
+        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] [subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]" variable="intentionName">
           <$set name="color" filter="[<intentionName>get[color]]" emptyValue=<<intentionTagColor>> >
 
         `       {
@@ -51,7 +51,7 @@ type: text/vnd.tiddlywiki
         </$list>
       `],
       "links": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}] [subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]" variable="projectNameTo">
+        <$list filter="[subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}] [subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}] [subfilter<tiddlerSourceFilter>tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]" variable="projectNameTo">
           <$list filter="[<projectNameTo>taggingtree[]tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="projectNameFrom">
           `       {
                     "source": "`<<projectNameFrom>>`",
