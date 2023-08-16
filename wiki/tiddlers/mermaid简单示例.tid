@@ -1,0 +1,16 @@
+created: 20230816174506682
+modified: 20230816174530312
+tags: 
+title: mermaid简单示例
+type: text/vnd.tiddlywiki
+
+$$$text/vnd.tiddlywiki.mermaid
+graph TD
+    A[监听tw-obsidian-add事件] --> B{获取Obsidian数据}
+    B --> |fetchData| C[将数据写入TiddlyWiki]
+    B ----> |ERROR| D[显示错误通知]
+    
+    E[监听tw-obsidian-purge事件] --> F{清空Obsidian数据}
+    F --> |purgeVault| G[清空TiddlyWiki中数据]
+    F ----> |无数据| H[显示无数据通知]
+$$$
