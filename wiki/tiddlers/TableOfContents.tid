@@ -1,5 +1,5 @@
 created: 20230728140429906
-modified: 20230815165225226
+modified: 20230816165513111
 title: TableOfContents
 type: text/vnd.tiddlywiki
 
@@ -12,5 +12,15 @@ type: text/vnd.tiddlywiki
 也就是说有两种方式，一种方式是有很多个小项目。另一种方式是有一个项目，里面有很多任务。
 
 另外也增加了两个内容，一个是想法，另一个是time。
+
+对任务而言，视图应该是一条线一样的，以任务为中心，然后接着是任务所在的项目，再然后是项目所在的回路或意义。也就是通过这种方式，了解一个任务应该是处在什么意义之塔之下。
+
+对项目而言，同样是一条线，既要对上展示回路或意义，也要对下展示任务。而且应该可以排除已完成的任务。
+
+对回路而言，同样只展示意义和项目上下两个。
+
+对意义而言，不管是回路还是项目都需要展示。
+
+但目前我对echarts插件还掌握得不是很好，所以还不能很好地实现其中的想法。
 
 依赖插件有"$:/plugins/kookma/shiraz", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/xp/aggregation","$:/plugins/mabuqian/gumo-customisation","$:/plugins/sukima/reveal-js"。如果cpl没有自动安装，请手动安装。
