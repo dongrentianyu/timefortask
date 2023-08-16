@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderIdea/AddIntention
 caption: {{$:/core/images/tag-button}} 回路或项目
-tags: $:/tags/TFT/UnderIntention
+tags: 
 
 <style>
 .parent {
@@ -26,6 +26,6 @@ grid-row-gap: 0px;
 </$button>
 </div>
 <div class="div2">
-<$edit-text  field="tags" class="w-100" tag=textarea/>
+<$edit-text  field="tags" class="w-100 h-100" tag=textarea/>
 </div>
 </div>

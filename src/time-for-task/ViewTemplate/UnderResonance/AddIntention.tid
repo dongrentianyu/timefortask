@@ -26,6 +26,6 @@ grid-row-gap: 0px;
 </$button>
 </div>
 <div class="div2">
-<$edit-text  field="tags" class="w-100" tag=textarea/>
+<$edit-text  field="tags" class="w-100 h-100" tag=textarea/>
 </div>
 </div>
