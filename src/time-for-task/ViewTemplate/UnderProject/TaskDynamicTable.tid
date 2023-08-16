@@ -4,6 +4,6 @@ tags: $:/tags/TFT/UnderProject
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
 
-\define get-non-completed-leaf-tasks() [tag<currentTiddler>filter<filter-is-new-task>] [tag<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/idea-tft}]
+\define get-non-completed-leaf-tasks() [tag<currentTiddler>filter<filter-is-new-task>]
 
 <$macrocall $name=aggregation  filter=<<get-non-completed-leaf-tasks>> defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable}} class="w-100" state="TFT-TaskDynamicTable-state" />

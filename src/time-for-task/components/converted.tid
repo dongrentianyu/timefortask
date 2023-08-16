@@ -1,0 +1,59 @@
+title: $:/plugins/mabuqian/time-for-task/Components/Buttons/converted
+
+\define task-converted-to-project()
+<$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}!tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
+  <$button tooltip="设为项目" aria-label="设为项目" >
+    <$action-setfield tft={{$:/plugins/mabuqian/time-for-task/Config/project-tft}} />
+    <$action-setfield super-tag={{$:/plugins/mabuqian/time-for-task/Config/project-tft}} />
+      {{$:/plugins/mabuqian/time-for-task/Images/SetAsProject}} 设为项目
+  </$button>
+</$list>
+\end
+
+\define project-converted-to-task()
+<$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
+  <$button tooltip="把项目改成任务" aria-label="把项目改成任务" >
+   <$set name="super-tag" filter="[{$:/plugins/mabuqian/time-for-task/Config/time-tft}] [{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">
+    <$action-setfield tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}} />
+    <$action-setfield super-tag=<<super-tag>> />
+      {{$:/plugins/mabuqian/time-for-task/Images/SetAsNotProject}} 设为任务
+    </$set>
+  </$button>
+</$list>
+\end
+
+\define idea-converted-to-task()
+<$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/idea-tft}]">
+  <$button tooltip="设为任务" aria-label="设为任务" >
+    <$action-setfield 
+    tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}} 
+    super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
+    tmo_taskState="New"
+    tmo_priority="Medium"
+    />
+      {{$:/plugins/mabuqian/time-for-task/Images/ToggleTask}} 设为任务 
+  </$button>
+</$list>
+\end
+
+\define resonance-converted-to-intention()
+<$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}]">
+  <$button tooltip="设为意义" aria-label="设为意义" >
+    <$action-setfield 
+    tft={{$:/plugins/mabuqian/time-for-task/Config/intention-tft}} 
+    />
+      {{$:/plugins/mabuqian/time-for-task/Images/Motivation}} 设为意义 
+  </$button>
+</$list>
+\end
+
+\define intention-converted-to-resonance()
+<$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]">
+  <$button tooltip="设为回路" aria-label="设为回路" >
+    <$action-setfield 
+    tft={{$:/plugins/mabuqian/time-for-task/Config/resonance-tft}} 
+    />
+      {{$:/plugins/mabuqian/time-for-task/Images/resonance}} 设为回路 
+  </$button>
+</$list>
+\end

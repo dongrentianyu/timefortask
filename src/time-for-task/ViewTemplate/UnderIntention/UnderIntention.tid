@@ -2,20 +2,22 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderIntention
 list-after: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
 tags: $:/tags/ViewTemplate
 
-\import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
+\import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons/converted]]
 
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}then<graphRootTiddler>]">
+  
+  <div class="tft-sidebar-project-list-item">
+   <<create-project-under-current-tiddler>>&nbsp;
+   <<intention-converted-to-resonance>>&nbsp;
+  </div>
 
-  <<create-project-under-current-tiddler>>
+ <details>
+   <summary>查看更多信息</summary>
 
-  <details>
-  <summary>查看更多信息</summary>
-
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderIntention]] -[enlist{$:/config/ViewTemplate/UnderIntention}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable" "$:/state/tft/UnderIntention" "tc-vertical">>
-
- </details>
-
+   <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderIntention]] -[enlist{$:/config/ViewTemplate/UnderIntention}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable" "$:/state/tft/UnderIntention" "tc-vertical">>
+  
+ </details> 
 
   </$list>
 </$let>

@@ -1,0 +1,9 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/IdeaDynamicTable
+caption: {{$:/plugins/mabuqian/time-for-task/Images/idea}} 想法列表
+tags: $:/tags/TFT/UnderProject
+
+\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
+
+\define get-non-completed-leaf-ideas() [tag<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/idea-tft}]
+
+<$macrocall $name=aggregation  filter=<<get-non-completed-leaf-ideas>> defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ideaDynamicTable}} class="w-100" state="TFT-TaskDynamicTable-state" />
