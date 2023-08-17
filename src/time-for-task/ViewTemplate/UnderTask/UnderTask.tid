@@ -13,6 +13,7 @@ tags: $:/tags/ViewTemplate
   <<create-idea-under-current-tiddler>>&nbsp;
   <<create-next-task-under-current-tiddler>>&nbsp;
   <<task-converted-to-project>>&nbsp;
+  <<converted-to-question-viewtemplate>>&nbsp;
   <<counts-number-of-completions>>&nbsp;
   </div>
 

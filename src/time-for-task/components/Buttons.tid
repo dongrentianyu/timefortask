@@ -11,7 +11,6 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_timeSpent="30"
        tmo_priority="Medium">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
-       <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新子任务
     </$set>
@@ -29,7 +28,6 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_timeSpent="30"
        tmo_priority="Medium">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
-       <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新子任务
     </$set>
@@ -61,7 +59,6 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_timeSpent="30"
        tmo_dependency=<<currentTiddler>> >
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
-       <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新后续任务
     </$set>
@@ -104,8 +101,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
       tmo_timeSpent="30"
       super-tag=<<super-tag>>
       tmo_priority="Medium"
-     >
-     <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
+     > 
       <<after-create-tiddler-without-parent>>
      </$action-createtiddler>
      {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新任务
@@ -125,7 +121,6 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
       tmo_priority="Medium"
       tmo_dueDate=<<now "YYYY-0MM-0DD" >>
      >
-     <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
       <<after-create-tiddler-without-parent>>
      </$action-createtiddler>
      {{$:/plugins/mabuqian/time-for-task/Images/Task}} 当日任务

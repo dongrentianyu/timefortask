@@ -6,8 +6,11 @@ tags: $:/tags/ViewTemplate
 
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tft{$:/plugins/mabuqian/time-for-task/Config/idea-tft}then<graphRootTiddler>]">
-
-    <<idea-converted-to-task>>
+    
+    <div class="tft-sidebar-project-list-item">
+    <<idea-converted-to-task>>&nbsp;
+    <<converted-to-question-viewtemplate>>&nbsp;
+    </div>
 
      <details>
      <summary>查看更多信息</summary>

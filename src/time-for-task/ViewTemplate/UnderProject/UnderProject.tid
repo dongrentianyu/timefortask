@@ -11,6 +11,7 @@ tags: $:/tags/ViewTemplate
   <<create-task-under-project>>&nbsp;
   <<create-idea-under-current-tiddler>>&nbsp;
   <<project-converted-to-task>>&nbsp;
+  <<converted-to-question-viewtemplate>>&nbsp;
   </div>
 
   <details>

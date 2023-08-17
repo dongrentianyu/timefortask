@@ -57,3 +57,12 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons/converted
   </$button>
 </$list>
 \end
+
+\define converted-to-question-viewtemplate()
+<$list filter="[<currentTiddler>has[tft]] :filter[{!!text}trim[]is[blank]then[yes]]">
+  <$button tooltip="设置模板" aria-label="设置模板" >
+    <$action-setfield $field="text" $value={{$:/plugins/mabuqian/time-for-task/button-templates}}  />
+      {{$:/plugins/mabuqian/time-for-task/Images/question-viewtemplate}} 设置模板 
+  </$button>
+</$list>
+\end
