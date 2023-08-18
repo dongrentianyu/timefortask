@@ -1,5 +1,49 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/list-searchx
-caption: 查询条目
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 查询任务条目
 tags: $:/tags/TFT/ProjectsOverview
 
-<<list-searchx filter:"[!is[system]]" class:"alert alert-secondary" placeholder:"请输入查询条目的名称" >>
+<<list-searchx filter:"[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}]" class:"alert  alert-secondary  w-100" placeholder:"查询任务条目" >>
+
+
+<div class="flex-row">
+<div class="flex-col borderless">
+展示类型<$select tiddler='$:/state/tft/list-searchx' tooltip='选择展示类型' default="不展示">
+<option>不展示</option>
+<option>简单展示</option>
+<option>表格展示</option>
+</$select>
+</div>
+    <div class="flex-col borderless">
+<<select-field-search "tags" "[tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">>
+    </div>
+    <div class="flex-col borderless">
+<<select-field-search "tmo_taskState" "[has[tmo_taskState]]">>
+    </div>
+		<div class="flex-col borderless">
+<<select-field-search "tmo_priority" "[has[tmo_priority]]">>
+    </div>
+		<div class="flex-col borderless">
+<<select-field-search "tmo_taskAssessment" "[has[tmo_taskAssessment]]">>
+    </div>
+</div>
+
+<$reveal type="match" state="$:/state/tft/list-searchx" text="简单展示">
+<div style="column-count:2;">
+<$list filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] +[search:tags:{$:/state/select-field-search/tags}]">
+
+<$link><<currentTiddler>></$link>
+
+</$list>
+</div>
+</$reveal>
+
+<$reveal type="match" state="$:/state/tft/list-searchx" text="表格展示">
+
+<$macrocall $name=table-dynamic filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] +[search:tags:{$:/state/select-field-search/tags}]" 
+class="w-100 thead-secondary table-hover-cyan" 
+fields="tbl-expand title tags tmo_taskState tmo_priority tmo_taskAssessment" 
+caption=<<now "YYYY-0MM-0DD hh:0mm:0ss">> 
+stateTiddler="$:/state/tft/list-searchx/table-dynamic"
+ />
+
+</$reveal>
