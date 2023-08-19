@@ -23,8 +23,29 @@ tags: $:/tags/TFT/ProjectsOverview
   <div class="flex-col borderless">
     <<select-field-search "tmo_priority" "[has[tmo_priority]]">>
   </div>
+</div>
+
+<div class="flex-row">
   <div class="flex-col borderless">
     <<select-field-search "tmo_taskAssessment" "[has[tmo_taskAssessment]]">>
+  </div>
+  <div class="flex-col borderless">
+    截止日期<$edit-text 
+    tiddler="$:/state/select-field-search/tmo_dueDate" 
+    field="tmo_dueDate" 
+    type="date"  />
+  </div>
+  <div class="flex-col borderless">
+    完成日期<$edit-text 
+    tiddler="$:/state/select-field-search/tmo_completionDate" 
+    field="tmo_completionDate" 
+    type="date"  />
+  </div>
+  <div class="flex-col borderless">
+    具体日期<$edit-text 
+    tiddler="$:/state/select-field-search/time_day" 
+    field="time_day" 
+    type="date"  />
   </div>
 </div>
 
@@ -32,7 +53,11 @@ tags: $:/tags/TFT/ProjectsOverview
          state="$:/state/tft/list-searchx"
          text="简单展示">
   <div style="column-count:2;">
-    <$list filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] +[search:tags:{$:/state/select-field-search/tags}]">
+    <$list filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] 
+    +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] +[search:tags:{$:/state/select-field-search/tags}]
+    +[search:tmo_dueDate:{$:/state/select-field-search/tmo_dueDate!!tmo_dueDate}]
+    +[search:tmo_completionDate:{$:/state/select-field-search/tmo_completionDate!!tmo_completionDate}]
+    +[search:time_day:{$:/state/select-field-search/time_day!!time_day}]">
 
       <$link>
         <<currentTiddler>>
@@ -47,7 +72,12 @@ tags: $:/tags/TFT/ProjectsOverview
          text="表格展示">
 
   <$macrocall $name=table-dynamic
-              filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] +[search:tags:{$:/state/select-field-search/tags}]"
+              filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] 
+              +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] 
+              +[search:tags:{$:/state/select-field-search/tags}]
+              +[search:tmo_dueDate:{$:/state/select-field-search/tmo_dueDate!!tmo_dueDate}]
+              +[search:tmo_completionDate:{$:/state/select-field-search/tmo_completionDate!!tmo_completionDate}]
+              +[search:time_day:{$:/state/select-field-search/time_day!!time_day}]"
               class="w-100 thead-secondary table-hover-cyan"
               fields="tbl-expand title tags tmo_taskState tmo_priority tmo_taskAssessment"
               caption=<<now "YYYY-0MM-0DD hh:0mm:0ss">>

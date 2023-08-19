@@ -1,0 +1,9 @@
+created: 20230819071136216
+modified: 20230819071238589
+tags: 
+title: 新条目
+type: text/vnd.tiddlywiki
+
+<$edit-text tiddler="$:/state/select-field-search/tmo_dueDate" field="myconfig" type="date"  /><p/>
+
+<$edit-text tiddler="AppSettings" field="myconfig" type="date" /><p/>
