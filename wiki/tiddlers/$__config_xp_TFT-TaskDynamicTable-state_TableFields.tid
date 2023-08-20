@@ -1,0 +1,6 @@
+created: 20230820203229926
+list: tbl-expand title tags tmo_taskState tmo_priority tft created modified tmo_timeSpent type
+modified: 20230820203229928
+order: tbl-expand title tags tmo_taskState tmo_priority tft
+title: $:/config/xp/TFT-TaskDynamicTable-state/TableFields
+type: text/vnd.tiddlywiki

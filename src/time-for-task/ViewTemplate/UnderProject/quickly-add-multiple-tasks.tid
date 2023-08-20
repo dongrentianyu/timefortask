@@ -1,0 +1,34 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/quickly-add-multiple-tasks
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 添加多个任务
+tags: $:/tags/TFT/UnderProject
+
+<$edit-text tiddler="$:/state/tft/quickly-add multiple-tasks" field="text" class="w-100" tag=textarea minHeight=400px/>
+
+<$set name="myList" value={{$:/state/tft/quickly-add multiple-tasks}}>
+<$set name="addprefix" value="[[">
+<$set name="addsuffix" value="]]">
+<$set name="add" value="]] [[">
+<$button>
+<$list filter="[<myList>addprefix<addprefix>addsuffix<addsuffix>search-replace:g:regexp[\n],<add>] +[enlist-input[]]" variable="thisTitle">
+<$action-createtiddler 
+$basetitle=<<thisTitle>>
+tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
+super-tag=<<super-tag>>
+tags=<<currentTiddler>>
+tmo_taskState="New"
+tmo_timeSpent="30"
+tmo_priority="Medium"
+/>
+</$list>
+{{$:/plugins/mabuqian/time-for-task/Images/Task}} 快速添加多个任务
+</$button>
+</$set>
+</$set>
+</$set>
+</$set>
+
+
+<$button>
+<$action-setfield $tiddler="$:/state/tft/quickly-add multiple-tasks" text=""/>
+清除编辑框中的内容
+</$button>
