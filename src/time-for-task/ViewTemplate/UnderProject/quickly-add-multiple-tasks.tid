@@ -1,15 +1,12 @@
-title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/quickly-add-multiple-tasks
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/quickly-add-multiple-tasks-tft
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 添加多个任务
 tags: $:/tags/TFT/UnderProject
 
-<$edit-text tiddler="$:/state/tft/quickly-add multiple-tasks" field="text" class="w-100" tag=textarea minHeight=400px/>
-
-<$set name="myList" value={{$:/state/tft/quickly-add multiple-tasks}}>
-<$set name="addprefix" value="[[">
-<$set name="addsuffix" value="]]">
-<$set name="add" value="]] [[">
+下面是直接从空格中添加多个任务的
+<$edit-text tiddler="$:/state/tft/quickly-add-multiple-tasks-tft/empty" field="text" class="w-100" tag=textarea />
+<$set name="emptyList" value={{$:/state/tft/quickly-add-multiple-tasks-tft/empty}}>
 <$button>
-<$list filter="[<myList>addprefix<addprefix>addsuffix<addsuffix>search-replace:g:regexp[\n],<add>] +[enlist-input[]]" variable="thisTitle">
+<$list filter="[enlist<emptyList>]" variable="thisTitle">
 <$action-createtiddler 
 $basetitle=<<thisTitle>>
 tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
@@ -18,6 +15,43 @@ tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
 tmo_priority="Medium"
+quickly-add-multiple-tasks-tft="yes"
+/>
+</$list>
+{{$:/plugins/mabuqian/time-for-task/Images/Task}} 快速添加多个任务
+</$button>
+</$set>
+<$button>
+<$action-setfield $tiddler="$:/state/tft/quickly-add-multiple-tasks-tft/empty" text=""/>
+清除编辑框中的内容
+</$button>
+<$button>
+<$list filter="[has[quickly-add-multiple-tasks-tft]]" variable="thisTitle">
+<$action-deletefield $tiddler=<<thisTitle>> $field="quickly-add-multiple-tasks-tft"/>
+</$list>
+清除quickly-add-multiple-tasks-tft字段
+</$button>
+
+
+下面是具有换行来添加多个任务的
+
+<$edit-text tiddler="$:/state/tft/quickly-add-multiple-tasks-tft/multiple" field="text" class="w-100" tag=textarea minHeight=400px/>
+
+<$set name="multipleList" value={{$:/state/tft/quickly-add-multiple-tasks-tft/multiple}}>
+<$set name="addprefix" value="[[">
+<$set name="addsuffix" value="]]">
+<$set name="add" value="]] [[">
+<$button>
+<$list filter="[<multipleList>addprefix<addprefix>addsuffix<addsuffix>search-replace:g:regexp[\n],<add>] +[enlist-input[]]" variable="thisTitle">
+<$action-createtiddler 
+$basetitle=<<thisTitle>>
+tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
+super-tag=<<super-tag>>
+tags=<<currentTiddler>>
+tmo_taskState="New"
+tmo_timeSpent="30"
+tmo_priority="Medium"
+quickly-add-multiple-tasks-tft="yes"
 />
 </$list>
 {{$:/plugins/mabuqian/time-for-task/Images/Task}} 快速添加多个任务
@@ -26,9 +60,13 @@ tmo_priority="Medium"
 </$set>
 </$set>
 </$set>
-
-
 <$button>
-<$action-setfield $tiddler="$:/state/tft/quickly-add multiple-tasks" text=""/>
+<$action-setfield $tiddler="$:/state/tft/quickly-add-multiple-tasks-tft/multiple" text=""/>
 清除编辑框中的内容
+</$button>
+<$button>
+<$list filter="[has[quickly-add-multiple-tasks-tft]]" variable="thisTitle">
+<$action-deletefield $tiddler=<<thisTitle>> $field="quickly-add-multiple-tasks-tft"/>
+</$list>
+清除quickly-add-multiple-tasks-tft字段
 </$button>
