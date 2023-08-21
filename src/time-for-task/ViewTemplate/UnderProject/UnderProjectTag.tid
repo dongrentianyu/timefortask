@@ -1,4 +1,4 @@
 title: $:/tags/TFT/UnderProject
-list: $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/quickly-add-multiple-tasks $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectTaskCompletedDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/IdeaDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/AddIntentionOrResonance $:/plugins/mabuqian/time-for-task/ViewTemplate/project-echarts $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/task-counts
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectTaskCompletedDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/quickly-add-multiple-tasks-tft $:/plugins/mabuqian/time-for-task/ViewTemplate/IdeaDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/AddIntentionOrResonance $:/plugins/mabuqian/time-for-task/ViewTemplate/project-echarts $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/task-counts
 
 Tiddler with this tag will show in the section under project tiddler, become one of the tabs.
