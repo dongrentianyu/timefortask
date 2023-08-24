@@ -1,8 +1,0 @@
-title: $:/plugins/mabuqian/time-for-task/Components/donut-chart-example
-type: text/vnd.tiddlywiki
-
-<!-- Ref: https://codepen.io/janverstr/pen/PvPoaV -->
-
-<<donut-chart "24" "120 styles" tomato>> <<donut-chart "55" "350 macros" yellow>> <<donut-chart "83" "1200 widgets" green>>
-
-这些来自[[论坛|https://talk.tiddlywiki.org/t/donut-chart-in-tiddlywiki-with-animation/535]]。选用这个而不选用echarts的原因在于这个不用再装新的插件。尽可能不去依赖太多插件。

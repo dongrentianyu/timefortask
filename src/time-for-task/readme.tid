@@ -10,5 +10,3 @@ demo: https://dongrentianyu.github.io/timefortask
 依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag"，$:/plugins/mabuqian/gumo-customisation,"$:/plugins/sukima/reveal-js"如果CPL没有自动安装，请手动安装。
 
 其中$:/plugins/xp/aggregation需要更新到0.5.0版本。
-
-[[这里|$:/plugins/mabuqian/time-for-task/Components/clock]]有一个时钟。因为需要echarts插件，所以我就没有放到gumo插件里去。
