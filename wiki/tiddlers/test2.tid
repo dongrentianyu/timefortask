@@ -1,10 +1,10 @@
 created: 20230824155357290
-modified: 20230824160741115
+modified: 20230825163821297
 super-tag: time 任务
 tags: gumo插件开发
 tft: 任务
 title: test2
-tmo_estimatedSpent: 90
+tmo_estimatedSpent: 45
 tmo_priority: Medium
 tmo_taskState: New
 tmo_timeSpent: 30

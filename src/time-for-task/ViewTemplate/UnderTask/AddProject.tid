@@ -2,6 +2,8 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/AddProject
 caption: {{$:/core/images/tag-button}} 添加所在项目
 tags: $:/tags/TFT/UnderTask
 
+\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
+
 <style>
 .parent {
 display: grid;
@@ -16,7 +18,7 @@ grid-row-gap: 0px;
 <div class="parent">
 <div class="div1">
 <$select tiddler='$:/state/tft/meaning' field='testing' multiple size='8' class="w-100">
-<$list filter='[tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]'>
+<$list filter=<<filter-is-new-project>> >
 <option><$view field='title'/></option>
 </$list>
 </$select>

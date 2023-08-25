@@ -1,5 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/time-spent
-tags: $:/tags/ViewTemplate
+tags: $:/tags/TFT/UnderTask
+caption: {{$:/plugins/mabuqian/time-for-task/Images/timelapse}} 时间花费
 
 <$list filter="[<currentTiddler>has[tmo_timeSpent]!prefix[$:/]]">
 
@@ -19,9 +20,6 @@ tags: $:/tags/ViewTemplate
   margin: 10px;
  }
 </style>
-
-<details>
-  <summary>调试花费时间和预估时间</summary>
 
 <$range tiddler=<<currentTiddler>> field="tmo_estimatedSpent" min="0" max="180" default="1" increment="5" list="tickmarks"/>
 <datalist id="tickmarks">
@@ -55,7 +53,5 @@ tags: $:/tags/ViewTemplate
 	<option value="11" label="165"></option>
 	<option value="12" label="180"></option>
 </datalist>
-
-</details>
 
 </$list>

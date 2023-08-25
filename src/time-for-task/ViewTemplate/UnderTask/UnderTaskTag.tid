@@ -1,4 +1,4 @@
 title: $:/tags/TFT/UnderTask
-list: $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext $:/plugins/mabuqian/time-for-task/ViewTemplate/CalendarEntry
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/time-spent $:/plugins/mabuqian/time-for-task/ViewTemplate/AddProject $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext $:/plugins/mabuqian/time-for-task/ViewTemplate/task-echarts
 
 Tiddler with this tag will show in the section under task tiddler, become one of the tabs.
