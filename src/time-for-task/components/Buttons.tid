@@ -9,7 +9,10 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tags={{!!tags}}
        tmo_taskState="New"
        tmo_timeSpent="30"
-       tmo_priority="Medium">
+       tmo_priority="Medium"
+       tmo_completionDate=""
+       tmo_estimatedSpent=""
+       tmo_taskAssessment="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新子任务
@@ -26,7 +29,10 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tags=<<currentTiddler>>
        tmo_taskState="New"
        tmo_timeSpent="30"
-       tmo_priority="Medium">
+       tmo_priority="Medium"
+       tmo_completionDate=""
+       tmo_estimatedSpent=""
+       tmo_taskAssessment="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新子任务
@@ -57,7 +63,10 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_taskState="New"
        tmo_priority="Medium"
        tmo_timeSpent="30"
-       tmo_dependency=<<currentTiddler>> >
+       tmo_dependency=<<currentTiddler>>
+       tmo_completionDate=""
+       tmo_estimatedSpent=""
+       tmo_taskAssessment="" >
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
        {{$:/plugins/mabuqian/time-for-task/Images/Task}} 新后续任务
@@ -102,6 +111,9 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
       tmo_timeSpent="30"
       super-tag=<<super-tag>>
       tmo_priority="Medium"
+      tmo_completionDate=""
+      tmo_estimatedSpent=""
+      tmo_taskAssessment=""
      > 
       <<after-create-tiddler-without-parent>>
      </$action-createtiddler>
@@ -121,6 +133,9 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
       super-tag=<<super-tag>>
       tmo_priority="Medium"
       tmo_dueDate=<<now "YYYY-0MM-0DD" >>
+      tmo_completionDate=""
+      tmo_estimatedSpent=""
+      tmo_taskAssessment=""
      >
       <<after-create-tiddler-without-parent>>
      </$action-createtiddler>

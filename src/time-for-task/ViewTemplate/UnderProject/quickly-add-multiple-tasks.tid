@@ -15,6 +15,9 @@ tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
 tmo_priority="Medium"
+tmo_completionDate=""
+tmo_estimatedSpent=""
+tmo_taskAssessment=""
 quickly-add-multiple-tasks-tft="yes"
 />
 </$list>
@@ -51,6 +54,9 @@ tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
 tmo_priority="Medium"
+tmo_completionDate=""
+tmo_estimatedSpent=""
+tmo_taskAssessment=""
 quickly-add-multiple-tasks-tft="yes"
 />
 </$list>
