@@ -4,6 +4,8 @@ super-tag: 项目
 tags: 想一想新回路
 tft: 项目
 title: schema
+tmo_projectPriority: High
+tmo_projectState: New
 tmo_taskState: New
 type: text/vnd.tiddlywiki
 

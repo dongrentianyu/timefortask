@@ -11,13 +11,13 @@ caption: 一个项目，两个任务
 
 <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
 
-<$transclude mode="block" />
-
 <$list filter=<<get-non-completed-leaf-tasks-presentation>> >
 
 <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
 
 </$list>
+
+<$transclude $field="description" mode="block" />
 
 </$slide>
 </$list>
