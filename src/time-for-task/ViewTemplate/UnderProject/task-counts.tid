@@ -14,5 +14,5 @@ tags: $:/tags/TFT/UnderProject
 <$vars 
 total-tasks={{{ [!is[system]tag<currentTiddler>has[tmo_taskState]count[]] }}}
 completed-tasks={{{ [tag<currentTiddler>has[tmo_taskState]!field:tmo_taskState[New]!field:tmo_taskState[Running]count[]]   }}} >
-<$macrocall $name=donut-chart pct={{{ [<completed-tasks>divide<total-tasks>fixed[2]multiply[100]] }}}  label="已完成任务" color=green/>
+<$macrocall $name=donut-chart pct={{{ [<completed-tasks>divide<total-tasks>fixed[4]multiply[100]] }}}  label="已完成任务" color=green/>
 </$vars>

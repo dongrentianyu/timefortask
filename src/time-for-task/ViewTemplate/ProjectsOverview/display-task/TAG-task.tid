@@ -1,0 +1,4 @@
+title: $:/tags/TFT/ProjectsOverview/task
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskCompletedDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/allTasks-counts $:/plugins/mabuqian/time-for-task/ViewTemplate/list-searchx
+
+这里用来展示task方面的内容

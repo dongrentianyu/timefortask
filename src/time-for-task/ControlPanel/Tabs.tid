@@ -3,57 +3,31 @@ caption: Tabs
 tags: $:/tags/time-for-task/Settings
 order: 2
 
+\define tabs-edit(name,tagname,config)
+<$link to="$tagname$">$name$</$link>&nbsp;&nbsp;<$link to="$config$">config</$link>&nbsp;&nbsp;
+
+<$edit-text tiddler='$config$' field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[shadows+tiddlers]tag[$tagname$]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>
+
+\end
+
 !! 可选的选项卡内容
 
 ''如果不想要某个选项内容，点击右边的复制按钮复制条目标题然后粘贴到上面的空白框中，多个条目中间添加空格。''
 
-[[Task|$:/tags/TFT/UnderTask]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/UnderTask]]
+<<tabs-edit "Task" "$:/tags/TFT/UnderTask" "$:/config/ViewTemplate/UnderTask" >>
 
-<$edit-text tiddler="$:/config/ViewTemplate/UnderTask" field="text" tag=textarea class="w-100" />
+<<tabs-edit "Project" "$:/tags/TFT/UnderProject" "$:/config/ViewTemplate/UnderProject" >>
 
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/TFT/UnderTask]]">
+<<tabs-edit "Intention" "$:/tags/TFT/UnderIntention" "$:/config/ViewTemplate/UnderIntention" >>
 
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+<<tabs-edit "ProjectsOverview/Task" "$:/tags/TFT/ProjectsOverview/task" "$:/config/ViewTemplate/ProjectsOverview/task" >>
 
-</$list>
+<<tabs-edit "ProjectsOverview/project" "$:/tags/TFT/ProjectsOverview/project" "$:/config/ViewTemplate/ProjectsOverview/project" >>
 
-[[Project|$:/tags/TFT/UnderProject]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/UnderProject]]
-
-<$edit-text tiddler="$:/config/ViewTemplate/UnderProject" field="text" tag=textarea class="w-100" />
-
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/TFT/UnderProject]]">
-
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
-
-</$list>
-
-
-[[Intention|$:/tags/TFT/UnderIntention]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/UnderIntention]]
-
-<$edit-text tiddler="$:/config/ViewTemplate/UnderIntention" field="text" tag=textarea class="w-100" />
-
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/TFT/UnderIntention]]">
-
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
-
-</$list>
-
-[[ProjectsOverview|$:/tags/TFT/ProjectsOverview]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/ProjectsOverview]]
-
-<$edit-text tiddler="$:/config/ViewTemplate/ProjectsOverview" field="text" tag=textarea class="w-100" />
-
-<$list filter="[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]]">
-
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
-
-</$list>
-
-[[ProjectsOverview/table|$:/tags/TFT/ProjectsOverview/table]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/ProjectsOverview/table]]
-
-<$edit-text tiddler="$:/config/ViewTemplate/ProjectsOverview/table" field="text" tag=textarea class="w-100" />
-
-<$list filter="[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/table]]">
-
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
-
-</$list>
+<<tabs-edit "ProjectsOverview/idea-intention-resonance" "$:/tags/TFT/ProjectsOverview/idea-intention-resonance" "$:/config/ViewTemplate/ProjectsOverview/idea-intention-resonance" >>

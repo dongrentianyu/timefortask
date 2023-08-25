@@ -1,0 +1,20 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/allTasks-counts
+caption: {{$:/plugins/mabuqian/time-for-task/Images/donut-chart}} 任务完成占比
+tags: $:/tags/TFT/ProjectsOverview/task
+
+<$vars 
+total-tasks={{{ [tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]count[]] }}} 
+completed-tasks={{{ [tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]!field:tmo_taskState[New]!field:tmo_taskState[Running]count[]]   }}} 
+>
+<$macrocall $name=donut-chart 
+pct={{{ [<completed-tasks>divide<total-tasks>fixed[4]multiply[100]] }}}  
+label="所有已完成任务" 
+color=green/>
+</$vars>
+
+
+已完成任务总数： <$text text={{{ [!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]!field:tmo_taskState[New]!field:tmo_taskState[Running]count[]]   }}} />
+
+未完成任务总数： <$text text={{{ [!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]count[]]   }}} />
+
+已有任务总数： <$text text={{{ [!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]count[]] }}} />

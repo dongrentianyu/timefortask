@@ -2,15 +2,22 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview
 
 <!-- similar to $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject -->
 <details>
-  <summary>查看更多信息-列表</summary>
+  <summary>任务更多信息</summary>
   
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/table]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/table}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" "$:/state/tft/ProjectsOverview/table" "tc-vertical">>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/task]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/task}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" "$:/state/tft/ProjectsOverview/task" "tc-vertical">>
 
 </details>
 
 <details>
-  <summary>查看更多信息</summary>
+  <summary>项目更多信息</summary>
   
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]] -[enlist{$:/config/ViewTemplate/ProjectsOverview}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" "$:/state/tft/ProjectsOverview" "tc-vertical">>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/project]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/project}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/sidebar-ProjectDynamicTable" "$:/state/tft/ProjectsOverview/project" "tc-vertical">>
+
+</details>
+
+<details>
+  <summary>意义与想法与回路</summary>
+  
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/idea-intention-resonance]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/idea-intention-resonance}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable" "$:/state/tft/ProjectsOverview/idea-intention-resonance" "tc-vertical">>
 
 </details>

@@ -1,5 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/sidebar-ProjectDynamicTable
-caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 所有项目
-tags: $:/tags/TFT/ProjectsOverview/table
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 所有项目
+tags: $:/tags/TFT/ProjectsOverview/project
 
 <$macrocall $name=aggregation  filter="[tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]"  defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable}} class="w-100" state="TFT-ProjectDynamicTable-state" />

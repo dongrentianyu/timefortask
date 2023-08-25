@@ -1,0 +1,4 @@
+title: $:/tags/TFT/ProjectsOverview/idea-intention-resonance
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ResonanceDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ideaDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/AllIntentionsFlowChartEcharts
+
+用这个标签来表示，想法、回路和意义三个方面内容的标签。未来如果有需要可能还会再拆分，但目前先保持这样。

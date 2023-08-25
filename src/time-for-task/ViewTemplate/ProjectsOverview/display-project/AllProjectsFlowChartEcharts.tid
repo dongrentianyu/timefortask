@@ -1,5 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEcharts
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 项目概览图
-tags: $:/tags/TFT/ProjectsOverview
+tags: $:/tags/TFT/ProjectsOverview/project
 
 <$echarts $tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEchartsAddon" dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" />

@@ -1,5 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Motivation}} 人生意义
-tags: $:/tags/TFT/ProjectsOverview/table
+tags: $:/tags/TFT/ProjectsOverview/idea-intention-resonance
 
 <$macrocall $name=aggregation caption="人生意义" filter="[all[tiddlers]tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]"  defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-IntentionDynamicTable}} class="w-100" state="TFT-IntentionDynamicTable-state" />
