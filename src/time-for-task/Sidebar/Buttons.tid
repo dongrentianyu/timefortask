@@ -10,11 +10,9 @@ title: $:/plugins/mabuqian/time-for-task/Sidebar/Buttons
   <<create-task-without-parent>>
   <<create-project-without-parent>>
   <<create-intention-without-parent>>
-  <<create-resonance-without-parent>>
 </div>
 <div class="tft-sidebar-buttons">
   <<create-idea-without-parent>>
   <<create-day-task-without-parent>>
-  <<create-day-event>>
-  <<create-day>>
+  <<create-resonance-without-parent>>
 </div>

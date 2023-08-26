@@ -13,11 +13,9 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons/converted
 \define project-converted-to-task()
 <$list filter="[<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}]" variable="ignore">
   <$button tooltip="把项目改成任务" aria-label="把项目改成任务" >
-   <$set name="super-tag" filter="[{$:/plugins/mabuqian/time-for-task/Config/time-tft}] [{$:/plugins/mabuqian/time-for-task/Config/task-tft}]">
     <$action-setfield tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}} />
-    <$action-setfield super-tag=<<super-tag>> />
+    <$action-setfield super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}} />
       {{$:/plugins/mabuqian/time-for-task/Images/SetAsNotProject}} 设为任务
-    </$set>
   </$button>
 </$list>
 \end
