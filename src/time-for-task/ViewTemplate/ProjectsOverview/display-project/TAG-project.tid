@@ -1,4 +1,4 @@
 title: $:/tags/TFT/ProjectsOverview/project
-list: $:/plugins/mabuqian/time-for-task/ViewTemplate/sidebar-ProjectDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ALLProjectCompletedDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEcharts
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/sidebar-ProjectDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/no-tasks-ProjectDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/ALLProjectCompletedDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/AllProjectsFlowChartEcharts
 
 用这个标签来表示总体展示下面的项目各项数据

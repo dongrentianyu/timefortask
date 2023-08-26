@@ -15,13 +15,13 @@ grid-row-gap: 0px;
 </style>
 <div class="parent">
 <div class="div1">
-<$select tiddler='$:/state/tft/meaning' field='testing' multiple size='8' class="w-100">
+<$select tiddler='$:/state/tft/meaning-intention' field='testing' multiple size='8' class="w-100">
 <$list filter='[tft{$:/plugins/mabuqian/time-for-task/Config/intention-tft}]'>
 <option><$view field='title'/></option>
 </$list>
 </$select>
 <$button>
-<$action-setfield  tags={{{ [[$:/state/tft/meaning]get[testing]] }}}   />
+<$action-setfield  tags={{{ [[$:/state/tft/meaning-intention]get[testing]] }}}   />
 确认添加
 </$button>
 </div>
