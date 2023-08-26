@@ -9,7 +9,7 @@ caption: 一个项目，两个任务
 <$list filter=<<filter-is-new-project>> >
 <$slide tiddlerTitle={{!!title}} backgroundColor=<<colour background>> >
 
-<$link to=<<currentTiddler>> ><<currentTiddler>></$link>
+!! <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
 
 <$list filter=<<get-non-completed-leaf-tasks-presentation>> >
 
