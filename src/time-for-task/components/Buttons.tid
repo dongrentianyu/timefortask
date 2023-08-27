@@ -9,7 +9,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_taskState="New"
        tmo_timeSpent="30"
        tmo_priority="Medium"
-       tmo_completionDate=""
+       tmo_completionDate=<<now "YYYY-0MM-0DD" >>
        tmo_estimatedSpent=""
        tmo_taskAssessment="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
@@ -27,7 +27,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_taskState="New"
        tmo_timeSpent="30"
        tmo_priority="Medium"
-       tmo_completionDate=""
+       tmo_completionDate=<<now "YYYY-0MM-0DD" >>
        tmo_estimatedSpent=""
        tmo_taskAssessment="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
@@ -59,7 +59,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
        tmo_priority="Medium"
        tmo_timeSpent="30"
        tmo_dependency=<<currentTiddler>>
-       tmo_completionDate=""
+       tmo_completionDate=<<now "YYYY-0MM-0DD" >>
        tmo_estimatedSpent=""
        tmo_taskAssessment="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
@@ -104,7 +104,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
       tmo_timeSpent="30"
       super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
       tmo_priority="Medium"
-      tmo_completionDate=""
+      tmo_completionDate=<<now "YYYY-0MM-0DD" >>
       tmo_estimatedSpent=""
       tmo_taskAssessment=""
      > 
@@ -124,7 +124,7 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
       super-tag={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
       tmo_priority="Medium"
       tmo_dueDate=<<now "YYYY-0MM-0DD" >>
-      tmo_completionDate=""
+      tmo_completionDate=<<now "YYYY-0MM-0DD" >>
       tmo_estimatedSpent=""
       tmo_taskAssessment=""
      >
@@ -186,23 +186,6 @@ title: $:/plugins/mabuqian/time-for-task/Components/Buttons
 </span>
 </$button>
 \end
-
-\define create-day-event()
-  <$button tooltip="点击创建时间记录条目">
-    <$action-createtiddler
-      $basetitle={{$:/state/TFT/PageLayout/create-tiddler-title}}
-      super-tag="time"
-      time_major=""
-      tmo_timeSpent="30"
-      time_form="events"
-      time_day=<<now "YYYY-0MM-0DD" >>
-     >
-      <<after-create-tiddler-without-parent>>
-     </$action-createtiddler>
-     {{$:/plugins/mabuqian/time-for-task/Images/timelapse}} 时刻
-  </$button>
-\end
-
 
 \define create-idea-without-parent()
   <$button tooltip="点击创建想法条目">
