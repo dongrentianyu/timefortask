@@ -1,5 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
 tags: $:/tags/ViewTemplate
+list-after: $:/core/ui/ViewTemplate/body
 
 <$list filter="[<currentTiddler>has[super-tag]!prefix[$:/]]">
 

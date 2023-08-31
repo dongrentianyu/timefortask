@@ -1,5 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderTask
 tags: $:/tags/ViewTemplate
+list-after: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
 
 \import [[$:/plugins/mabuqian/time-for-task/Sidebar/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons/converted]]
 

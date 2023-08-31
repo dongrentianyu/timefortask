@@ -1,0 +1,27 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/task-state
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 任务状态
+tags: $:/tags/TFT/UnderProject
+
+<$let graphRootTiddler=<<currentTiddler>> >
+
+<$list filter='[tag<currentTiddler>sort[tmo_taskState]each[tmo_taskState]]'>
+
+!! {{!!tmo_taskState}}
+
+<div style="column-count: 4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;">
+
+<$list filter='[tag<graphRootTiddler>tmo_taskState{!!tmo_taskState}]'>
+
+<$link><<currentTiddler>></$link>&nbsp;&nbsp;
+
+</$list>
+
+</div>
+
+</$list>
+</$let>
