@@ -4,7 +4,7 @@ tags: $:/tags/TFT/UnderProject
 
 <$let graphRootTiddler=<<currentTiddler>> >
 
-<$list filter='[tag<currentTiddler>sort[tmo_taskState]each[tmo_taskState]]'>
+<$list filter='[tag<currentTiddler>has[tmo_taskState]sort[tmo_taskState]each[tmo_taskState]]'>
 
 !! {{!!tmo_taskState}}
 
