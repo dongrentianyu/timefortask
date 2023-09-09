@@ -15,10 +15,10 @@ tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
 tmo_priority="Medium"
-tmo_completionDate=""
+tmo_completionDate=<<now "YYYY-0MM-0DD" >>
 tmo_estimatedSpent=""
 tmo_taskAssessment=""
-quickly-add-multiple-tasks-tft="yes"
+quickly-add-multiple-tasks-tft=<<currentTiddler>>
 />
 </$list>
 {{$:/plugins/mabuqian/time-for-task/Images/Task}} 快速添加多个任务
@@ -34,7 +34,18 @@ quickly-add-multiple-tasks-tft="yes"
 </$list>
 清除quickly-add-multiple-tasks-tft字段
 </$button>
-
+<$let
+a="["
+b="]"
+c="quickly-add-multiple-tasks-tft"
+d=<<currentTiddler>>
+e={{{ [<c>addsuffix<a>addsuffix<d>addsuffix<b>addsuffix<b>addprefix<a>]  }}}
+>
+<$button message="tm-copy-to-clipboard" param=<<e>> >
+<$action-navigate $to="$:/Commander"/>
+复制筛选器表达式
+</$button>
+</$let>
 
 下面是具有换行来添加多个任务的
 
@@ -54,10 +65,10 @@ tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
 tmo_priority="Medium"
-tmo_completionDate=""
+tmo_completionDate=<<now "YYYY-0MM-0DD" >>
 tmo_estimatedSpent=""
 tmo_taskAssessment=""
-quickly-add-multiple-tasks-tft="yes"
+quickly-add-multiple-tasks-tft=<<currentTiddler>>
 />
 </$list>
 {{$:/plugins/mabuqian/time-for-task/Images/Task}} 快速添加多个任务
@@ -76,3 +87,16 @@ quickly-add-multiple-tasks-tft="yes"
 </$list>
 清除quickly-add-multiple-tasks-tft字段
 </$button>
+
+<$let
+a="["
+b="]"
+c="quickly-add-multiple-tasks-tft"
+d=<<currentTiddler>>
+e={{{ [<c>addsuffix<a>addsuffix<d>addsuffix<b>addsuffix<b>addprefix<a>]  }}}
+>
+<$button message="tm-copy-to-clipboard" param=<<e>> >
+<$action-navigate $to="$:/Commander"/>
+复制筛选器表达式
+</$button>
+</$let>
