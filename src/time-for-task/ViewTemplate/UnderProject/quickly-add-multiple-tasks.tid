@@ -10,7 +10,7 @@ tags: $:/tags/TFT/UnderProject
 <$action-createtiddler 
 $basetitle=<<thisTitle>>
 tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
-super-tag=<<super-tag>>
+super-tag="任务"
 tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
@@ -60,7 +60,7 @@ e={{{ [<c>addsuffix<a>addsuffix<d>addsuffix<b>addsuffix<b>addprefix<a>]  }}}
 <$action-createtiddler 
 $basetitle=<<thisTitle>>
 tft={{$:/plugins/mabuqian/time-for-task/Config/task-tft}}
-super-tag=<<super-tag>>
+super-tag="任务"
 tags=<<currentTiddler>>
 tmo_taskState="New"
 tmo_timeSpent="30"
