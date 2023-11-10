@@ -5,15 +5,15 @@ div.tft-sidebar-container {
 }
 
 .tft-sidebar-project-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .tft-sidebar-project-list-item {
   padding: 5px 0;
   margin: 5px;
   word-wrap: break-word;
-	word-break: break-all;
+  word-break: break-all;
 }
 
 .tft-sidebar-buttons {
@@ -35,7 +35,7 @@ div.tft-sidebar-container {
   font-size: 16px;
   color: #666;
   background-color: #e2e1e4 !important ;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   display: block;
   margin: 0 auto;
@@ -59,7 +59,7 @@ div.tft-sidebar-container {
 }
 .search-input {
   flex-grow: 1;
-  padding: 5px 10px; 
+  padding: 5px 10px;
   font-size: 14px;
   border: none;
   background: transparent;

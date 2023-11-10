@@ -1,0 +1,7 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview
+
+<$transclude 
+$variable="tabs" 
+tabsList="[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]]"
+default="$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/task"
+/>
