@@ -4,4 +4,4 @@ tags: $:/tags/TFT/UnderIntention
 
 <!-- \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]  <<get-non-completed-leaf-projects>> -->
 
-<$macrocall $name=aggregation caption="项目列表" filter="[tag<currentTiddler>has[tft]]" defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable}} class="w-100" state="TFT-ProjectDynamicTable-state" />
+<$transclude $variable=aggregation caption="项目列表" filter="[tag<currentTiddler>has[tft]]" defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-ProjectDynamicTable}} class="w-100" state="TFT-ProjectDynamicTable-state" />

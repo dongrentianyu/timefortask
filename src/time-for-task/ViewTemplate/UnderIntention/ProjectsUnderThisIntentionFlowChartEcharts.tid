@@ -1,5 +1,5 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts
-caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 此意义的意义之塔
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 意义之塔
 tags: $:/tags/TFT/UnderIntention
 
 \define echarts-with-subfilter()

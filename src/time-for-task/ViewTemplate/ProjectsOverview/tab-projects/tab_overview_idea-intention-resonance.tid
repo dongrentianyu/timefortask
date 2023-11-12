@@ -2,4 +2,4 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/idea-inte
 tags: $:/tags/TFT/ProjectsOverview
 caption: 意义、想法、回路
 
-<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/idea-intention-resonance]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/idea-intention-resonance}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable" "$:/state/tft/ProjectsOverview/idea-intention-resonance" "tc-vertical">>
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/idea-intention-resonance]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/idea-intention-resonance}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/IntentionDynamicTable" "$:/state/tft/ProjectsOverview/idea-intention-resonance">>

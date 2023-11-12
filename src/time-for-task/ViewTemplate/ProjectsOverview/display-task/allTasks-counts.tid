@@ -6,7 +6,7 @@ tags: $:/tags/TFT/ProjectsOverview/task
 total-tasks={{{ [tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]count[]] }}} 
 completed-tasks={{{ [tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}has[tmo_taskState]!field:tmo_taskState[New]!field:tmo_taskState[Running]count[]]   }}} 
 >
-<$macrocall $name=donut-chart 
+<$transclude $variable=donut-chart 
 pct={{{ [<completed-tasks>divide<total-tasks>fixed[4]multiply[100]round[]] }}}  
 label="所有已完成任务" 
 color=green/>

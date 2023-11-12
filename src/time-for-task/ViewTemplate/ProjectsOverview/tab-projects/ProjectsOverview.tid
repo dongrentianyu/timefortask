@@ -1,7 +1,11 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview
 
-<$transclude 
-$variable="tabs" 
-tabsList="[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview]]"
-default="$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/task"
-/>
+<$reveal type="match" state="$:/state/tft/ProjectsOverview" text="任务">
+      <$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/task" mode="block"/>
+</$reveal>
+<$reveal type="match" state="$:/state/tft/ProjectsOverview" text="项目">
+      <$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/project" mode="block"/>
+</$reveal>
+<$reveal type="match" state="$:/state/tft/ProjectsOverview" text="其他">
+      <$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/idea-intention-resonance" mode="block"/>
+</$reveal>

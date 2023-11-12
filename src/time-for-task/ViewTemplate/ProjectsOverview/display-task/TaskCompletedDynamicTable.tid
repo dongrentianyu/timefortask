@@ -1,7 +1,12 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskCompletedDynamicTable
-caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 所有不再执行任务
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 已结束的任务
 tags: $:/tags/TFT/ProjectsOverview/task
 
 \define filter-taskCompleted() [tmo_taskState[Completed]] [tmo_taskState[Archived]] [tmo_taskState[Terminated]] [tmo_taskState[Suspended]]
 
-<$macrocall $name=aggregation caption="已完成的任务" filter=<<filter-taskCompleted>>  defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskCompletedDynamicTable}} class="w-100" state="TFT-TaskCompletedDynamicTable-state" />
+<$transclude
+$variable=aggregation
+caption="已完成的任务"
+filter=<<filter-taskCompleted>>
+defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskCompletedDynamicTable}}
+class="w-100" state="TFT-TaskCompletedDynamicTable-state" />

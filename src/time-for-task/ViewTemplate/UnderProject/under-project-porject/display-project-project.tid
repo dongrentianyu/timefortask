@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project
+tags: $:/tags/TFT/UnderProject
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 项目栏
+
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderProject/project]] -[enlist{$:/config/ViewTemplate/UnderProject/project}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project/project-dynamictable" "$:/state/tft/UnderProject/project">>

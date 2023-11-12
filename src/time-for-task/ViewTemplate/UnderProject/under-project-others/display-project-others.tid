@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/others
+tags: $:/tags/TFT/UnderProject
+caption: {{$:/plugins/mabuqian/time-for-task/Images/idea}} 其他栏
+
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderProject/others]] -[enlist{$:/config/ViewTemplate/UnderProject/others}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/AddIntentionOrResonance" "$:/state/tft/UnderProject/others">>

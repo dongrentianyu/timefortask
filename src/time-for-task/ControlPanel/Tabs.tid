@@ -10,10 +10,11 @@ order: 2
 
 <$list filter="[all[shadows+tiddlers]tag[$tagname$]]">
 
-<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$transclude $variable="copy-to-clipboard" src={{!!title}} />
 
 </$list>
 
+---
 \end
 
 !! 可选的选项卡内容
@@ -23,6 +24,12 @@ order: 2
 <<tabs-edit "Task" "$:/tags/TFT/UnderTask" "$:/config/ViewTemplate/UnderTask" >>
 
 <<tabs-edit "Project" "$:/tags/TFT/UnderProject" "$:/config/ViewTemplate/UnderProject" >>
+
+<<tabs-edit "项目中的任务" "$:/tags/TFT/UnderProject/task" "$:/config/ViewTemplate/UnderProject/task" >>
+
+<<tabs-edit "项目中的项目" "$:/tags/TFT/UnderProject/project" "$:/config/ViewTemplate/UnderProject/project" >>
+
+<<tabs-edit "项目中的其他" "$:/tags/TFT/UnderProject/others" "$:/config/ViewTemplate/UnderProject/others" >>
 
 <<tabs-edit "Intention" "$:/tags/TFT/UnderIntention" "$:/config/ViewTemplate/UnderIntention" >>
 

@@ -13,7 +13,7 @@ order: 1
     tabIndex={{$:/config/EditTabIndex}}
     cancelPopups="yes"
   >
-    <$macrocall $name="tag" tag={{$:/plugins/mabuqian/time-for-task/Config/$typeName$-tft}} />
+    <$transclude $variable="tag" tag={{$:/plugins/mabuqian/time-for-task/Config/$typeName$-tft}} />
 
     <$edit-text tiddler=<<tempTitle>> tag="input" field="text" placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} />
 

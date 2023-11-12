@@ -9,12 +9,10 @@ type: text/vnd.tiddlywiki
 
 <$scrollable fallthrough="none" class="tft-sidebar-container tc-popup-keep tc-menubar-dropdown-sidebar">
 
-{{$:/plugins/mabuqian/time-for-task/Sidebar/Buttons}}
+<$transclude tiddler="$:/plugins/mabuqian/time-for-task/Sidebar/Buttons" mode="block"/>
 
+<$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview" mode="block"/>
 <!-- <<project-list>> 先注释起来，这个应该是列出优先级的任务条目，但我现在采用下面的方式来使用。未来可能会删除。-->
-
 </$scrollable>
 
-{{$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview}}
-
-{{$:/plugins/mabuqian/time-for-task/ViewTemplate/presentation}}
+<$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/presentation" mode="block"/>

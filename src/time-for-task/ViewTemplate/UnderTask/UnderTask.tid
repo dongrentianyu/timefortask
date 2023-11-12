@@ -20,7 +20,7 @@ list-after: $:/plugins/mabuqian/time-for-task/ViewTemplate/super-tag
 <details>
   <summary>查看更多信息</summary>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext" "$:/state/tft/UnderTask" "tc-vertical">>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskContext" "$:/state/tft/UnderTask">>
 
 </details>
 

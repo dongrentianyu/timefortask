@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/quickly-add-multiple-tasks-tft
-caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 添加多个任务
-tags: $:/tags/TFT/UnderProject
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 添加任务
+tags: $:/tags/TFT/UnderProject/others
 
 下面是直接从空格中添加多个任务的
 <$edit-text tiddler="$:/state/tft/quickly-add-multiple-tasks-tft/empty" field="text" class="w-100" tag=textarea />

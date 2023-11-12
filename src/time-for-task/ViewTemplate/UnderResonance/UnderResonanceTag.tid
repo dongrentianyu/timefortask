@@ -1,4 +1,4 @@
 title: $:/tags/TFT/UnderResonance
-list: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsUnderThisIntentionFlowChart
+list: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderResonance/ProjectDynamicTable $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderResonance/AddIntention $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderResonance/ResonanceEcharts
 
 Tiddler with this tag will show in the section under Resonance tiddler, become one of the tabs.

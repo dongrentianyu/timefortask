@@ -15,7 +15,7 @@ tags: $:/tags/ViewTemplate
  <details>
    <summary>查看更多信息</summary>
 
-   <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderIntention]] -[enlist{$:/config/ViewTemplate/UnderIntention}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable" "$:/state/tft/UnderIntention" "tc-vertical">>
+   <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderIntention]] -[enlist{$:/config/ViewTemplate/UnderIntention}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectDynamicTable" "$:/state/tft/UnderIntention">>
   
  </details> 
 

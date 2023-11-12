@@ -1,9 +1,9 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 任务列表
-tags: $:/tags/TFT/UnderProject
+tags: $:/tags/TFT/UnderProject/task
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
 
 \define get-non-completed-leaf-tasks() [tag<currentTiddler>filter<filter-is-new-task>]
 
-<$macrocall $name=aggregation  filter=<<get-non-completed-leaf-tasks>> defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable}} class="w-100" state="TFT-TaskDynamicTable-state" />
+<$transclude $variable=aggregation  filter=<<get-non-completed-leaf-tasks>> defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-TaskDynamicTable}} class="w-100" state="TFT-TaskDynamicTable-state" />

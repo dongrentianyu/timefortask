@@ -1,0 +1,16 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project-counts
+caption: {{$:/plugins/mabuqian/time-for-task/Images/donut-chart}} 统计
+tags: $:/tags/TFT/UnderProject/project
+
+\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
+\define filter-projectCompleted() [tmo_projectState[Completed]] [tmo_projectState[Archived]] [tmo_projectState[Terminated]] [tmo_projectState[Suspended]]
+
+进行中项目总数：<$text text={{{ [tag<currentTiddler>filter<filter-is-new-project>count[]]   }}} />&nbsp;&nbsp;
+已完成项目总数： <$text text={{{ [tag<currentTiddler>filter<filter-projectCompleted>count[]]   }}} />&nbsp;&nbsp;
+已有项目总数： <$text text={{{ [!is[system]tag<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}count[]] }}} />
+
+<$vars 
+total-projects={{{ [!is[system]tag<currentTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}count[]] }}}
+completed-projects={{{ [tag<currentTiddler>filter<filter-projectCompleted>count[]]   }}} >
+<$transclude $variable=donut-chart pct={{{ [<completed-projects>divide<total-projects>fixed[4]multiply[100]round[]] }}}  label="已完成项目" color=green/>
+</$vars>

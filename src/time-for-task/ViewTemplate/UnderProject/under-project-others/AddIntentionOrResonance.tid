@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/AddIntentionOrResonance
 caption: {{$:/core/images/tag-button}} 意义或回路
-tags: $:/tags/TFT/UnderProject
+tags: $:/tags/TFT/UnderProject/others
 
 <style>
 .parent {

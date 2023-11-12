@@ -1,0 +1,16 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project/no-tasks-project-dynamictable
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 无任务的项目
+tags: $:/tags/TFT/UnderProject/project
+
+\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
+
+<$let graphRootTiddler=<<currentTiddler>> >
+
+<$transclude
+$variable=aggregation
+filter="[tag<graphRootTiddler>tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}!field:tmo_projectState[Completed]!field:tmo_projectState[Archived]!field:tmo_projectState[Terminated]!field:tmo_projectState[Suspended]!filter<filter-is-not-leaf>sort<projectCompareByPriority>]" 
+defaultFields={{$:/plugins/mabuqian/time-for-task/Config/UnderProject/project/defaultFields-no-tasks-project-dynamictable}} 
+class="w-100" 
+state="TFT-UnderProject-project-no-tasks-dynamictable-state" />
+
+</$let>

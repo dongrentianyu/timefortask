@@ -1,0 +1,17 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project/completed-project-dynamictable
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 已结束的项目
+tags: $:/tags/TFT/UnderProject/project
+
+\define filter-projectCompleted() [tmo_projectState[Completed]] [tmo_projectState[Archived]] [tmo_projectState[Terminated]] [tmo_projectState[Suspended]]
+
+<$let graphRootTiddler=<<currentTiddler>> >
+
+<$transclude
+$variable=aggregation 
+caption="已结束的项目" 
+filter="[tag<graphRootTiddler>filter<filter-projectCompleted>]" 
+defaultFields={{$:/plugins/mabuqian/time-for-task/Config/UnderProject/project/defaultFields-completed-project-dynamictable}} 
+class="w-100" 
+state="TFT-UnderProject-project-completed-dynamictable-state" />
+
+</$let>

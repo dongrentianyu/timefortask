@@ -1,0 +1,16 @@
+title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project/project-dynamictable
+caption: {{$:/plugins/mabuqian/time-for-task/Images/Table}} 进行中的项目
+tags: $:/tags/TFT/UnderProject/project
+
+\import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]]
+
+<$let graphRootTiddler=<<currentTiddler>> >
+
+<$transclude 
+$variable=aggregation
+filter="[tag<graphRootTiddler>filter<filter-is-new-project>]"  
+defaultFields={{$:/plugins/mabuqian/time-for-task/Config/UnderProject/project/defaultFields-project-dynamictable}} 
+class="w-100"
+state="TFT-UnderProject-project-doing-dynamictable-state" />
+
+</$let>

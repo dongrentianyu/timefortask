@@ -71,7 +71,7 @@ tags: $:/tags/TFT/ProjectsOverview/task
          state="$:/state/tft/list-searchx"
          text="表格展示">
 
-  <$macrocall $name=table-dynamic
+  <$transclude $variable=table-dynamic
               filter="[!is[system]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}] 
               +[search:tmo_taskState:{$:/state/select-field-search/tmo_taskState}] +[search:tmo_priority:{$:/state/select-field-search/tmo_priority}] +[search:tmo_taskAssessment:{$:/state/select-field-search/tmo_taskAssessment}] 
               +[search:tags:{$:/state/select-field-search/tags}]

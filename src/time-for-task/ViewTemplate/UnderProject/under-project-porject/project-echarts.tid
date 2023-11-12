@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/project-echarts
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Project}} 项目图表
-tags: $:/tags/TFT/UnderProject
+tags: $:/tags/TFT/UnderProject/project
 
 \import [[$:/plugins/mabuqian/time-for-task/filters/leaf-task]] [[$:/plugins/mabuqian/time-for-task/Components/Buttons]]
 

@@ -6,4 +6,4 @@ tags: $:/tags/TFT/ProjectsOverview/task
 <!--先注释起来，看后期还用不用。不用可能就删除了。
 \define caption() 优先待办列表 <$count filter=<<get-all-non-completed-leaf-tasks>> /> -->
 
-<$macrocall $name=aggregation caption=<<caption>> filter="[all[tiddlers]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}filter<filter-is-new-task>]" defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-PriorityTaskDynamicTable}} class="w-100" state="TFT-PriorityTaskDynamicTable-state" />
+<$transclude $variable=aggregation caption=<<caption>> filter="[all[tiddlers]tft{$:/plugins/mabuqian/time-for-task/Config/task-tft}filter<filter-is-new-task>]" defaultFields={{$:/plugins/mabuqian/time-for-task/Config/defaultFields-PriorityTaskDynamicTable}} class="w-100" state="TFT-PriorityTaskDynamicTable-state" />

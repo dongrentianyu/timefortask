@@ -2,4 +2,4 @@ title: $:/plugins/mabuqian/time-for-task/ViewTemplate/ProjectsOverview/task
 tags: $:/tags/TFT/ProjectsOverview
 caption: 任务
 
-<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/task]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/task}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" "$:/state/tft/ProjectsOverview/task" "tc-vertical">>
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/ProjectsOverview/task]] -[enlist{$:/config/ViewTemplate/ProjectsOverview/task}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/PriorityTaskDynamicTable" "$:/state/tft/ProjectsOverview/task">>

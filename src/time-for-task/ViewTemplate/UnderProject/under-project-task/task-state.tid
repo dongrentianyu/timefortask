@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/task-state
 caption: {{$:/plugins/mabuqian/time-for-task/Images/Task}} 任务状态
-tags: $:/tags/TFT/UnderProject
+tags: $:/tags/TFT/UnderProject/task
 
 <$let graphRootTiddler=<<currentTiddler>> >
 

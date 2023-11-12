@@ -6,20 +6,29 @@ tags: $:/tags/ViewTemplate
 
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tft{$:/plugins/mabuqian/time-for-task/Config/project-tft}then<graphRootTiddler>]">
-
   <div class="tft-sidebar-project-list-item">
   <<create-task-under-project>>&nbsp;
   <<create-idea-under-current-tiddler>>&nbsp;
   <<project-converted-to-task>>&nbsp;
   <<converted-to-question-viewtemplate>>&nbsp;
   </div>
-
-  <details>
-  <summary>查看更多信息</summary>
-
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/TFT/UnderProject]] -[enlist{$:/config/ViewTemplate/UnderProject}]" "$:/plugins/mabuqian/time-for-task/ViewTemplate/TaskDynamicTable" "$:/state/tft/UnderProject" "tc-vertical">>
-
-  </details>
+  <div class="tft-sidebar-project-list-item">
+    <$button set="$:/state/tft/UnderProject" setTo="任务">任务栏</$button>&nbsp;
+    <$button set="$:/state/tft/UnderProject" setTo="项目">项目栏</$button>&nbsp;
+    <$button set="$:/state/tft/UnderProject" setTo="其他">其他</$button>&nbsp;
+    <$button set="$:/state/tft/UnderProject" setTo="隐藏">隐藏</$button>
+  </div>
+  <div>
+    <$reveal type="match" state="$:/state/tft/UnderProject" text="任务">
+      <$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/task" mode="block"/>
+    </$reveal>
+    <$reveal type="match" state="$:/state/tft/UnderProject" text="项目">
+      <$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/project" mode="block"/>
+    </$reveal>
+    <$reveal type="match" state="$:/state/tft/UnderProject" text="其他">
+      <$transclude tiddler="$:/plugins/mabuqian/time-for-task/ViewTemplate/UnderProject/others" mode="block"/>
+    </$reveal>
+  </div>
 
   </$list>
 </$let>
