@@ -17,8 +17,8 @@ title: $:/plugins/mabuqian/time-for-task/Sidebar/Buttons
   <<create-resonance-without-parent>>
 </div>
 <div class="tft-sidebar-buttons">
-  <$button set="$:/state/tft/ProjectsOverview" setTo="任务">任务栏</$button>&nbsp;
-  <$button set="$:/state/tft/ProjectsOverview" setTo="项目">项目栏</$button>&nbsp;
-  <$button set="$:/state/tft/ProjectsOverview" setTo="其他">意义、想法、回路</$button>&nbsp;
-  <$button set="$:/state/tft/ProjectsOverview" setTo="隐藏">隐藏</$button>
+  <$button set="$:/state/tft/ProjectsOverview" setTo="任务" tooltip="点击展示任务栏">任务栏</$button>&nbsp;
+  <$button set="$:/state/tft/ProjectsOverview" setTo="项目" tooltip="点击展示项目栏">项目栏</$button>&nbsp;
+  <$button set="$:/state/tft/ProjectsOverview" setTo="其他" tooltip="点击展示意义、想法、回路栏">意义、想法、回路</$button>&nbsp;
+  <$button set="$:/state/tft/ProjectsOverview" setTo="隐藏" tooltip="点击隐藏">隐藏</$button>
 </div>
