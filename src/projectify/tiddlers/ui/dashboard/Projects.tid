@@ -1,0 +1,34 @@
+caption: {{$:/plugins/nico/projectify/images/collection}} Projects
+created: 20200424193106051
+modified: 20210122213319191
+tags:
+title: $:/plugins/nico/projectify/ui/dashboard/Projects
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/projectify/
+
+<div class="py-projects-heading">
+  <div class="py-title">
+    <h2><<lingo Projects>></h2>
+    {{$:/plugins/nico/projectify/ui/buttons/ProjectListSettings}}
+  </div>
+
+  <div class="py-category-filter">
+    {{$:/plugins/nico/projectify/ui/buttons/CategoryFilter}}
+  </div>
+</div>
+
+<$reveal
+  type="match"
+  state="$:/state/projectify/show-reorder-projects"
+  class="tc-tiddler-info tc-popup-handle py-reorder-projects"
+  text="yes"
+  animate="yes"
+  retain="yes"
+>
+  {{$:/plugins/nico/projectify/ui/dashboard/ReorderProjects}}
+</$reveal>
+
+{{$:/plugins/nico/projectify/ui/dashboard/ActiveProjects}}
+{{$:/plugins/nico/projectify/ui/buttons/AddProject}}
+{{$:/plugins/nico/projectify/ui/dashboard/ArchivedProjects}}

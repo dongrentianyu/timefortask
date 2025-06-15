@@ -1,0 +1,24 @@
+created: 20200427133943777
+modified: 20210117203524275
+tags: [[Projectify documentation]]
+title: $:/plugins/nico/projectify/doc/Help
+type: text/vnd.tiddlywiki
+
+{{$:/plugins/nico/projectify/ui/welcome/HelpWelcome}}
+
+{{$:/plugins/nico/projectify/ui/forms/HelpSearch}}
+
+<div class="py-cards">
+  <$list filter="[all[tiddlers+shadows]tag[$:/plugins/nico/projectify/tags/help-card]!has[draft.of]]">
+    <span class="py-card-wrapper">
+      <$link overrideClass="py-card" to={{!!title}}>
+	<div class="py-card-head">
+	  <h3>{{!!caption}}</h3>
+	</div>
+	<div class="py-description">
+	  {{!!description}}
+	</div>
+      </$link>
+    </span>
+  </$list>
+</div>

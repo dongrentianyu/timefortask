@@ -1,0 +1,26 @@
+created: 20201217210439140
+modified: 20210112180542001
+title: $:/plugins/nico/projectify/ui/buttons/AddProject
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/projectify/
+
+<$button
+  class="py-btn btn-primary"
+  popup="$:/state/projectify/show-new-project-popup"
+  tooltip={{$:/language/projectify/AddProject/Hint}}
+  aria-label={{$:/language/projectify/AddProject/Hint}}
+>
+  {{$:/core/images/edit-button}}
+  <<lingo AddProject/Caption>>
+</$button>
+
+<$reveal
+  type="popup"
+  class="tc-popup-keep py-popup"
+  state="$:/state/projectify/show-new-project-popup"
+  position="above"
+>
+  <h2> <<lingo NewProject>></h2>
+  {{$:/plugins/nico/projectify/ui/forms/NewProject}}
+</$reveal>

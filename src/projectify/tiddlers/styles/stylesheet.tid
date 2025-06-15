@@ -1,0 +1,292 @@
+created: 20200426194806637
+modified: 20210127111843916
+tags: $:/tags/Stylesheet
+title: $:/plugins/nico/projectify/styles/stylesheet
+type: text/vnd.tiddlywiki
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.py-projects-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.py-projects-heading h2 {
+  margin: 0;
+  display: inline-block;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .py-projects-heading {
+    display: block;
+  }
+
+  .py-projects-heading .py-title {
+    margin-bottom: 20px;
+  }
+}
+
+.py-projects-heading > button {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tc-titlebar .py-checkbox svg {
+  width: 26px;
+  height: 26px;
+  fill: <<colour tiddler-controls-foreground>>;
+}
+
+.tc-titlebar .py-checkbox .done svg {
+  width: 26px;
+  height: 26px;
+  fill: #2da562;
+}
+
+.py-reorder-projects:not([hidden]) {
+  display: block;
+}
+
+.py-projects, .py-todos {
+  padding-left: 0;
+}
+
+.py-projects .py-project,
+.py-todos .tc-menu-list-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.py-projects,
+.py-todos .tc-menu-list-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.py-todo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 0;
+}
+
+.py-project {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.py-project a {
+  font-weight: bold;
+}
+
+.py-project .py-project-infos {
+  font-size: .8em;
+  line-height: 1em;
+  color: <<colour muted-foreground>>;
+  margin-left: 20px;
+}
+
+.py-project .py-project-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.py-project .py-project-heading .py-project-category {
+  font-size: .9em;
+  white-space: nowrap;
+}
+
+/* Align the completed todos with the non-completed ones that have a drag
+   handle. TODO: Check why the padding is different from the drag-handle's width
+   */
+.py-completed-todos .py-todo .py-checkbox {
+  padding-left: 22px;
+}
+
+.py-todo .tc-tiddlylink:hover {
+  text-decoration: none;
+}
+
+.py-todo .py-todo-actions {
+  float: right;
+}
+
+.py-todo .py-btn.py-priority {
+  border: none;
+}
+
+.py-todo .py-project-link {
+  font-size: .8em;
+  color: #aaa;
+}
+
+.py-todo .py-todo-text-icon {
+  color: #999;
+  fill: #999;
+}
+
+.py-todo.py-completed a {
+  color: <<colour muted-foreground>>;
+}
+
+.py-todo-heading {
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.py-todo-heading .py-btn {
+  font-size: .9em;
+  padding: .3em .9em;
+}
+
+.py-todo-actions .py-btn,
+.py-todo .py-btn.py-priority {
+  color: #999;
+  fill: #999;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.py-due-date.py-overdue {
+  color: <<colour background>>;
+  background: #e73939;
+  border-color: #e73939;
+  font-weight: bold;
+}
+
+.py-due-date.py-due-today {
+  color: <<colour primary>>;
+  fill: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
+.py-todo .py-todo-actions .py-btn {
+  font-size: .8em;
+  margin-left: 6px;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .py-todo .py-todo-actions .py-btn.py-not-scheduled,
+  .py-todo .py-todo-actions .py-btn.py-priority- {
+    opacity: 0;
+    transition: opacity ease-in .14s;
+  }
+
+  .py-todo:hover .py-todo-actions .py-btn {
+    opacity: 1 !important;
+  }
+}
+
+.py-projects .tc-droppable.tc-dragover {
+  background: rgba(255,255,100,0.3);
+  display: block;
+}
+
+.py-tabs.tc-tab-buttons button {
+  font-weight: bold;
+  font-size: 1.2em;
+  border: 0;
+  padding: .6em .8em .4em .8em;
+  background: transparent;
+  cursor: pointer;
+  color: <<colour tiddler-title-foreground>>;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .py-tabs.tc-tab-buttons button {
+    font-size: .8em;
+    padding: 8px;
+  }
+
+  .py-tabs.tc-tab-buttons button svg {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 auto 6px auto;
+  }
+}
+
+.py-tabs.tc-tab-buttons button.tc-tab-selected {
+  border: 0;
+  border-bottom: 4px solid <<colour primary>>;
+  color: <<colour tiddler-title-foreground>>;
+}
+
+.py-scheduled-drop-down h4 {
+  margin: 5px 10px;
+  color: <<colour foreground>>;
+  font-weight: bold;
+}
+
+.py-scheduled-drop-down .clear {
+  margin: 5px 10px;
+}
+
+.tc-drop-down.py-drop-down {
+  min-width: 200px;
+}
+
+.tc-drop-down.py-drop-down .tc-btn-invisible {
+  font-size: 14px;
+  line-height: 2em;
+}
+
+.tc-drop-down.py-drop-down .tc-btn-invisible svg {
+    margin-right: 6px;
+}
+
+.tc-drop-down.py-drop-down hr {
+  margin: 2px 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid <<colour muted-foreground>>;
+}
+
+.tc-drop-down .py-priorities {
+  display: flex;
+  align-items: space-between;
+}
+
+.tc-drop-down .py-priorities .tc-btn-invisible {
+  width: auto;
+  text-align: center;
+}
+
+.py-priority-3, .py-priority-3 svg,
+.py-drop-down .py-priority-3,
+.py-drop-down .py-priority-3 svg,
+.py-btn.py-priority-3 {
+  fill: #e73939;
+  color: #e73939;
+}
+
+.py-priority-2, .py-priority-2 svg,
+.py-drop-down .py-priority-2,
+.py-drop-down .py-priority-2 svg,
+.py-btn.py-priority-2 {
+  fill: #e77a39;
+  color: #e77a39;
+}
+
+.py-priority-1, .py-priority-1 svg,
+.py-drop-down .py-priority-1,
+.py-drop-down .py-priority-1 svg,
+.py-btn.py-priority-1 {
+  fill: #24cd5e;
+  color: #24cd5e;
+}
+
+.py-project-category-manager-table {
+  width: 100%;
+}
+
+.py-project-category-manager-table td {
+  padding: 4px;
+}
+
+.py-project-category-manager-table input {
+  width: 100%;
+}
+
+.py-project-category-manager-table input[type="color"] {
+  width: 50px;
+  padding: 3px;
+}

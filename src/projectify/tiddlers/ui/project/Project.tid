@@ -1,0 +1,40 @@
+created: 20201207165347344
+list-after: $:/plugins/nico/projectify/ui/todo/TodoHeading
+modified: 20210521102831888
+tags: $:/tags/ViewTemplate
+title: $:/plugins/nico/projectify/ui/project/Project
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/projectify/
+
+<$list filter=<<py-is-project>> variable="ignore">
+  <$list filter=<<py-is-not-subproject>>>
+    <div class="py-category-wrapper">
+      {{||$:/plugins/nico/projectify/ui/buttons/SelectCategory}}
+      <$list filter=<<py-is-open>>>
+	{{||$:/plugins/nico/projectify/ui/buttons/ArchiveProject}}
+      </$list>
+    </div>
+  </$list>
+  
+  {{||$:/plugins/nico/projectify/ui/project/ArchivedProjectBanner}}
+
+  <h2><<lingo Todos>> {{||$:/plugins/nico/projectify/images/pie}}</h2>
+
+  <$macrocall
+    $name="todo-list"
+    emptyTemplate="$:/plugins/nico/projectify/ui/welcome/EmptyProject"
+  />
+
+  {{||$:/plugins/nico/projectify/ui/buttons/ToggleCompletedTodos}}
+
+  <$list filter=<<py-is-open>>>
+    <$vars
+      stateTiddler=<<qualify "$:/temp/projectify/todo-form">>
+      todo-tags="[{!!title}] todo"
+      placeholder={{$:/language/projectify/AddTodoToProject/Placeholder}}
+    >
+      {{||$:/plugins/nico/projectify/ui/forms/AddTodo}}
+    </$vars>
+  </$list>
+</$list>

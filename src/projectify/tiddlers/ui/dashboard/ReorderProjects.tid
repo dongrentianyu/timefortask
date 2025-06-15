@@ -1,0 +1,21 @@
+created: 20201216161736491
+modified: 20210112180541479
+title: $:/plugins/nico/projectify/ui/dashboard/ReorderProjects
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/projectify/
+
+<div class="py-label">
+  <<lingo ReorderProjects/Hint>>
+</div>
+
+<$macrocall
+  $name="list-tagged-draggable"
+  tag="Project"
+  subFilter=<<py-is-active-subfilter>>
+  />
+
+<$button class="py-btn">
+  <<lingo Close/Caption>>
+  <$action-setfield $tiddler="$:/state/projectify/show-reorder-projects" text="no"/>
+</$button>

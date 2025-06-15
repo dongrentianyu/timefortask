@@ -1,0 +1,19 @@
+caption: {{$:/plugins/nico/projectify/images/stack}} {{$:/language/projectify/Next}}
+created: 20200425195221581
+list-after: $:/plugins/nico/projectify/ui/dashbaord/Schedule
+modified: 20210123140005174
+tags: $:/plugins/nico/projectify/tags/dashboard
+title: $:/plugins/nico/projectify/ui/NextActions
+type: text/vnd.tiddlywiki
+
+<$list
+  filter=<<py-has-active-projects>>
+  emptyMessage={{$:/plugins/nico/projectify/ui/welcome/EmptyNextActions}}
+>
+  <dl>
+    <$list
+      filter=<<py-active-projects>>
+      template="$:/plugins/nico/projectify/ui/project/NextAction"
+      />
+  </dl>
+</$list>

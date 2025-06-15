@@ -1,0 +1,19 @@
+created: 20200427152938733
+modified: 20210105203540386
+tags: [[Projectify documentation]]
+title: $:/plugins/nico/projectify/doc/Installation
+type: text/vnd.tiddlywiki
+
+!! Dependencies
+
+While not strictly required, we strongly recommand installing the [[Relink|$:/plugins/flibbles/relink]] plugin as well, as it makes renaming projects much more convenient.
+
+* [[$:/plugins/flibbles/relink]]
+
+!! Plugin
+
+Drag&drop the following link into your wiki
+
+* [[$:/plugins/nico/projectify]]
+
+Then save & reload your wiki.

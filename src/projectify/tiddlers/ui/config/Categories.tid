@@ -1,0 +1,67 @@
+created: 20210114221324413
+modified: 20210126095312829
+tags: $:/plugins/nico/projectify/tags/Config
+title: $:/plugins/nico/projectify/ui/config/Categories
+list-after: $:/plugins/nico/projectify/ui/config/Dashboard
+type: text/vnd.tiddlywiki
+caption: {{$:/language/projectify/Categories}}
+
+\define lingo-base() $:/language/TagManager/
+
+\define category-editor()
+<tr>
+  <td><$link to=<<currentTiddler>>>{{||$:/plugins/nico/projectify/ui/category/Category}}</$link></td>
+  <td>
+    <$list filter={{$:/config/projectify/DefaultCategoryColours}} variable="colour">
+      <$button class="tc-btn-invisible">
+	{{$:/plugins/nico/projectify/ui/category/CategoryPill}}
+	<$action-setfield $field="color" $value=<<colour>>/>
+      </$button>
+    </$list>
+    <$edit-text field="color" tag="input" type="color"/>
+  </td>
+  <td>
+    <$button class="py-btn btn-danger btn-small">
+      {{$:/core/images/delete-button}} {{$:/language/Buttons/Delete/Caption}}
+      <$action-deletetiddler $tiddler=<<currentTiddler>>>
+    </$button>
+  </td>
+</tr>
+\end
+
+!! {{$:/language/projectify/Categories}}
+
+<table class="py-project-category-manager-table">
+  <tbody>
+    <tr>
+      <th>{{$:/language/projectify/Category}}</th>
+      <th><<lingo Colour/Heading>></th>
+      <th></th>
+    </tr>
+
+    <$list filter=<<py-all-categories>>>
+      <<category-editor>>
+    </$list>
+  </tbody>
+</table>
+
+{{$:/plugins/nico/projectify/ui/buttons/AddCategory}}
+
+!! Default category colours
+
+<table class="py-project-category-manager-table">
+  <tbody>
+    <tr>
+      <td><<lingo Colour/Heading>></td>
+      <td>
+	<$edit-text
+	  tiddler="$:/config/projectify/DefaultCategoryColours"
+	  field="text"
+	  tag="input"
+	/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

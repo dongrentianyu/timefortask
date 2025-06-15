@@ -1,0 +1,55 @@
+created: 20201207165347344
+modified: 20210206210842918
+title: $:/plugins/nico/projectify/ui/forms/AddTodo
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/projectify/
+
+\define add-todo-actions()
+<$list filter="[<stateTiddler>get[todo-name]trim[]!is[blank]]" variable="ignore">
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[todo-name]] }}}
+    $savetitle="$:/temp/projectify/new-todo"
+  />
+
+  <$action-listops $tiddler={{$:/temp/projectify/new-todo}} $tags=<<todo-tags>>/>
+  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} due={{{ [<stateTiddler>get[due]] }}}/>
+  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} priority={{{ [<stateTiddler>get[priority]] }}}/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="due"/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="priority"/>
+
+  <$action-sendmessage $message="tm-auto-save-wiki"/>
+</$list>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/projectify/add-todo-form">>>
+  <div class="py-composite-input">
+    <$keyboard key="enter">
+    <<add-todo-actions>>
+      <$edit-text
+	class="py-input"
+	tiddler=<<stateTiddler>>
+	field="todo-name"
+	placeholder=<<placeholder>>
+	/>
+    </$keyboard>
+
+    <div class="py-todo-actions">
+      <$vars currentTiddler=<<stateTiddler>>>
+	<$transclude tiddler="$:/plugins/nico/projectify/ui/buttons/TodoDueDate" mode="inline"/>
+	<$transclude tiddler="$:/plugins/nico/projectify/ui/buttons/TodoPriority" mode="inline"/>
+      </$vars>
+    </div>
+  </div>
+  <div class="py-actions">
+    <$button
+      class="py-btn btn-primary"
+      actions=<<add-todo-actions>>
+      tooltip={{$:/language/projectify/AddTodo/Hint}}
+      aria-label={{$:/language/projectify/AddTodo/Hint}}
+    >
+      <<lingo AddTodo/Caption>>
+    </$button>
+  </div>
+</$vars>
