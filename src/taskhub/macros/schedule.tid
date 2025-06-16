@@ -1,0 +1,29 @@
+tags: $:/tags/Macro
+title: $:/plugins/mabuqian/TaskHub/macros/schedule
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define TH-schedule-overdue()
+  <$list
+    filter=<<TH-todos-overdue>>
+    template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+  />
+\end
+
+\define TH-schedule-day(day)
+  <$vars day=<<__day__>>>
+    <$list
+      filter=<<TH-todos-due-on>>
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+  </$vars>
+\end
+
+\define TH-schedule-today()
+  <$list
+    filter=<<TH-todos-due-today>>
+    template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+    emptyMessage="🌞 {{$:/language/TaskHub/AllClear}}"
+  />
+\end  

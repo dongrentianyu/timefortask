@@ -1,0 +1,12 @@
+tags: $:/tags/Macro
+title: $:/plugins/mabuqian/TaskHub/macros/utils
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/TaskHub/
+
+\define py-tip(text)
+<div class="py-tip">
+  <span class="py-tip-icon">{{$:/plugins/mabuqian/TaskHub/images/lightbulb}}</span>
+  ''<<lingo Tip>>: ''$text$
+</div>
+\end

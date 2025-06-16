@@ -1,0 +1,200 @@
+tags: $:/tags/Macro
+title: $:/plugins/mabuqian/TaskHub/macros/filters
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\procedure TH-archived-projects()
+[all[tiddlers]tmo[Project]!has[draft.of]!title[Inbox]get[tmo_projectState]!match[doing]sort[title]]
+\end
+
+\procedure TH-active-projects()
+[all[tiddlers]tmo[Project]!has[draft.of]!title[Inbox]tmo_projectState[doing]]
+\end
+
+\procedure TH-all-categories()
+[all[tiddlers]has[tmo_projectCategory]get[tmo_projectCategory]unique[]sort[title]]
+\end
+
+\procedure TH-has-scheduled-todos-in-projects()
+[all[tiddlers]tmo[Task]tmo_taskState[todo]!has[draft.of]has[tmo_dueDate]limit[1]]
+\end
+
+\procedure TH-has-active-projects()
+[all[tiddlers]tmo[Project]!has[draft.of]tmo_projectState[doing]limit[1]]
+\end
+
+\procedure TH-has-archived-projects()
+[all[tiddlers]tmo[Project]!title[Inbox]get[tmo_projectState]!match[doing]limit[1]]
+\end
+
+\procedure TH-has-projects()
+[all[tiddlers]tmo[Project]!title[Inbox]limit[1]]
+\end
+
+\procedure TH-is-project()
+[all[tiddlers]all[current]tmo[Project]] [all[current]tmo[SubProject]]
+\end
+
+\procedure TH-is-not-subproject()
+[all[tiddlers]all[current]!tmo[SubProject]]
+\end
+
+<!-- 当项目中的任务都完成或为空时，展示特定内容 -->
+<!-- 暂未考虑到子项目情况 -->
+
+\procedure TH-is-empty-project()
+[all[tiddlers]tmo[Project]subfilter{!!tmo_projectFilter}get[tmo_taskState]match[todo]count[]match[0]]
+\end
+
+\procedure TH-has-category()
+[all[current]has[tmo_projectCategory]]
+\end
+
+<!-- 表示条目中存在子条目且是任务的情况 -->
+<!-- 主要用于项目展示中，展示当前项目 -->
+
+\procedure TH-has-todos()
+[all[tiddlers]has[tmo_projectFilter]]
+\end
+
+\procedure TH-has-open-todos()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]limit[1]]
+\end
+
+\procedure TH-has-no-open-todo()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]match[0]]
+\end
+
+\procedure TH-has-scheduled-todos()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]has[tmo_dueDate]limit[1]]
+\end
+
+\procedure TH-has-unscheduled-todos()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]!has[tmo_dueDate]limit[1]]
+\end
+
+\procedure TH-has-completed-todos()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}!tmo_taskState[todo]limit[1]]
+\end
+
+\procedure TH-next-open-todo()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]limit[1]]
+\end
+
+\procedure TH-filtered-todos()
+[all[tiddlers]subfilter<todoFilter>tmo_taskState[todo]sort[title]]
+\end
+
+\procedure TH-open-todos()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]]
+\end
+
+\procedure TH-completed-todos()
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}!tmo_taskState[todo]sort[created]]
+\end
+
+\procedure TH-todos-due-today()
+[all[tiddlers]tmo_taskState[todo]days:tmo_dueDate[0]]
+\end
+
+\procedure TH-todos-overdue()
+[all[tiddlers]tmo_taskState[todo]!days:tmo_dueDate[-1]sort[due]]
+\end
+
+\procedure TH-todos-due-today-or-overdue()
+[all[tiddlers]days:tmo_dueDate[0]] [all[tiddlers]!days:tmo_dueDate[-1]] +[!has[draft.of]tmo_taskState[todo]sort[tmo_dueDate]]
+\end
+
+\procedure TH-upcoming-due-dates()
+[all[tiddlers]tmo_taskState[todo]has[tmo_dueDate]sort[tmo_dueDate]eachday[tmo_dueDate]] -[!days:tmo_dueDate[-1]]
+\end
+
+\procedure TH-todos-due-on()
+[all[tiddlers]tmo_taskState[todo]sameday:tmo_dueDate<day>]
+\end
+
+\procedure TH-has-overdue-todos()
+[all[tiddlers]tmo_taskState[todo]!days:tmo_dueDate[-1]limit[1]]
+\end
+
+\procedure TH-has-todos-due-today-or-overdue()
+[all[tiddlers]days:tmo_dueDate[0]] [all[tiddlers]!days:tmo_dueDate[-1]] +[tmo_taskState[todo]limit[1]]
+\end
+
+\procedure TH-is-todo()
+[all[current]tmo_taskState[todo]]
+\end
+
+\procedure TH-is-open()
+[all[current]tmo_taskState[todo]]
+\end
+
+\procedure TH-is-completed()
+[all[current]!tmo_taskState[todo]]
+\end
+
+\procedure TH-is-overdue()
+[all[current]tmo_taskState[todo]!days:tmo_dueDate[-1]]
+\end
+
+\procedure TH-is-due-today()
+[all[current]days:tmo_dueDate[0]]
+\end
+
+\procedure TH-is-due-yesterday()
+[all[current]days:tmo_dueDate[-1]]
+\end
+
+\procedure TH-is-due-tomorrow()
+[all[current]days:tmo_dueDate[1]]
+\end
+
+\procedure TH-is-due-later()
+[all[current]!tmo_dueDate[1]]
+\end
+
+\procedure TH-is-scheduled()
+[all[current]has[tmo_dueDate]]
+\end
+
+\procedure TH-is-not-scheduled()
+[all[current]!has[tmo_dueDate]]
+\end
+
+\procedure TH-is-not-overdue()
+[all[current]] -[!days:tmo_dueDate[-1]]
+\end
+
+<!-- 下面几个没有加上中括号，可能出现了问题，后续再查看情况 -->
+
+\procedure TH-unscheduled-todos-subfilter()
+tmo_taskState[todo]!has[tmo_dueDate]
+\end
+
+\procedure TH-scheduled-todos-subfilter()
+tmo_taskState[todo]has[tmo_dueDate]sort[tmo_dueDate]
+\end
+
+\procedure TH-is-active-subfilter()
+tmo_taskState[todo]
+\end
+
+\procedure TH-all-projects-and-subprojects-filter()
+[tmo[Project]] [tmo[SubProject]]
+\end
+
+<!-- 下面几个需要再研究，暂不改 -->
+
+\procedure todo-list-drop-tags()
+todo [all[current]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<__tag__>]
+\end
+
+\procedure project-refile-tags()
+todo [all[<actionTiddler>]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<currentTiddler>]
+\end
+
+\procedure TH-convert-todo-into-project()
+[all[current]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] -SubProject -Inbox -todo Project
+\end
+
