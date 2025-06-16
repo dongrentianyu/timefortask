@@ -1,0 +1,10 @@
+{
+  "title": "$:/plugins/mabuqian/TaskHub",
+  "author": "mabuqian",
+  "description": "tasks hub",
+  "core-version": ">=5.3.6",
+  "plugin-type": "plugin",
+  "version": "0.0.1",
+  "dependents": [],
+  "list": "readme"
+}
