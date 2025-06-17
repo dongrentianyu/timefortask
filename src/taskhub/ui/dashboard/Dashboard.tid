@@ -1,0 +1,17 @@
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Dashboard
+
+\define lingo-base() $:/language/TaskHub/
+
+<$macrocall
+  $name="tabs"
+  tabsList="[all[tiddlers+shadows]tag[$:/plugins/mabuqian/TaskHub/tags/dashboard]]"
+  default={{$:/config/projectify/DefaultDashboardTab}}
+  state="$:/state/projects-and-schedule"
+  class="TH-tabs"
+/>
+
+<div class="TH-right-aligned">
+  <$link to="$:/plugins/mabuqian/TaskHub/doc/Help">
+    {{$:/plugins/mabuqian/TaskHub/images/info}} <<lingo Help>>
+  </$link>
+</div>

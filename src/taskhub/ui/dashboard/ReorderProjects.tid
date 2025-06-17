@@ -1,0 +1,18 @@
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ReorderProjects
+
+\define lingo-base() $:/language/TaskHub/
+
+<div class="TH-label">
+  <<lingo ReorderProjects/Hint>>
+</div>
+
+<$macrocall
+  $name="list-tagged-draggable"
+  tag="Project"
+  subFilter=<<TH-is-active-subfilter>>
+  />
+
+<$button class="TH-btn">
+  <<lingo Close/Caption>>
+  <$action-setfield $tiddler="$:/state/projectify/show-reorder-projects" text="no"/>
+</$button>

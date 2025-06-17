@@ -1,0 +1,87 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/date-picker
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.TH-date-picker .TH-date-today {
+  color: <<colour primary>>;
+}
+
+.TH-date-picker .TH-date-today svg {
+  fill: <<colour primary>>;
+}
+
+.TH-date-picker .TH-date-clear {
+  color: #e73939;
+}
+
+.TH-date-picker .TH-date-clear svg {
+  fill: #e73939;
+}
+
+.TH-date-picker .pika-single {
+  margin: 0;
+  border: 0;
+  padding: 6px;
+  color: <<colour foreground>>;
+  background: transparent;
+}
+
+.TH-date-picker .pika-lendar {
+  margin: 0;
+  border: 0;
+  width: 100%;
+}
+
+.TH-date-picker .pika-lendar .pika-table {
+  margin: 0;
+}
+
+.TH-date-picker .pika-lendar .pika-table th {
+  background: transparent;
+  font-weight: bold;
+  color: <<colour muted-foreground>>;
+}
+
+.TH-date-picker .pika-lendar button,
+.TH-date-picker .pika-button {
+  border-radius: 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+.TH-date-picker .pika-button {
+  padding: 6px 8px !important;
+}
+
+.TH-date-picker .pika-prev,
+.TH-date-picker .pika-next {
+  padding: 4px;
+  width: 20px;
+}
+
+.TH-date-picker .pika-lendar button:hover,
+.TH-date-picker .pika-lendar button:active,
+.TH-date-picker .pika-next {
+  background-color: <<colour primary>>;
+  color: <<colour background>>;
+  border-radius: 3px;
+}
+
+.TH-date-picker .pika-lendar .is-selected .pika-button,
+.TH-date-picker .pika-lendar .has-event .pika-button {
+  background: <<colour muted-foreground>>;
+  color: <<colour tiddler-background>>;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+.TH-date-picker .pika-label {
+  background-color: transparent;
+  color: <<colour foreground>>;
+}
+
+.TH-date-picker .pika-lendar table th,
+.TH-date-picker .pika-lendar table td {
+  border: 0 none;
+}

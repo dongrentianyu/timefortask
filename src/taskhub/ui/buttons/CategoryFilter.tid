@@ -1,0 +1,47 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/CategoryFilter
+
+\define lingo-base() $:/language/TaskHub/
+
+<$vars
+  popupTiddler=<<qualify "$:/state/projectify/category-filter-dropdown">>
+  stateTiddler="$:/state/projectify/project-category-filter"
+>
+  <$button popup=<<popupTiddler>> class="TH-btn btn-small">
+    {{$:/plugins/mabuqian/TaskHub/images/funnel}}
+    <$reveal type="match" state=<<stateTiddler>> text="">
+      <<lingo FilterProjects>>
+    </$reveal>
+    <$reveal type="nomatch" state=<<stateTiddler>> text="">
+      Projects in
+      <$tiddler tiddler={{{ [<stateTiddler>get[text]] }}}>
+	{{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}
+      </$tiddler>
+    </$reveal>
+  </$button>
+
+  <$reveal state=<<popupTiddler>> type="popup" position="below" animate="yes" class="tc-drop-down TH-drop-down">
+    <$list filter=<<TH-all-categories>> variable="category">
+      <$vars colour={{{ [<category>get[color]] }}}>
+	<$button class="tc-btn-invisible">
+	  <$tiddler tiddler=<<category>>>
+	    {{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}
+	  </$tiddler>
+	  <$action-setfield $tiddler=<<stateTiddler>> text=<<category>>/>
+	</$button>
+      </$vars>
+    </$list>
+
+    <hr/>
+    <$link to="$:/plugins/mabuqian/TaskHub/ui/config/Categories">
+      <<lingo EditCategories>>
+    </$link>
+  </$reveal>
+
+  <$reveal type="nomatch" state=<<stateTiddler>> text="">
+    <$button class="tc-btn-invisible btn-small TH-link-muted">
+      <<lingo Clear>>
+	<$action-deletetiddler $tiddler=<<stateTiddler>>/>
+    </$button>
+  </$reveal>
+
+</$vars>

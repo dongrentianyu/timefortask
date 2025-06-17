@@ -1,0 +1,23 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/AddCategory
+
+\define lingo-base() $:/language/TaskHub/
+
+<$button
+  class="TH-btn btn-primary"
+  popup="$:/state/projectify/show-new-category-popup"
+  tooltip={{$:/language/TaskHub/AddCategory/Hint}}
+  aria-label={{$:/language/TaskHub/AddCategory/Hint}}
+>
+  {{$:/core/images/edit-button}}
+  <<lingo AddCategory/Caption>>
+</$button>
+
+<$reveal
+  type="popup"
+  class="tc-popup-keep TH-popup"
+  state="$:/state/projectify/show-new-category-popup"
+  position="above"
+>
+  <h2><<lingo Category>></h2>
+  {{$:/plugins/mabuqian/TaskHub/ui/forms/NewCategory}}
+</$reveal>

@@ -1,0 +1,29 @@
+title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject
+
+\define lingo-base() $:/language/TaskHub/
+
+\define emptyWelcomeMessage()
+<div class="TH-welcome">
+  <div class="icon">{{$:/plugins/mabuqian/TaskHub/images/rocket}}</div>
+  <h3>{{$:/language/TaskHub/WelcomeProjectTitle}}</h3>
+  {{$:/language/TaskHub/WelcomeProjectDescription}}
+</div>
+
+<$macrocall $name="TH-tip" text=<<lingo DragTodoTip>>/>
+\end
+
+<$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
+  <$droppable actions=<<project-refile-actions>>>
+    <$list
+      filter=<<TH-is-empty-project>>
+      emptyMessage=<<emptyWelcomeMessage>>
+      variable="ignore">
+
+      <div class="TH-welcome">
+	<div class="icon">{{$:/plugins/mabuqian/TaskHub/images/victory}}</div>
+	<h3>{{$:/language/TaskHub/EmptyProjectTitle}}</h3>
+	{{$:/language/TaskHub/EmptyProjectDescription}}
+      </div>
+    </$list>
+  </$droppable>
+</$reveal>

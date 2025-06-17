@@ -1,0 +1,289 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.TH-projects-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TH-projects-heading h2 {
+  margin: 0;
+  display: inline-block;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .TH-projects-heading {
+    display: block;
+  }
+
+  .TH-projects-heading .TH-title {
+    margin-bottom: 20px;
+  }
+}
+
+.TH-projects-heading > button {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tc-titlebar .TH-checkbox svg {
+  width: 26px;
+  height: 26px;
+  fill: <<colour tiddler-controls-foreground>>;
+}
+
+.tc-titlebar .TH-checkbox .done svg {
+  width: 26px;
+  height: 26px;
+  fill: #2da562;
+}
+
+.TH-reorder-projects:not([hidden]) {
+  display: block;
+}
+
+.TH-projects, .TH-todos {
+  padding-left: 0;
+}
+
+.TH-projects .TH-project,
+.TH-todos .tc-menu-list-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.TH-projects,
+.TH-todos .tc-menu-list-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.TH-todo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 0;
+}
+
+.TH-project {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.TH-project a {
+  font-weight: bold;
+}
+
+.TH-project .TH-project-infos {
+  font-size: .8em;
+  line-height: 1em;
+  color: <<colour muted-foreground>>;
+  margin-left: 20px;
+}
+
+.TH-project .TH-project-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TH-project .TH-project-heading .TH-project-category {
+  font-size: .9em;
+  white-space: nowrap;
+}
+
+/* Align the completed todos with the non-completed ones that have a drag
+   handle. TODO: Check why the padding is different from the drag-handle's width
+   */
+.TH-completed-todos .TH-todo .TH-checkbox {
+  padding-left: 22px;
+}
+
+.TH-todo .tc-tiddlylink:hover {
+  text-decoration: none;
+}
+
+.TH-todo .TH-todo-actions {
+  float: right;
+}
+
+.TH-todo .TH-btn.TH-priority {
+  border: none;
+}
+
+.TH-todo .TH-project-link {
+  font-size: .8em;
+  color: #aaa;
+}
+
+.TH-todo .TH-todo-text-icon {
+  color: #999;
+  fill: #999;
+}
+
+.TH-todo.TH-completed a {
+  color: <<colour muted-foreground>>;
+}
+
+.TH-todo-heading {
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.TH-todo-heading .TH-btn {
+  font-size: .9em;
+  padding: .3em .9em;
+}
+
+.TH-todo-actions .TH-btn,
+.TH-todo .TH-btn.TH-priority {
+  color: #999;
+  fill: #999;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.TH-due-date.TH-overdue {
+  color: <<colour background>>;
+  background: #e73939;
+  border-color: #e73939;
+  font-weight: bold;
+}
+
+.TH-due-date.TH-due-today {
+  color: <<colour primary>>;
+  fill: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
+.TH-todo .TH-todo-actions .TH-btn {
+  font-size: .8em;
+  margin-left: 6px;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .TH-todo .TH-todo-actions .TH-btn.TH-not-scheduled,
+  .TH-todo .TH-todo-actions .TH-btn.TH-priority- {
+    opacity: 0;
+    transition: opacity ease-in .14s;
+  }
+
+  .TH-todo:hover .TH-todo-actions .TH-btn {
+    opacity: 1 !important;
+  }
+}
+
+.TH-projects .tc-droppable.tc-dragover {
+  background: rgba(255,255,100,0.3);
+  display: block;
+}
+
+.TH-tabs.tc-tab-buttons button {
+  font-weight: bold;
+  font-size: 1.2em;
+  border: 0;
+  padding: .6em .8em .4em .8em;
+  background: transparent;
+  cursor: pointer;
+  color: <<colour tiddler-title-foreground>>;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .TH-tabs.tc-tab-buttons button {
+    font-size: .8em;
+    padding: 8px;
+  }
+
+  .TH-tabs.tc-tab-buttons button svg {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 auto 6px auto;
+  }
+}
+
+.TH-tabs.tc-tab-buttons button.tc-tab-selected {
+  border: 0;
+  border-bottom: 4px solid <<colour primary>>;
+  color: <<colour tiddler-title-foreground>>;
+}
+
+.TH-scheduled-drop-down h4 {
+  margin: 5px 10px;
+  color: <<colour foreground>>;
+  font-weight: bold;
+}
+
+.TH-scheduled-drop-down .clear {
+  margin: 5px 10px;
+}
+
+.tc-drop-down.TH-drop-down {
+  min-width: 200px;
+}
+
+.tc-drop-down.TH-drop-down .tc-btn-invisible {
+  font-size: 14px;
+  line-height: 2em;
+}
+
+.tc-drop-down.TH-drop-down .tc-btn-invisible svg {
+    margin-right: 6px;
+}
+
+.tc-drop-down.TH-drop-down hr {
+  margin: 2px 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid <<colour muted-foreground>>;
+}
+
+.tc-drop-down .TH-priorities {
+  display: flex;
+  align-items: space-between;
+}
+
+.tc-drop-down .TH-priorities .tc-btn-invisible {
+  width: auto;
+  text-align: center;
+}
+
+.TH-priority-3, .TH-priority-3 svg,
+.TH-drop-down .TH-priority-3,
+.TH-drop-down .TH-priority-3 svg,
+.TH-btn.TH-priority-3 {
+  fill: #e73939;
+  color: #e73939;
+}
+
+.TH-priority-2, .TH-priority-2 svg,
+.TH-drop-down .TH-priority-2,
+.TH-drop-down .TH-priority-2 svg,
+.TH-btn.TH-priority-2 {
+  fill: #e77a39;
+  color: #e77a39;
+}
+
+.TH-priority-1, .TH-priority-1 svg,
+.TH-drop-down .TH-priority-1,
+.TH-drop-down .TH-priority-1 svg,
+.TH-btn.TH-priority-1 {
+  fill: #24cd5e;
+  color: #24cd5e;
+}
+
+.TH-project-category-manager-table {
+  width: 100%;
+}
+
+.TH-project-category-manager-table td {
+  padding: 4px;
+}
+
+.TH-project-category-manager-table input {
+  width: 100%;
+}
+
+.TH-project-category-manager-table input[type="color"] {
+  width: 50px;
+  padding: 3px;
+}

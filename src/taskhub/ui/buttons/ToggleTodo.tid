@@ -1,0 +1,20 @@
+tags: $:/tags/ViewToolbar
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleTodo
+caption: {{||$:/plugins/mabuqian/TaskHub/ui/buttons/Checkbox}} Toggle todo
+description: Projectify -- Toggle the state of the current todo tiddler
+list-before: $:/core/ui/Buttons/close
+
+\define save-actions()
+  <$action-sendmessage $message="tm-auto-save-wiki"/>
+\end
+
+<$list filter=<<TH-is-todo>>>
+<button class="tc-btn-invisible">
+  <span class="TH-toggle-todo-button">
+    <$checkbox tag="done" actions=<<save-actions>>>
+      {{||$:/plugins/mabuqian/TaskHub/ui/buttons/Checkbox}}
+    </$checkbox>
+  </span>
+</button>
+</$list>
+

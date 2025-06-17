@@ -1,0 +1,32 @@
+caption: {{$:/plugins/mabuqian/TaskHub/images/inbox}} {{$:/language/TaskHub/Inbox}}
+title: $:/plugins/mabuqian/TaskHub/ui/inbox/Inbox
+
+\define lingo-base() $:/language/TaskHub/
+
+\define inbox-count()
+  <$vars currentTiddler="Inbox">
+    <span class="TH-count">
+      <$count filter=<<TH-open-todos>>/>
+    </span>
+  </$vars>
+\end
+
+<h2>{{$:/language/TaskHub/Inbox}} <<inbox-count>></h2>
+
+<$vars currentTiddler="Inbox">
+  <$macrocall
+    class="TH-inbox-input"
+    $name="todo-list"
+    emptyTemplate="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox"
+  />
+</$vars>
+
+<label class="TH-label TH-right-aligned">
+  <<lingo AddToInbox/Hint>>
+</label>
+<$vars
+  todo-tags="Inbox todo"
+  placeholder={{$:/language/TaskHub/AddToInbox/Placeholder}}
+>
+  {{$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}
+</$vars>

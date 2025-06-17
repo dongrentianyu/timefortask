@@ -1,0 +1,52 @@
+title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
+
+\define lingo-base() $:/language/TaskHub/
+
+\define add-todo-actions()
+<$list filter="[<stateTiddler>get[todo-name]trim[]!is[blank]]" variable="ignore">
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[todo-name]] }}}
+    $savetitle="$:/temp/projectify/new-todo"
+  />
+
+  <$action-listops $tiddler={{$:/temp/projectify/new-todo}} $tags=<<todo-tags>>/>
+  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} due={{{ [<stateTiddler>get[due]] }}}/>
+  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} priority={{{ [<stateTiddler>get[priority]] }}}/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="due"/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="priority"/>
+
+  <$action-sendmessage $message="tm-auto-save-wiki"/>
+</$list>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/projectify/add-todo-form">>>
+  <div class="TH-composite-input">
+    <$keyboard key="enter">
+    <<add-todo-actions>>
+      <$edit-text
+	class="TH-input"
+	tiddler=<<stateTiddler>>
+	field="todo-name"
+	placeholder=<<placeholder>>
+	/>
+    </$keyboard>
+
+    <div class="TH-todo-actions">
+      <$vars currentTiddler=<<stateTiddler>>>
+	<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate" mode="inline"/>
+	<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority" mode="inline"/>
+      </$vars>
+    </div>
+  </div>
+  <div class="TH-actions">
+    <$button
+      class="TH-btn btn-primary"
+      actions=<<add-todo-actions>>
+      tooltip={{$:/language/TaskHub/AddTodo/Hint}}
+      aria-label={{$:/language/TaskHub/AddTodo/Hint}}
+    >
+      <<lingo AddTodo/Caption>>
+    </$button>
+  </div>
+</$vars>

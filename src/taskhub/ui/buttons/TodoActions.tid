@@ -1,0 +1,25 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoActions
+
+<$vars
+  popupTiddler=<<qualify "$:/state/projectify/todo-actions-dropdown">>
+  cssClass="TH-btn"
+>
+  <$button
+    class=<<cssClass>>
+    popup=<<popupTiddler>>
+    tooltip={{$:/language/TaskHub/TodoActions/Hint}}
+    aria-label={{$:/language/TaskHub/TodoActions/Hint}}
+  >
+    {{$:/plugins/mabuqian/TaskHub/images/dots}}
+  </$button>
+
+  <$reveal state=<<popupTiddler>> type="popup" position="belowleft" animate="no">
+    <div class="tc-drop-down TH-drop-down TH-date-picker TH-todo-actions-drop-down">
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoPriority}}
+      <hr/>
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoDueDate}}
+      <hr/>
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoConvert}}
+    </div>
+  </$reveal>
+</$vars>

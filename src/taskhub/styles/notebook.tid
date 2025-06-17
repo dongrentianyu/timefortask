@@ -1,0 +1,19 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/notebook
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+/* Notebook sidebar */
+
+.nc-sidebar .TH-projects {
+  margin: 0;
+  border: 0;
+}
+
+.nc-sidebar .TH-projects .TH-project {
+  border-bottom: 0;
+}
+
+.nc-sidebar dl {
+  margin: 0;
+}

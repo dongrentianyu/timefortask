@@ -1,0 +1,10 @@
+title: $:/plugins/mabuqian/TaskHub/ui/forms/TodoDueDate
+
+\define lingo-base() $:/language/TaskHub/
+
+<$TH-date-today>{{$:/plugins/mabuqian/TaskHub/images/sun}} <<lingo Today>></$TH-date-today>
+<$TH-date-tomorrow>{{$:/plugins/mabuqian/TaskHub/images/calendar-event}} <<lingo Tomorrow>></$TH-date-tomorrow>
+<$TH-date-next-week>{{$:/plugins/mabuqian/TaskHub/images/calendar}} <<lingo NextWeek>></$TH-date-next-week>
+<$TH-date-clear>{{$:/plugins/mabuqian/TaskHub/images/slash-circle}} <<lingo Clear>></$TH-date-clear>
+<hr/>
+<$TH-date-calendar/>

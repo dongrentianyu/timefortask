@@ -1,0 +1,10 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/vanilla
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+/* Default sidebar */
+
+.TH-sidebar-section {
+  max-width: 500px;
+}

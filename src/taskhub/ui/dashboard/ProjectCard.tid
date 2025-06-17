@@ -1,0 +1,35 @@
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectCard
+
+\define lingo-base() $:/language/TaskHub/
+
+\define card-style()
+background-color: $(background)$;
+\end
+
+<$vars category={{!!category}}>
+  <$vars background={{{ [<category>get[color]] }}}>
+    <div class="TH-card-wrapper" style=<<card-style>>>
+      <$link overrideClass="TH-card" to={{!!title}}>
+		<div class="TH-card-options">
+			{{||$:/plugins/mabuqian/TaskHub/ui/buttons/ProjectCardSettings}}
+		</div>
+		<div class="TH-card-head">
+			<h3><$text text=<<currentTiddler>>/></h3>
+			<div class="TH-description">
+				{{!!description}}
+			</div>
+		</div>
+		<div class="TH-project-infos">
+			{{||$:/plugins/mabuqian/TaskHub/images/pie}}
+			<$count filter=<<TH-open-todos>>/>
+			<<lingo OpenTasks>>
+		</div>
+		<$list filter=<<TH-has-category>> variable="ignore">
+			<div class="TH-project-category">
+				<$text text=<<category>>/>
+			</div>
+		</$list>
+      </$link>
+    </div>
+  </$vars>
+</$vars>

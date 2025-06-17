@@ -1,0 +1,16 @@
+caption: {{$:/plugins/mabuqian/TaskHub/images/stack}} {{$:/language/TaskHub/Next}}
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Schedule
+tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
+title: $:/plugins/mabuqian/TaskHub/ui/NextActions
+
+<$list
+  filter=<<TH-has-active-projects>>
+  emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
+>
+  <dl>
+    <$list
+      filter=<<TH-active-projects>>
+      template="$:/plugins/mabuqian/TaskHub/ui/project/NextAction"
+      />
+  </dl>
+</$list>

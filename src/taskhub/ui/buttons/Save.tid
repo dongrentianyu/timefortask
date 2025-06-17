@@ -1,0 +1,8 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/Save
+
+\define lingo-base() $:/language/TaskHub/
+
+<$button class="TH-btn btn-primary">
+  <<save-actions>>
+  <<lingo Save/Caption>>
+</$button>

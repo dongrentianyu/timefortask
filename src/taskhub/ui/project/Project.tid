@@ -1,0 +1,37 @@
+list-after: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
+tags: $:/tags/ViewTemplate
+title: $:/plugins/mabuqian/TaskHub/ui/project/Project
+
+\define lingo-base() $:/language/TaskHub/
+
+<$list filter=<<TH-is-project>> variable="ignore">
+  <$list filter=<<TH-is-not-subproject>>>
+    <div class="TH-category-wrapper">
+      {{||$:/plugins/mabuqian/TaskHub/ui/buttons/SelectCategory}}
+      <$list filter=<<TH-is-open>>>
+	{{||$:/plugins/mabuqian/TaskHub/ui/buttons/ArchiveProject}}
+      </$list>
+    </div>
+  </$list>
+  
+  {{||$:/plugins/mabuqian/TaskHub/ui/project/ArchivedProjectBanner}}
+
+  <h2><<lingo Todos>> {{||$:/plugins/mabuqian/TaskHub/images/pie}}</h2>
+
+  <$macrocall
+    $name="todo-list"
+    emptyTemplate="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject"
+  />
+
+  {{||$:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos}}
+
+  <$list filter=<<TH-is-open>>>
+    <$vars
+      stateTiddler=<<qualify "$:/temp/projectify/todo-form">>
+      todo-tags="[{!!title}] todo"
+      placeholder={{$:/language/TaskHub/AddTodoToProject/Placeholder}}
+    >
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}
+    </$vars>
+  </$list>
+</$list>

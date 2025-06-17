@@ -1,0 +1,7 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/Cancel
+
+\define lingo-base() $:/language/TaskHub/
+
+<$button class="TH-btn" set=<<stateTiddler>> setTo="">
+  <<lingo Cancel/Caption>>
+</$button>

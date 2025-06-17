@@ -1,0 +1,26 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/welcome
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.TH-welcome {
+  max-width: 800px;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 0 auto;
+  background: <<colour message-background>>;
+  color: <<colour message-foreground>>;
+  border-radius: 12px;
+}
+
+.TH-welcome .icon {
+  font-size: 4em;
+}
+
+.TH-welcome h3 {
+  font-weight: bold;
+}
+
+.TH-welcome p {
+  margin: 0;
+}

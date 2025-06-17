@@ -1,0 +1,24 @@
+tags: $:/plugins/mabuqian/TaskHub/tags/Config
+title: $:/plugins/mabuqian/TaskHub/ui/config/Basics
+list-before: $:/plugins/mabuqian/TaskHub/ui/config/Dashboard
+caption: {{$:/language/ControlPanel/Basics/Caption}}
+
+\define lingo-base() $:/language/TaskHub/
+
+\define select-show-welcome-messages()
+<$select tiddler="$:/config/projectify/ShowWelcomeMessages">
+  <option value="yes">{{$:/language/Yes}}</option>
+  <option value="no">{{$:/language/No}}</option>
+</$select>
+\end
+
+\define select-show-completed-todos()
+<$select tiddler="$:/config/projectify/ShowCompletedTodos">
+  <option value="yes">{{$:/language/Yes}}</option>
+  <option value="no">{{$:/language/No}}</option>
+</$select>
+\end
+
+|<<lingo ShowWelcomeMessages>> |<<select-show-welcome-messages>> |
+|<<lingo ShowCompletedTodosByDefault>> |<<select-show-completed-todos>> |
+

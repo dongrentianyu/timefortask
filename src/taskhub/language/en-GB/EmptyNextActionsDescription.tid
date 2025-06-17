@@ -1,0 +1,5 @@
+title: $:/language/TaskHub/EmptyNextActionsDescription
+
+<p>
+  The first task of each active project will appear here -- [[learn more|$:/plugins/nico/projectify/doc/NextActions]].
+</p>

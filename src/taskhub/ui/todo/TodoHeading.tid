@@ -1,0 +1,36 @@
+list-after: $:/core/ui/ViewTemplate/tags
+tags: $:/tags/ViewTemplate
+title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
+
+\define lingo-base() $:/language/TaskHub/
+
+<$list filter=<<TH-is-todo>>>
+  <div class="TH-todo-heading">
+    {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
+    {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority}}
+
+    <$vars popupTiddler=<<qualify "$:/state/projectify/todo-heading-dropdown">>>
+      <$button
+	popup=<<popupTiddler>>
+	class="TH-btn"
+	tooltip={{$:/language/TaskHub/MoreActions/Hint}}
+	aria-label={{$:/language/TaskHub/MoreActions/Hint}}
+      >
+	<<lingo More>> {{$:/core/images/down-arrow}}
+      </$button>
+
+      <$reveal state=<<popupTiddler>> type="popup" class="tc-drop-down TH-drop-down" position="below">
+	<$list filter=<<TH-is-not-subproject>>>
+	  <$button class="tc-btn-invisible">
+      	    {{$:/plugins/mabuqian/TaskHub/images/checklist}} <<lingo AddSubTasks/Caption>>
+	    <$action-listops $tags="[[SubProject]]"/>
+	    <$action-sendmessage $message="tm-auto-save-wiki"/>
+	  </$button>
+	</$list>
+
+	{{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoConvert}}
+      </$reveal>
+    </$vars>
+  </div>
+</$list>
+

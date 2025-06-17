@@ -1,0 +1,63 @@
+title: $:/plugins/mabuqian/TaskHub/ui/forms/NewProject
+
+\define lingo-base() $:/language/TaskHub/
+
+\define add-project-actions()
+  <$action-createtiddler
+    $basetitle={{$:/state/projectify/new-project!!project_title}}
+    description={{$:/state/projectify/new-project!!description}}
+    category={{$:/state/projectify/new-project!!category}}
+    tags="Project"/>
+  <$action-setfield
+    $tiddler="$:/state/projectify/new-project"
+    project_title=""
+    description=""
+    category=""
+  />
+  <$action-setfield $tiddler="$:/state/projectify/show-new-project-popup" text=""/>
+  <$action-sendmessage $message="tm-auto-save-wiki"/>
+\end
+
+<div class="TH-form">
+  <$keyboard key="enter">
+    <<add-project-actions>>
+    <div class="TH-control-group">
+      <div class="TH-label"><<lingo NewProjectTitle>></div>
+      <$edit-text
+        class="TH-input"
+        focus="true"
+        tiddler="$:/state/projectify/new-project"
+        field="project_title"
+      />
+    </div>
+    <div class="TH-control-group">
+      <div class="TH-label"><<lingo NewProjectDescription>></div>
+      <$edit-text
+        class="TH-input"
+        tiddler="$:/state/projectify/new-project"
+        field="description"
+      />
+    </div>
+    <div class="TH-control-group">
+      <div class="TH-label"><<lingo NewProjectCategory>></div>
+      <$select tiddler="$:/state/projectify/new-project" field="category">
+	<$list filter=<<TH-all-categories>>>
+	  <option value=<<currentTiddler>>>
+	    <<currentTiddler>>
+	  </option>
+	</$list>
+	<option value=""></option>	    
+      </$select>
+    </div>
+  </$keyboard>
+  <div class="TH-actions">
+    <$button class="TH-btn btn-primary">
+      <<add-project-actions>>
+	<<lingo Save/Caption>>
+    </$button>
+    <<lingo Or>>
+    <$button class="TH-btn" set="$:/state/projectify/show-new-project-popup" setTo="">
+      <<lingo Cancel/Caption>>
+    </$button>
+  </div>
+</div>

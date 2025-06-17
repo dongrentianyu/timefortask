@@ -1,0 +1,16 @@
+tags: $:/plugins/mabuqian/TaskHub/tags/Config
+title: $:/plugins/mabuqian/TaskHub/ui/config/Calendar
+list-before: $:/plugins/mabuqian/TaskHub/ui/config/Dashboard
+caption: {{$:/language/TaskHub/Calendar}}
+
+\define lingo-base() $:/language/TaskHub/
+
+\define select-first-day-of-week()
+<$select tiddler="$:/config/projectify/FirstDayOfWeek">
+  <option value="1">{{$:/language/Date/Long/Day/1}}</option>
+  <option value="0">{{$:/language/Date/Long/Day/0}}</option>
+</$select>
+\end
+
+|<<lingo FirstDayOfWeek>> |<<select-first-day-of-week>> |
+

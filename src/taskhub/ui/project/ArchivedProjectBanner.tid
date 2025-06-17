@@ -1,0 +1,7 @@
+title: $:/plugins/mabuqian/TaskHub/ui/project/ArchivedProjectBanner
+
+<$list filter=<<TH-is-completed>>>
+  <div class="TH-banner">
+    {{$:/language/TaskHub/ProjectArchived}} {{||$:/plugins/mabuqian/TaskHub/ui/buttons/RestoreProject}}
+  </div>
+</$list>

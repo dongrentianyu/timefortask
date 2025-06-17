@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \define TH-schedule-day(day)
-  <$vars day=<<__day__>>>
+  <$vars day=<<day>>>
     <$list
       filter=<<TH-todos-due-on>>
       template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"

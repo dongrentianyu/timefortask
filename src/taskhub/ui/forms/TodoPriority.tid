@@ -1,0 +1,17 @@
+title: $:/plugins/mabuqian/TaskHub/ui/forms/TodoPriority
+
+<div class="TH-priorities">
+  <$list filter="3 2 1" variable="priority">
+    <$button class={{{ [[tc-btn-invisible TH-priority-]addsuffix<priority>] }}}>
+      {{$:/plugins/mabuqian/TaskHub/images/flag}}
+      <$action-setfield priority=<<priority>>/>
+      <$action-sendmessage $message="tm-auto-save-wiki"/>
+    </$button>
+  </$list>
+
+  <$button class="tc-btn-invisible">
+    {{$:/plugins/mabuqian/TaskHub/images/slash-circle}}
+    <$action-deletefield $field="priority"/>
+    <$action-sendmessage $message="tm-auto-save-wiki"/>
+  </$button>
+</div>

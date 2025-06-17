@@ -1,0 +1,23 @@
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectListItem
+
+\define lingo-base() $:/language/TaskHub/
+
+<$vars category={{!!category}}>
+  <li class="TH-project">
+    <div class="TH-project-heading">
+      <div class="TH-project-title">
+      	{{||$:/plugins/mabuqian/TaskHub/images/pie}} <$link to={{!!title}}><$view field="title"/></$link>
+      </div>
+      <$list filter="<<category>>" variable="ignore">
+        <div class="TH-project-category">
+          <$tiddler tiddler=<<category>>>
+            {{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}
+          </$tiddler>
+        </div>
+      </$list>
+    </div>
+    <div class="TH-project-infos">
+      <$count filter=<<TH-open-todos>>/> <<lingo OpenTasks>>
+    </div>
+  </li>
+</$vars>

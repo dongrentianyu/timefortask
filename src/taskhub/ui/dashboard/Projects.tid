@@ -1,0 +1,30 @@
+caption: {{$:/plugins/mabuqian/TaskHub/images/collection}} Projects
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Projects
+
+\define lingo-base() $:/language/TaskHub/
+
+<div class="TH-projects-heading">
+  <div class="TH-title">
+    <h2><<lingo Projects>></h2>
+    {{$:/plugins/mabuqian/TaskHub/ui/buttons/ProjectListSettings}}
+  </div>
+
+  <div class="TH-category-filter">
+    {{$:/plugins/mabuqian/TaskHub/ui/buttons/CategoryFilter}}
+  </div>
+</div>
+
+<$reveal
+  type="match"
+  state="$:/state/projectify/show-reorder-projects"
+  class="tc-tiddler-info tc-popup-handle TH-reorder-projects"
+  text="yes"
+  animate="yes"
+  retain="yes"
+>
+  {{$:/plugins/mabuqian/TaskHub/ui/dashboard/ReorderProjects}}
+</$reveal>
+
+{{$:/plugins/mabuqian/TaskHub/ui/dashboard/ActiveProjects}}
+{{$:/plugins/mabuqian/TaskHub/ui/buttons/AddProject}}
+{{$:/plugins/mabuqian/TaskHub/ui/dashboard/ArchivedProjects}}

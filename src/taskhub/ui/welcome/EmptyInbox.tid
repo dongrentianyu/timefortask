@@ -1,0 +1,25 @@
+title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox
+
+\define emptyWelcomeMessage()
+  <div class="TH-welcome">
+    <div class="icon">{{$:/plugins/mabuqian/TaskHub/images/postbox}}</div>
+    <h3>{{$:/language/TaskHub/WelcomeInboxTitle}}</h3>
+    {{$:/language/TaskHub/WelcomeInboxDescription}}
+  </div>
+\end
+
+<$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
+  <$droppable actions=<<project-refile-actions>>>
+    <$list
+      filter=<<TH-is-empty-project>>
+      emptyMessage=<<emptyWelcomeMessage>>
+      variable="ignore">
+
+      <div class="TH-welcome">
+	<div class="icon">{{$:/plugins/mabuqian/TaskHub/images/tada}}</div>
+	<h3>{{$:/language/TaskHub/EmptyInboxTitle}}</h3>
+	{{$:/language/TaskHub/EmptyInboxDescription}}
+      </div>
+    </$list>
+  </$droppable>
+</$reveal>

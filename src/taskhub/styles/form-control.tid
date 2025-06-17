@@ -1,0 +1,159 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/form-control
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.TH-btn {
+  border-radius: 1.5em;
+  border: 1px solid #ccc;
+  background: <<colour tiddler-background>>;
+  padding: .3em 1em;
+  cursor: pointer;
+  transition: box-shadow ease-in .1s;
+}
+
+.TH-btn:focus {
+  outline: 0 none;
+}
+
+.TH-btn:active {
+  box-shadow: 0 0 0 0.2rem rgba(0,0,0,.08);
+}
+
+.TH-btn.btn-small {
+  font-size: .9em;
+  padding: .2em .8em;
+}
+
+.TH-btn.btn-primary {
+  background-color: <<colour primary>>;
+  border-color: <<colour primary>>;
+  color: <<colour background>>;
+  fill: <<colour background>>;
+}
+
+.TH-btn.btn-primary:active {
+  box-shadow: 0 0 0 0.2rem rgba(0,125,255,.3);
+}
+
+.TH-btn.btn-danger {
+  border-color: #e73939;
+  color: #e73939;
+  fill: #e73939;
+}
+
+.TH-btn.btn-danger:active {
+  box-shadow: 0 0 0 0.2rem rgba(255,0,0,.2);
+}
+
+.TH-form .TH-control-group {
+  margin: 8px 0;
+}
+
+.TH-form .TH-control-group .TH-label {
+  padding: 0;
+}
+
+.TH-actions {
+  margin: 10px 0 20px 0;
+}
+
+.TH-form .TH-actions {
+  margin-top: 20px;
+}
+
+.TH-composite-input {
+  position: relative;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid <<colour tiddler-editor-border>>;
+}
+
+.TH-composite-input:focus-within {
+  border-color: <<colour primary>>;
+}
+
+.TH-composite-input input.TH-input {
+  border: none;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.TH-composite-input input.TH-input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.TH-composite-input .TH-todo-actions {
+  margin-top: 6px;
+  font-size: .9em;
+}
+
+input.TH-input {
+  transition: border .14s ease-in-out;
+  border: 1px solid <<colour tiddler-editor-border>>;
+  padding: 8px;
+  border-radius: 4px;
+  width: 300px;
+}
+
+input.TH-input:focus {
+  box-shadow: 0 0 0.2rem 0 <<colour primary>>;
+  outline: 0;
+  border-color: <<colour primary>>;
+
+}
+
+input.TH-input.input-larger {
+  width: 450px;
+  max-width: 100%;
+}
+
+input.TH-input.input-large {
+  width: 100%;
+  padding: .5em 1em;
+  font-size: 1.1em;
+}
+
+.TH-todo input[type="checkbox"],
+.TH-toggle-todo-button input[type="checkbox"] {
+  display: none;
+}
+
+.TH-checkbox {
+  color: <<colour muted-foreground>>;
+  cursor: pointer;
+  transition: all ease-in .2s;
+}
+
+.TH-todo .TH-checkbox {
+  margin-right: 3px;
+}
+
+.TH-checkbox .todo-hover {
+  display: none;
+}
+
+.TH-checkbox:hover .todo-hover {
+  display: initial;
+}
+
+.TH-checkbox:hover .todo {
+  display: none;
+}
+
+.TH-checkbox:hover {
+  color: #2da562;
+}
+
+.TH-checkbox .done {
+  color: #2da562;
+}
+
+.TH-popup {
+  background: <<colour tiddler-background>>;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  padding: 5px 20px;
+  width: 350px;
+}

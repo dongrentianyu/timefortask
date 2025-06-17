@@ -1,0 +1,15 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/ArchiveProject
+
+\define lingo-base() $:/language/TaskHub/
+
+<$fieldmangler>
+  <$button
+    class="TH-btn btn-small btn-danger nc-archive-project"
+    tooltip={{$:/language/TaskHub/ArchiveProject/Hint}}
+    aria-label={{$:/language/TaskHub/ArchiveProject/Hint}}
+  >
+    <$action-sendmessage $message="tm-add-tag" $param="done"/>
+    <$action-sendmessage $message="tm-auto-save-wiki"/>
+    {{$:/core/images/delete-button}} <<lingo ArchiveProject/Caption>>
+  </$button>
+</$fieldmangler>

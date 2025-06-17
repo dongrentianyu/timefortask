@@ -1,0 +1,39 @@
+description: Show all todos scheduled for today
+tags: $:/tags/PageControls
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/Scheduled
+
+\define lingo-base() $:/language/TaskHub/
+
+<$button
+  popup="$:/state/projectify/scheduled-dropdown"
+  tooltip={{$:/language/TaskHub/TodaysTodos}}
+  aria-label={{$:/language/TaskHub/TodaysTodos}}
+  class={{{ [[desktop-only ]addsuffix<tv-config-toolbar-class>] }}}
+  selectedClass="tc-selected"
+>
+  <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+    <span class="TH-pill-container">
+      {{$:/plugins/mabuqian/TaskHub/images/calendar}}
+      <$list filter=<<TH-has-todos-due-today-or-overdue>>>
+        <div class="TH-pill"></div>
+      </$list>
+    </span>
+  </$list>
+  <$list filter="[<tv-config-toolbar-text>match[yes]]">
+    <span class="tc-btn-text"><<lingo TodaysTodos>></span>
+  </$list>
+</$button>
+
+<$reveal state="$:/state/projectify/scheduled-dropdown" type="popup" position="belowleft">
+  <div class="tc-drop-down TH-scheduled-drop-down">
+    <h4><<ling TodayAndOverdue>></h4>
+    <$list
+      filter=<<TH-todos-due-today-or-overdue>>
+      emptyMessage="""<div class="clear">🌞 <<lingo AllClear>></div>"""
+    >
+      <$link to={{!!title}}>
+	{{||$:/plugins/mabuqian/TaskHub/ui/todo/TodoCaption}}
+      </$link>
+    </$list>
+  </div>
+</$reveal>

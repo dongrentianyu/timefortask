@@ -1,0 +1,50 @@
+title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
+
+\define lingo-base() $:/language/TaskHub/
+
+\define add-project-actions()
+  <$action-createtiddler
+    $basetitle={{$:/state/projectify/new-category!!tag_name}}
+    color={{$:/state/projectify/new-category!!color}}
+    tags="$:/plugins/mabuqian/TaskHub/tags/Category"/>
+  <$action-setfield
+    $tiddler="$:/state/projectify/new-category"
+    tag_name=""
+    color=""
+  />
+  <$action-setfield $tiddler="$:/state/projectify/show-new-category-popup" text=""/>
+  <$action-sendmessage $message="tm-auto-save-wiki"/>
+\end
+
+<div class="TH-form">
+  <$keyboard key="enter">
+    <<add-project-actions>>
+    <div class="TH-control-group">
+      <div class="TH-label"><<lingo Category>></div>
+      <$edit-text
+        class="TH-input"
+        focus="true"
+        tiddler="$:/state/projectify/new-category"
+        field="tag_name"
+      />
+    </div>
+    <div class="TH-control-group">
+      <div class="TH-label">{{$:/language/TagManager/Colour/Heading}}</div>
+      <$edit-text
+        class="TH-input"
+        tiddler="$:/state/projectify/new-category"
+        field="color"
+      />
+    </div>
+  </$keyboard>
+  <div class="TH-actions">
+    <$button class="TH-btn btn-primary">
+      <<add-project-actions>>
+	<<lingo Save/Caption>>
+    </$button>
+    <<lingo Or>>
+    <$button class="TH-btn" set="$:/state/projectify/show-new-category-popup" setTo="">
+      <<lingo Cancel/Caption>>
+    </$button>
+  </div>
+</div>

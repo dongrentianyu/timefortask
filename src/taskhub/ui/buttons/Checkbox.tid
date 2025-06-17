@@ -1,0 +1,11 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/Checkbox
+
+<span class="TH-checkbox">
+  <$list filter=<<TH-is-open>>>
+    <span class="todo"> {{$:/plugins/mabuqian/TaskHub/images/checkbox}}</span>
+    <span class="todo-hover"> {{$:/plugins/mabuqian/TaskHub/images/checkbox-checked}}</span>
+  </$list>
+  <$list filter=<<TH-is-completed>>>
+    <span class="done"> {{$:/plugins/mabuqian/TaskHub/images/checkbox-checked-solid}}</span>
+  </$list>
+</span>

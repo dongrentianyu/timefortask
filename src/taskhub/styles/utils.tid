@@ -1,0 +1,114 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/utils
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.TH-link-muted {
+  text-decoration: underline;
+  color: <<colour muted-foreground>>;
+}
+
+.TH-link-muted:hover,
+.TH-link-muted:active {
+  color: <<colour primary>>;
+}
+
+.TH-icon {
+  vertical-align: middle;
+}
+
+.TH-pie circle {
+  stroke: <<colour primary>>;
+  fill: <<colour background>>;
+}
+    
+.TH-due-date svg {
+  width: 1em;
+  height: 1em;
+}
+
+.TH-label {
+  display: block;
+  font-size: .8em;
+  opacity: .6;
+  padding: 4px 0;
+}
+
+.TH-right-aligned {
+  text-align: right;
+}
+
+.TH-drag-handle {
+  color: <<colour muted-foreground>>;
+  width: 18px;
+  display: inline-block;
+}
+
+.TH-drag-handle svg {
+  vertical-align: middle;
+}
+
+.TH-banner {
+  padding: 10px 20px;
+  background: <<colour notification-background>>;
+  border: 1px solid <<colour notification-border>>;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+.TH-banner button {
+  text-decoration: underline;
+}
+
+.TH-tip {
+  margin: 10px;
+  background: <<colour notification-background>>;
+  color: <<colour notification-foreground>>;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.TH-tip-icon {
+  font-size: 1.2em;
+}
+
+.TH-count {
+  background: #df3f3f;
+  color: white;
+  font-weight: bold;
+  padding: 6px;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 24px;
+  min-width: 24px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.TH-count.info {
+  background: <<colour primary>>;
+}
+
+.tc-tab-buttons .TH-count {
+  font-size: 10px;
+  padding: 4px;
+  min-width: 18px;
+  margin-top: -0.5rem;
+}
+
+.TH-pill-container {
+  position: relative;
+}
+
+.TH-pill-container .TH-pill {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #df3f3f;
+}
+
+modified: 20210117210522162

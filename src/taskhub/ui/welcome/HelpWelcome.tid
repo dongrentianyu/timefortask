@@ -1,0 +1,9 @@
+title: $:/plugins/mabuqian/TaskHub/ui/welcome/HelpWelcome
+
+<$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
+  <div class="TH-welcome">
+    <div class="icon">{{$:/plugins/mabuqian/TaskHub/images/waving-hand}}</div>
+    <h3>Help & documentation</h3>
+    <p>Getting started, guides, customization, etc.</p>
+  </div>
+</$reveal>

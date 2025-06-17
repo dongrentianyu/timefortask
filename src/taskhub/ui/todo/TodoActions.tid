@@ -1,0 +1,14 @@
+title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoActions
+
+<span class="TH-todo-actions">
+  <$list filter="[<showProjectLinks>!is[blank]]" variable="ignore">
+    <$list filter="[all[current]tags[]filter<TH-all-projects-and-subprojects-filter>]">
+      <$link to={{!!title}} overrideClass="TH-project-link"/>
+    </$list>
+  </$list>
+    
+  <$list filter=<<TH-is-scheduled>>>
+    {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
+  </$list>
+  {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoActions}}
+</span>

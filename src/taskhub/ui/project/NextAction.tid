@@ -1,0 +1,10 @@
+title: $:/plugins/mabuqian/TaskHub/ui/project/NextAction
+
+<$list filter=<<TH-has-open-todos>> variable="ignore">
+  <dt class="TH-project">
+    <$link to={{!!title}}><$view field="title"/></$link> {{||$:/plugins/mabuqian/TaskHub/images/pie}}
+  </dt>
+  <dd>
+    <$list filter=<<TH-next-open-todo>> template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"></$list>
+  </dd>
+</$list>

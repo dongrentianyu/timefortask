@@ -1,13 +1,27 @@
 {
   "cSpell.words": [
+    "basetitle",
+    "colour",
+    "createtiddler",
+    "dashbaord",
+    "deletefield",
     "eachday",
     "echarts",
+    "filteredtranscludeinline",
     "gumo-customisation",
+    "insertbefore",
     "kookma",
     "linonetwo",
     "listops",
     "mabuqian",
+    "macrocall",
+    "macrocallinline",
+    "macrodef",
+    "nico",
+    "projectify",
     "sameday",
+    "savetitle",
+    "Stylesheet",
     "subfilter",
     "sukima",
     "taggingtree",
@@ -15,6 +29,8 @@
     "tagtree",
     "tidgi",
     "timefortask",
+    "transclude",
+    "transcludeinline",
     "yaisog"
   ]
 }

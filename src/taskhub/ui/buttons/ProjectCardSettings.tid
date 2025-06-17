@@ -1,0 +1,30 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectCardSettings
+
+\define lingo-base() $:/language/TaskHub/
+
+<$vars popupTiddler=<<qualify "$:/state/projectify/project-card-settings-dropdown">>>
+  <$button
+    popup=<<popupTiddler>>
+    tooltip={{$:/language/TaskHub/CardOptions/Hint}}
+    aria-label={{$:/language/TaskHub/CardOptions/Hint}}
+    class="tc-btn-invisible"
+    selectedClass="tc-selected"
+  >
+    {{$:/core/images/down-arrow}}
+  </$button>
+
+  <$reveal state=<<popupTiddler>> type="popup" position="below" animate="yes" class="tc-drop-down TH-drop-down">
+    <$list filter=<<TH-all-categories>> variable="category">
+      <$button class="tc-btn-invisible">
+	<$tiddler tiddler=<<category>>>
+	  {{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}
+	</$tiddler>
+	<$action-setfield category=<<category>>/>
+      </$button>
+    </$list>
+    <hr/>
+    <$link to="$:/plugins/mabuqian/TaskHub/ui/config/Categories">
+      <<lingo EditCategories>>
+    </$link>
+  </$reveal>
+</$vars>

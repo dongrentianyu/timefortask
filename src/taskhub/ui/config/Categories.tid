@@ -1,0 +1,64 @@
+tags: $:/plugins/mabuqian/TaskHub/tags/Config
+title: $:/plugins/mabuqian/TaskHub/ui/config/Categories
+list-after: $:/plugins/mabuqian/TaskHub/ui/config/Dashboard
+caption: {{$:/language/TaskHub/Categories}}
+
+\define lingo-base() $:/language/TagManager/
+
+\define category-editor()
+<tr>
+  <td><$link to=<<currentTiddler>>>{{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}</$link></td>
+  <td>
+    <$list filter={{$:/config/projectify/DefaultCategoryColours}} variable="colour">
+      <$button class="tc-btn-invisible">
+	{{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
+	<$action-setfield $field="color" $value=<<colour>>/>
+      </$button>
+    </$list>
+    <$edit-text field="color" tag="input" type="color"/>
+  </td>
+  <td>
+    <$button class="TH-btn btn-danger btn-small">
+      {{$:/core/images/delete-button}} {{$:/language/Buttons/Delete/Caption}}
+      <$action-deletetiddler $tiddler=<<currentTiddler>>>
+    </$button>
+  </td>
+</tr>
+\end
+
+!! {{$:/language/TaskHub/Categories}}
+
+<table class="TH-project-category-manager-table">
+  <tbody>
+    <tr>
+      <th>{{$:/language/TaskHub/Category}}</th>
+      <th><<lingo Colour/Heading>></th>
+      <th></th>
+    </tr>
+
+    <$list filter=<<TH-all-categories>>>
+      <<category-editor>>
+    </$list>
+  </tbody>
+</table>
+
+{{$:/plugins/mabuqian/TaskHub/ui/buttons/AddCategory}}
+
+!! Default category colours
+
+<table class="TH-project-category-manager-table">
+  <tbody>
+    <tr>
+      <td><<lingo Colour/Heading>></td>
+      <td>
+	<$edit-text
+	  tiddler="$:/config/projectify/DefaultCategoryColours"
+	  field="text"
+	  tag="input"
+	/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

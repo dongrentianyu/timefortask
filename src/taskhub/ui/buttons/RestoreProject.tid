@@ -1,0 +1,11 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/RestoreProject
+
+\define lingo-base() $:/language/TaskHub/
+
+<$fieldmangler>
+  <$button class="tc-btn-invisible">
+    <$action-sendmessage $message="tm-remove-tag" $param="done"/>
+    <<lingo RestoreProject>>
+    <$action-sendmessage $message="tm-auto-save-wiki"/>
+  </$button>
+</$fieldmangler>

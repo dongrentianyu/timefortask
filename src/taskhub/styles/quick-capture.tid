@@ -1,0 +1,17 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/quick-TH-
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+[data-tiddler-title^="$:/plugins/mabuqian/TaskHub/QuickTH-"] .tc-title,
+[data-tiddler-title^="$:/plugins/mabuqian/TaskHub/QuickTH-"] .tc-subtitle {
+  display: none;
+}
+
+[data-tiddler-title^="$:/plugins/mabuqian/TaskHub/QuickTH-"] svg {
+  fill: <<colour primary>>;
+  vertical-align: middle;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 6px;
+}

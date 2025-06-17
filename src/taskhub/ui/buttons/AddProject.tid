@@ -1,0 +1,23 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/AddProject
+
+\define lingo-base() $:/language/TaskHub/
+
+<$button
+  class="TH-btn btn-primary"
+  popup="$:/state/projectify/show-new-project-popup"
+  tooltip={{$:/language/TaskHub/AddProject/Hint}}
+  aria-label={{$:/language/TaskHub/AddProject/Hint}}
+>
+  {{$:/core/images/edit-button}}
+  <<lingo AddProject/Caption>>
+</$button>
+
+<$reveal
+  type="popup"
+  class="tc-popup-keep TH-popup"
+  state="$:/state/projectify/show-new-project-popup"
+  position="above"
+>
+  <h2> <<lingo NewProject>></h2>
+  {{$:/plugins/mabuqian/TaskHub/ui/forms/NewProject}}
+</$reveal>
