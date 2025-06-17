@@ -28,7 +28,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/project/Project
   <$list filter=<<TH-is-open>>>
     <$vars
       stateTiddler=<<qualify "$:/temp/projectify/todo-form">>
-      todo-tags="[{!!title}] todo"
       placeholder={{$:/language/TaskHub/AddTodoToProject/Placeholder}}
     >
       {{||$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}

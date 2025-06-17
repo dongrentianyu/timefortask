@@ -25,7 +25,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/inbox/Inbox
   <<lingo AddToInbox/Hint>>
 </label>
 <$vars
-  todo-tags="Inbox todo"
   placeholder={{$:/language/TaskHub/AddToInbox/Placeholder}}
 >
   {{$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}

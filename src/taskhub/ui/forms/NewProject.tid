@@ -7,7 +7,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewProject
     $basetitle={{$:/state/projectify/new-project!!project_title}}
     description={{$:/state/projectify/new-project!!description}}
     category={{$:/state/projectify/new-project!!category}}
-    tags="Project"/>
+    tmo="Project"/>
   <$action-setfield
     $tiddler="$:/state/projectify/new-project"
     project_title=""

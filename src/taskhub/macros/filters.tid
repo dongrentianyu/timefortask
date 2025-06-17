@@ -193,8 +193,3 @@ todo [all[current]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<__tag__>]
 \procedure project-refile-tags()
 todo [all[<actionTiddler>]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<currentTiddler>]
 \end
-
-\procedure TH-convert-todo-into-project()
-[all[current]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] -SubProject -Inbox -todo Project
-\end
-

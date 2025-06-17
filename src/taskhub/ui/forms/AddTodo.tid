@@ -8,8 +8,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     $basetitle={{{ [<stateTiddler>get[todo-name]] }}}
     $savetitle="$:/temp/projectify/new-todo"
   />
-
-  <$action-listops $tiddler={{$:/temp/projectify/new-todo}} $tags=<<todo-tags>>/>
+  <$action-listops $tiddler={{$:/temp/projectify/new-todo}} tmo="Task"/>
   <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} due={{{ [<stateTiddler>get[due]] }}}/>
   <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} priority={{{ [<stateTiddler>get[priority]] }}}/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
