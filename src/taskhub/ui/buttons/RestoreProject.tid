@@ -4,7 +4,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/RestoreProject
 
 <$fieldmangler>
   <$button class="tc-btn-invisible">
-    <$action-sendmessage $message="tm-remove-tag" $param="done"/>
+    <$action-setfield  tmo_projectState="doing"/>
     <<lingo RestoreProject>>
   </$button>
 </$fieldmangler>

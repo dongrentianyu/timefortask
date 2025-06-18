@@ -8,7 +8,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ArchiveProject
     tooltip={{$:/language/TaskHub/ArchiveProject/Hint}}
     aria-label={{$:/language/TaskHub/ArchiveProject/Hint}}
   >
-    <$action-sendmessage $message="tm-add-tag" $param="done"/>
+    <$action-setfield tmo_projectState="done"/>
     {{$:/core/images/delete-button}} <<lingo ArchiveProject/Caption>>
   </$button>
 </$fieldmangler>

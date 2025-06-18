@@ -1,0 +1,10 @@
+created: 20250618184717968
+modified: 20250618184856698
+tags: 
+title: 新条目 12
+tmo: Project
+type: text/vnd.tiddlywiki
+
+<$tiddler tiddler="789" >
+	<$transclude $tiddler="$:/plugins/mabuqian/TaskHub/ui/viewTemplate/project"/>
+</$tiddler>

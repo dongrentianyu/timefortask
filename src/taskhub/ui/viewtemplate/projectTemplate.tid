@@ -1,0 +1,48 @@
+title: $:/plugins/mabuqian/TaskHub/ui/viewTemplate/project
+code-body: yes
+
+\procedure lingo-base() $:/language/TaskHub/
+
+<$let tmo_projectFilter-x={{{ [get[tmo_projectFilter]substitute[]] }}}>
+<div class="TH-category-wrapper">
+{{||$:/plugins/mabuqian/TaskHub/ui/buttons/SelectCategory}}
+<%if [{!!tmo_projectState}match[doing]] %>
+{{||$:/plugins/mabuqian/TaskHub/ui/buttons/ArchiveProject}}
+<%endif%>
+</div>
+
+
+<%if [{!!tmo_projectState}!match[doing]] %>
+{{||$:/plugins/mabuqian/TaskHub/ui/project/ArchivedProjectBanner}}
+<%endif%>
+
+<h2><<lingo Todos>> {{||$:/plugins/mabuqian/TaskHub/images/pie}}</h2>
+<%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]count[]match[0]] %>
+<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject" />
+<%else%>
+  <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]] %>
+    <label class="TH-label"><<lingo Scheduled>></label>
+    <div class="TH-todos">
+    <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]trim[]!is[blank]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
+    </div>
+  <%else%>
+    <label class="TH-label"><<lingo OtherTasks>></label>
+    <div class="TH-todos">
+    <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]!has[tmo_dueDate]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
+    </div>
+  <%endif%>
+<%endif%>
+
+
+{{||$:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos}}
+
+<%if [{!!tmo_projectState}match[doing]] %>
+    <$vars
+      stateTiddler=<<qualify "$:/temp/TaskHub/todo-form">>
+      placeholder={{$:/language/TaskHub/AddTodoToProject/Placeholder}}
+      todo-tags=<<currentTiddler>>
+    >
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}
+    </$vars>
+<%endif%>
+</$let>

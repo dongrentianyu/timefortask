@@ -1,9 +1,12 @@
 category: 
 created: 20250618172550631
 description: 
-modified: 20250618172550631
+modified: 20250618201040817
+tags: 
 title: 789
 tmo: Project
-tmo_projectFilter: [tag<currentTiddler>]
+tmo_projectFilter: [tag<currentTiddler>] [tag[77]]
 tmo_projectState: doing
 type: text/vnd.tiddlywiki
+
+0000000

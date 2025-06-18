@@ -1,0 +1,7 @@
+list-before: $:/config/ViewTemplateBodyFilters/system
+tags: $:/tags/ViewTemplateBodyFilter
+title: $:/plugins/mabuqian/TaskHub/ui/viewTemplate/filter
+code-body: yes
+
+[tmo[Task]then[$:/plugins/mabuqian/TaskHub/ui/viewTemplate/task]]
+[tmo[Project]then[$:/plugins/mabuqian/TaskHub/ui/viewTemplate/project]]

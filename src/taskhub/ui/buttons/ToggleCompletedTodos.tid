@@ -2,14 +2,13 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
 
 \define lingo-base() $:/language/TaskHub/
 
-<$list filter=<<TH-has-completed-todos>> variable="ignore">
-  <$vars stateTiddler=<<qualify "$:/state/TaskHub/show-completed">>
+<$vars stateTiddler=<<qualify "$:/state/TaskHub/show-completed">>
 	 default={{$:/config/TaskHub/ShowCompletedTodos}}>
 
     <$reveal type="nomatch" state=<<stateTiddler>> text="yes" default=<<default>>>
       <$button class="tc-btn-invisible TH-link-muted" set=<<stateTiddler>> setTo="yes">
         {{$:/plugins/mabuqian/TaskHub/images/eye}}
-	<$count filter=<<TH-completed-todos>>/> <<lingo Completed/Caption>>
+	<$count filter="[subfilter<tmo_projectFilter-x>!tmo_taskState[todo]]" /> <<lingo Completed/Caption>>
       </$button>
     </$reveal>
 
@@ -19,7 +18,11 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
           {{$:/plugins/mabuqian/TaskHub/images/eyeslash}} <<lingo HideCompleted/Caption>>
         </$button>
       </div>
-      <$macrocall $name="TH-todo-list-completed"/>
+      <div class="TH-todos TH-completed-todos">
+      <$list
+      filter="[subfilter<tmo_projectFilter-x>!tmo_taskState[todo]]"
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+      </div>
     </$reveal>
   </$vars>
-</$list>

@@ -1,6 +1,5 @@
-list-after: $:/core/ui/ViewTemplate/tags
-tags: 
-title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
+title: $:/plugins/mabuqian/TaskHub/ui/viewTemplate/task
+code-body: yes
 
 \define lingo-base() $:/language/TaskHub/
 

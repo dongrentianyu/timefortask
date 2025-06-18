@@ -1,19 +1,6 @@
 title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoItem
 
-\define drag-handle()
-  <$draggable
-    tag="span"
-    class="TH-drag-handle"
-    tiddler={{!!title}}>
-      {{$:/plugins/mabuqian/TaskHub/images/drag-handle}}
-  </$draggable>
-\end
-
 <div class={{{ [all[current]tag[done]then[TH-todo TH-completed]else[TH-todo]] }}}>
-  <$list filter="[<dragHandle>!is[blank]]" variable="ignore">
-    <<drag-handle>>
-  </$list>
-
   <$checkbox field="tmo_taskState" checked="done" unchecked="todo" >
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/Checkbox}}
     <$reveal type="nomatch" state="!!priority" text="">

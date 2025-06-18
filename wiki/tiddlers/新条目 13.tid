@@ -1,0 +1,17 @@
+created: 20250618190729050
+modified: 20250618192253939
+tags: 
+title: 新条目 13
+type: text/vnd.tiddlywiki
+
+<$tiddler tiddler="789" >
+{{!!tmo_projectFilter}}
+<$let a={{{[get[tmo_projectFilter]substitute[]]}}}>
+<<a>>
+<%if [subfilter<a>tmo_taskState[todo]count[]match[0]] %>
+  从文件 URI 加载
+<%else%>
+  从未知协定加载
+<%endif%>
+</$let>
+</$tiddler>

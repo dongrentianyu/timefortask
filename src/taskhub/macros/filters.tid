@@ -55,7 +55,7 @@ codebody: yes
 <!-- 主要用于项目展示中，展示当前项目 -->
 
 \procedure TH-has-todos()
-[all[tiddlers]has[tmo_projectFilter]]
+[all[current]tmo[Project]]
 \end
 
 \procedure TH-has-open-todos()
