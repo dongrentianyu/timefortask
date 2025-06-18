@@ -5,8 +5,8 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Dashboard
 <$macrocall
   $name="tabs"
   tabsList="[all[tiddlers+shadows]tag[$:/plugins/mabuqian/TaskHub/tags/dashboard]]"
-  default={{$:/config/projectify/DefaultDashboardTab}}
-  state="$:/state/projects-and-schedule"
+  default={{$:/config/TaskHub/DefaultDashboardTab}}
+  state="$:/state/TaskHub/projects-and-schedule"
   class="TH-tabs"
 />
 

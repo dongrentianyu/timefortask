@@ -44,7 +44,7 @@ type: text/vnd.tiddlywiki
 <!-- 暂未考虑到子项目情况 -->
 
 \procedure TH-is-empty-project()
-[all[tiddlers]tmo[Project]subfilter{!!tmo_projectFilter}get[tmo_taskState]match[todo]count[]match[0]]
+[all[tiddlers]tmo[Project]subfilter{!!tmo_projectFilter}get[tmo_taskState]match[todo]count[]match[0]] :else[tmo_taskState[todo]count[]match[0]]
 \end
 
 \procedure TH-has-category()
@@ -59,27 +59,27 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-has-open-todos()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]limit[1]]
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]limit[1]] :else[tmo_taskState[todo]limit[1]]
 \end
 
 \procedure TH-has-no-open-todo()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]match[0]]
+[all[current]has[tmo_projectFilter]] :then[subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]match[0]] :else[tmo_taskState[todo]count[]match[0]]
 \end
 
 \procedure TH-has-scheduled-todos()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]has[tmo_dueDate]limit[1]]
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]has[tmo_dueDate]limit[1]] :else[tmo_taskState[todo]has[tmo_dueDate]limit[1]]
 \end
 
 \procedure TH-has-unscheduled-todos()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]!has[tmo_dueDate]limit[1]]
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]!has[tmo_dueDate]limit[1]] :else[tmo_taskState[todo]!has[tmo_dueDate]limit[1]]
 \end
 
 \procedure TH-has-completed-todos()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}!tmo_taskState[todo]limit[1]]
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}!tmo_taskState[todo]limit[1]] :else[!tmo_taskState[todo]limit[1]]
 \end
 
 \procedure TH-next-open-todo()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]limit[1]]
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]limit[1]] :else[tmo_taskState[todo]limit[1]]
 \end
 
 \procedure TH-filtered-todos()
@@ -87,7 +87,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-open-todos()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]]
+[all[tiddlers]tmo_taskState[todo]]
 \end
 
 \procedure TH-completed-todos()
@@ -123,7 +123,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-is-todo()
-[all[current]tmo_taskState[todo]]
+[all[current]has[tmo_taskState]]
 \end
 
 \procedure TH-is-open()

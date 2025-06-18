@@ -8,7 +8,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox
   </div>
 \end
 
-<$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
+<$reveal type="match" state="$:/config/TaskHub/ShowWelcomeMessages" text="yes">
     <$list
       filter=<<TH-is-empty-project>>
       emptyMessage=<<emptyWelcomeMessage>>

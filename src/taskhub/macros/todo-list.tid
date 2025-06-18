@@ -3,29 +3,29 @@ title: $:/plugins/mabuqian/TaskHub/macros/todo-list
 
 \procedure lingo-base() $:/language/TaskHub/
 
-\procedure todo-list-filtered(subFilter)
+\procedure TH-todo-list-filtered(subFilter)
   <div class="TH-todos">
   <$list filter=<<subFilter>>  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
   </div>
 \end
   
-\procedure todo-list(emptyTemplate)
+\procedure TH-todo-list(emptyTemplate)
   <$list filter=<<TH-has-no-open-todo>> variable="ignore">
     <$transclude tiddler=<<emptyTemplate>>/>
   </$list>
   <$list filter=<<TH-has-scheduled-todos>> variable="ignore">
     <label class="TH-label"><<lingo Scheduled>></label>
-    <$macrocall $name="todo-list-filtered" subFilter=<<TH-scheduled-todos-subfilter>>/>
+    <$macrocall $name="TH-todo-list-filtered" subFilter=<<TH-scheduled-todos-subfilter>>/>
   </$list>
   <$list filter=<<TH-has-unscheduled-todos>> variable="ignore">
     <$list filter=<<TH-has-scheduled-todos>>>
       <label class="TH-label"><<lingo OtherTasks>></label>
     </$list>
   </$list>
-  <$macrocall $name="todo-list-filtered" subFilter=<<TH-unscheduled-todos-subfilter>>/>
+  <$macrocall $name="TH-todo-list-filtered" subFilter=<<TH-unscheduled-todos-subfilter>>/>
 \end
 
-\procedure todo-list-completed()
+\procedure TH-todo-list-completed()
   <div class="TH-todos TH-completed-todos">
     <$list
       filter=<<TH-completed-todos>>

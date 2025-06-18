@@ -9,7 +9,7 @@ caption: {{$:/language/TaskHub/Categories}}
 <tr>
   <td><$link to=<<currentTiddler>>>{{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}</$link></td>
   <td>
-    <$list filter={{$:/config/projectify/DefaultCategoryColours}} variable="colour">
+    <$list filter={{$:/config/TaskHub/DefaultCategoryColours}} variable="colour">
       <$button class="tc-btn-invisible">
 	{{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
 	<$action-setfield $field="color" $value=<<colour>>/>
@@ -52,7 +52,7 @@ caption: {{$:/language/TaskHub/Categories}}
       <td><<lingo Colour/Heading>></td>
       <td>
 	<$edit-text
-	  tiddler="$:/config/projectify/DefaultCategoryColours"
+	  tiddler="$:/config/TaskHub/DefaultCategoryColours"
 	  field="text"
 	  tag="input"
 	/>

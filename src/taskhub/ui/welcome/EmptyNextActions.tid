@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions
 
-<$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
+<$reveal type="match" state="$:/config/TaskHub/ShowWelcomeMessages" text="yes">
   <div class="TH-welcome">
     <div class="icon">{{$:/plugins/mabuqian/TaskHub/images/palmtree}}</div>
     <h3>{{$:/language/TaskHub/EmptyInboxDescription}}</h3>

@@ -12,7 +12,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject
 <$macrocall $name="TH-tip" text=<<lingo DragTodoTip>>/>
 \end
 
-<$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
+<$reveal type="match" state="$:/config/TaskHub/ShowWelcomeMessages" text="yes">
     <$list
       filter=<<TH-is-empty-project>>
       emptyMessage=<<emptyWelcomeMessage>>

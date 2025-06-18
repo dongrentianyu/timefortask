@@ -5,7 +5,7 @@ caption: {{$:/language/TaskHub/Dashboard}}
 \define lingo-base() $:/language/TaskHub/
 
 \define projects-view()
-<$select tiddler="$:/config/projectify/projects-view">
+<$select tiddler="$:/config/TaskHub/projects-view">
   <$list filter="list cards">
     <option value=<<currentTiddler>>><$macrocall $name="lingo" title=<<currentTiddler>>/></option>
   </$list>
@@ -13,12 +13,12 @@ caption: {{$:/language/TaskHub/Dashboard}}
 \end
 
 \define default-dashboard-tab()
-<$select tiddler="$:/config/projectify/DefaultDashboardTab">
+<$select tiddler="$:/config/TaskHub/DefaultDashboardTab">
   <$list filter="[all[tiddlers+shadows]tag[$:/plugins/mabuqian/TaskHub/tags/dashboard]]">
     <option value=<<currentTiddler>>>
       <$transclude field="caption"><$text text=<<currentTiddler>>/>
     </$transclude></option>
-    <$select tiddler="$:/config/projectify/projects-view">
+    <$select tiddler="$:/config/TaskHub/projects-view">
 </$select>
 \end
 

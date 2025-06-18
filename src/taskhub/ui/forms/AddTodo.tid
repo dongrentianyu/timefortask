@@ -6,17 +6,19 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
 <$list filter="[<stateTiddler>get[todo-name]trim[]!is[blank]]" variable="ignore">
   <$action-createtiddler
     $basetitle={{{ [<stateTiddler>get[todo-name]] }}}
-    $savetitle="$:/temp/projectify/new-todo"
+    $savetitle="$:/temp/TaskHub/new-todo"
+    tmo="Task"
+    tmo_taskState="todo"
   />
-  <$action-listops $tiddler={{$:/temp/projectify/new-todo}} tmo="Task"/>
-  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} tmo_dueDate={{{ [<stateTiddler>get[due]] }}}/>
+  <$action-listops $tiddler={{$:/temp/TaskHub/new-todo}} />
+  <$action-setfield $tiddler={{$:/temp/TaskHub/new-todo}} tmo_dueDate={{{ [<stateTiddler>get[due]] }}}/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
-  <$action-deletefield $tiddler=<<stateTiddler>> $field="due"/>
+  <$action-deletefield $tiddler=<<stateTiddler>> $field="tmo_dueDate"/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="priority"/>
 </$list>
 \end
 
-<$vars stateTiddler=<<qualify "$:/temp/projectify/add-todo-form">>>
+<$vars stateTiddler=<<qualify "$:/temp/TaskHub/add-todo-form">>>
   <div class="TH-composite-input">
     <$keyboard key="enter">
     <<add-todo-actions>>

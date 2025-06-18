@@ -16,7 +16,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/inbox/Inbox
 <$vars currentTiddler="Inbox">
   <$macrocall
     class="TH-inbox-input"
-    $name="todo-list"
+    $name="TH-todo-list"
     emptyTemplate="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox"
   />
 </$vars>

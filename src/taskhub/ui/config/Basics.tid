@@ -6,14 +6,14 @@ caption: {{$:/language/ControlPanel/Basics/Caption}}
 \define lingo-base() $:/language/TaskHub/
 
 \define select-show-welcome-messages()
-<$select tiddler="$:/config/projectify/ShowWelcomeMessages">
+<$select tiddler="$:/config/TaskHub/ShowWelcomeMessages">
   <option value="yes">{{$:/language/Yes}}</option>
   <option value="no">{{$:/language/No}}</option>
 </$select>
 \end
 
 \define select-show-completed-todos()
-<$select tiddler="$:/config/projectify/ShowCompletedTodos">
+<$select tiddler="$:/config/TaskHub/ShowCompletedTodos">
   <option value="yes">{{$:/language/Yes}}</option>
   <option value="no">{{$:/language/No}}</option>
 </$select>

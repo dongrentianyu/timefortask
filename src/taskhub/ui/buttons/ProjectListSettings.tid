@@ -13,7 +13,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectListSettings
 </$button>
 
 <$reveal state="$:/state/TaskHub/project-list-settings-dropdown" type="popup" position="below" animate="yes" class="tc-drop-down">
-  <$vars switchView={{{ [{$:/config/projectify/projects-view}match[list]then[cards]else[list]] }}}>
+  <$vars switchView={{{ [{$:/config/TaskHub/projects-view}match[list]then[cards]else[list]] }}}>
     <$button class="tc-btn-invisible">
       <$list filter="[<switchView>match[list]]">
 	<<lingo ViewAsList>>
@@ -21,7 +21,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectListSettings
       <$list filter="[<switchView>match[cards]]">
 	<<lingo ViewAsCards>>
       </$list>
-      <$action-setfield $tiddler="$:/config/projectify/projects-view" text=<<switchView>> />
+      <$action-setfield $tiddler="$:/config/TaskHub/projects-view" text=<<switchView>> />
     </$button>
   </$vars>
 

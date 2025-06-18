@@ -4,7 +4,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
 
 <$list filter=<<TH-has-completed-todos>> variable="ignore">
   <$vars stateTiddler=<<qualify "$:/state/TaskHub/show-completed">>
-	 default={{$:/config/projectify/ShowCompletedTodos}}>
+	 default={{$:/config/TaskHub/ShowCompletedTodos}}>
 
     <$reveal type="nomatch" state=<<stateTiddler>> text="yes" default=<<default>>>
       <$button class="tc-btn-invisible TH-link-muted" set=<<stateTiddler>> setTo="yes">
@@ -19,7 +19,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
           {{$:/plugins/mabuqian/TaskHub/images/eyeslash}} <<lingo HideCompleted/Caption>>
         </$button>
       </div>
-      <$macrocall $name="todo-list-completed"/>
+      <$macrocall $name="TH-todo-list-completed"/>
     </$reveal>
   </$vars>
 </$list>

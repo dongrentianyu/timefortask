@@ -34,3 +34,4 @@ title: $:/plugins/mabuqian/TaskHub/readme
 * 修改插件名称前缀，由`$:/plugins/nico/projectify/`前缀改成了`$:/plugins/mabuqian/TaskHub/`前缀
 * 并删除了无用的字段，比如创建时间，修改时间和类型等。
 ** 这些字段应该是由开发时留下的，并没有实际作用
+* 更新状态条目，由`$:/state/projectify/`前缀改成了`$:/state/TaskHub/`前缀
