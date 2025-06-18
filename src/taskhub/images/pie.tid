@@ -2,8 +2,8 @@ title: $:/plugins/mabuqian/TaskHub/images/pie
 
 <$set name="PI" value="3.14">
   <$set name="circumference" value={{{ [<PI>multiply[2]multiply[5]] }}}>
-    <$set name="all" value={{{ [tag<currentTiddler>!has[draft.of]count[]] }}}>
-      <$set name="closed" value={{{ [tag<currentTiddler>!has[draft.of]tag[done]count[]]}}}>
+    <$set name="all" value={{{ [subfilter{!!tmo_projectFilter}tmo[Task]count[]] }}}>
+      <$set name="closed" value={{{ [subfilter{!!tmo_projectFilter}tmo[Task]!tmo_taskState[todo]count[]]}}}>
 	<$set name="ratio" value={{{ [<all>is[0]then<circumference>else<circumference>multiply<closed>divide<all>] }}}>
         <svg
           class="py-icon py-pie"

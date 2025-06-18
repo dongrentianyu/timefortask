@@ -1,5 +1,5 @@
-tags: $:/tags/ControlPanel
+tags: $:/tags/ControlPanel/SettingsTab
 title: $:/plugins/mabuqian/TaskHub/ui/config/Config
-caption: Projectify
+caption: TaskHub
 
 <<tabs "[all[shadows+tiddlers]tag[$:/plugins/mabuqian/TaskHub/tags/Config]!has[draft.of]]" "$:/plugins/mabuqian/TaskHub/ui/config/Basics" "$:/state/TaskHub/config">>

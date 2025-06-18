@@ -1,6 +1,6 @@
 tags: $:/tags/Macro
 title: $:/plugins/mabuqian/TaskHub/macros/filters
-type: text/vnd.tiddlywiki
+codebody: yes
 
 \whitespace trim
 
@@ -33,7 +33,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-is-project()
-[all[tiddlers]all[current]tmo[Project]] [all[current]tmo[SubProject]]
+[all[current]tmo[Project]] [all[current]tmo[SubProject]]
 \end
 
 \procedure TH-is-not-subproject()
@@ -63,7 +63,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-has-no-open-todo()
-[all[current]has[tmo_projectFilter]] :then[subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]match[0]] :else[tmo_taskState[todo]count[]match[0]]
+[subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]]  [all[current]has[tmo_taskState]tmo_taskState[todo]count[]] +[count[]match[0]]
 \end
 
 \procedure TH-has-scheduled-todos()
@@ -87,7 +87,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-open-todos()
-[all[tiddlers]tmo_taskState[todo]]
+[all[tiddlers]tag[Inbox]tmo_taskState[todo]]
 \end
 
 \procedure TH-completed-todos()
@@ -127,11 +127,11 @@ type: text/vnd.tiddlywiki
 \end
 
 \procedure TH-is-open()
-[all[current]tmo_taskState[todo]]
+[all[current]has[tmo_projectState]tmo_projectState[doing]] [all[current]has[tmo_taskState]tmo_taskState[todo]] +[first[]]
 \end
 
 \procedure TH-is-completed()
-[all[current]!tmo_taskState[todo]]
+[all[current]has[tmo_projectState]!tmo_projectState[doing]] [all[current]has[tmo_taskState]!tmo_taskState[todo]] +[first[]]
 \end
 
 \procedure TH-is-overdue()
@@ -169,11 +169,11 @@ type: text/vnd.tiddlywiki
 <!-- 由原来的可拖放状态改成了列表状态，不需要拖放排序 -->
 
 \procedure TH-unscheduled-todos-subfilter()
-[tmo_taskState[todo]!has[tmo_dueDate]]
+[tag[Inbox]tmo_taskState[todo]!has[tmo_dueDate]]
 \end
 
 \procedure TH-scheduled-todos-subfilter()
-[tmo_taskState[todo]has[tmo_dueDate]sort[tmo_dueDate]]
+[tag[Inbox]tmo_taskState[todo]has[tmo_dueDate]sort[tmo_dueDate]]
 \end
 
 \procedure TH-is-active-subfilter()

@@ -9,8 +9,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     $savetitle="$:/temp/TaskHub/new-todo"
     tmo="Task"
     tmo_taskState="todo"
+    tags=<<todo-tags>>
   />
   <$action-listops $tiddler={{$:/temp/TaskHub/new-todo}} />
+  <$action-setfield $tiddler={{$:/temp/TaskHub/new-todo}}  $tags=<<todo-tags>> />
   <$action-setfield $tiddler={{$:/temp/TaskHub/new-todo}} tmo_dueDate={{{ [<stateTiddler>get[due]] }}}/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="tmo_dueDate"/>

@@ -1,10 +1,10 @@
 created: 20250618114511022
-modified: 20250618120252840
+modified: 20250618175730453
 tags: 
 title: 测试
 type: text/vnd.tiddlywiki
 
-<$list filter="[all[current]has[tmo_projectFilter]] :then[subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]match[0]] :else[tmo_taskState[todo]count[]match[0]]" >
+<$list filter="[subfilter{!!tmo_projectFilter}tmo_taskState[todo]]" >
 
 !!! <$link><<currentTiddler>></$link>
 
