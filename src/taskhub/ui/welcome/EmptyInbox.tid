@@ -9,7 +9,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox
 \end
 
 <$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
-  <$droppable actions=<<project-refile-actions>>>
     <$list
       filter=<<TH-is-empty-project>>
       emptyMessage=<<emptyWelcomeMessage>>
@@ -21,5 +20,4 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox
 	{{$:/language/TaskHub/EmptyInboxDescription}}
       </div>
     </$list>
-  </$droppable>
 </$reveal>

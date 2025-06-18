@@ -3,11 +3,6 @@ title: $:/plugins/mabuqian/TaskHub/macros/todo-list
 
 \procedure lingo-base() $:/language/TaskHub/
 
-\procedure project-refile-actions()
-<!-- Macro similar to the todo-list drop actions, but used in project lists/cards -->
-  <$action-listops $tiddler=<<actionTiddler>> $tags=<<project-refile-tags>>/>
-\end
-
 \procedure todo-list-drop-actions(tag)
 <!-- Same as list-tagged-draggable-drop-actions, but removing the item from its old project and adding the todo tag. -->
 <$action-listops $tiddler=<<actionTiddler>> $tags=<<todo-list-drop-tags>>/>
@@ -29,7 +24,7 @@ title: $:/plugins/mabuqian/TaskHub/macros/todo-list
     dragHandle="yes"
     list-tagged-draggable-drop-actions=<<todo-list-drop-actions>>
   >
-    <div class="py-todos">
+    <div class="TH-todos">
       <$macrocall
         $name="list-tagged-draggable"
         tag=<<projectTag>>
@@ -41,25 +36,25 @@ title: $:/plugins/mabuqian/TaskHub/macros/todo-list
 \end
   
 \procedure todo-list(emptyTemplate)
-  <$list filter=<<py-has-no-open-todo>> variable="ignore">
+  <$list filter=<<TH-has-no-open-todo>> variable="ignore">
     <$transclude tiddler=<<emptyTemplate>>/>
   </$list>
-  <$list filter=<<py-has-scheduled-todos>> variable="ignore">
-    <label class="py-label"><<lingo Scheduled>></label>
-    <$macrocall $name="todo-list-filtered" subFilter=<<py-scheduled-todos-subfilter>>/>
+  <$list filter=<<TH-has-scheduled-todos>> variable="ignore">
+    <label class="TH-label"><<lingo Scheduled>></label>
+    <$macrocall $name="todo-list-filtered" subFilter=<<TH-scheduled-todos-subfilter>>/>
   </$list>
-  <$list filter=<<py-has-unscheduled-todos>> variable="ignore">
-    <$list filter=<<py-has-scheduled-todos>>>
-      <label class="py-label"><<lingo OtherTasks>></label>
+  <$list filter=<<TH-has-unscheduled-todos>> variable="ignore">
+    <$list filter=<<TH-has-scheduled-todos>>>
+      <label class="TH-label"><<lingo OtherTasks>></label>
     </$list>
   </$list>
-  <$macrocall $name="todo-list-filtered" subFilter=<<py-unscheduled-todos-subfilter>>/>
+  <$macrocall $name="todo-list-filtered" subFilter=<<TH-unscheduled-todos-subfilter>>/>
 \end
 
 \procedure todo-list-completed()
-  <div class="py-todos py-completed-todos">
+  <div class="TH-todos TH-completed-todos">
     <$list
-      filter=<<py-completed-todos>>
+      filter=<<TH-completed-todos>>
       template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
     />
   </div>

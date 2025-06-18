@@ -189,7 +189,3 @@ tmo_taskState[todo]
 \procedure todo-list-drop-tags()
 todo [all[current]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<__tag__>]
 \end
-
-\procedure project-refile-tags()
-todo [all[<actionTiddler>]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<currentTiddler>]
-\end

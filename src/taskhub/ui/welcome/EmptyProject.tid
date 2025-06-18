@@ -13,7 +13,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject
 \end
 
 <$reveal type="match" state="$:/config/projectify/ShowWelcomeMessages" text="yes">
-  <$droppable actions=<<project-refile-actions>>>
     <$list
       filter=<<TH-is-empty-project>>
       emptyMessage=<<emptyWelcomeMessage>>
@@ -25,5 +24,4 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject
 	{{$:/language/TaskHub/EmptyProjectDescription}}
       </div>
     </$list>
-  </$droppable>
 </$reveal>
