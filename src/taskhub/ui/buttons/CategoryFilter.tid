@@ -3,8 +3,8 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/CategoryFilter
 \define lingo-base() $:/language/TaskHub/
 
 <$vars
-  popupTiddler=<<qualify "$:/state/projectify/category-filter-dropdown">>
-  stateTiddler="$:/state/projectify/project-category-filter"
+  popupTiddler=<<qualify "$:/state/TaskHub/category-filter-dropdown">>
+  stateTiddler="$:/state/TaskHub/project-category-filter"
 >
   <$button popup=<<popupTiddler>> class="TH-btn btn-small">
     {{$:/plugins/mabuqian/TaskHub/images/funnel}}

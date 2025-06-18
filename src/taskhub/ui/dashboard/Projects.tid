@@ -16,7 +16,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Projects
 
 <$reveal
   type="match"
-  state="$:/state/projectify/show-reorder-projects"
+  state="$:/state/TaskHub/show-reorder-projects"
   class="tc-tiddler-info tc-popup-handle TH-reorder-projects"
   text="yes"
   animate="yes"

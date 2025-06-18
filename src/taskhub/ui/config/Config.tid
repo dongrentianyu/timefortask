@@ -2,4 +2,4 @@ tags: $:/tags/ControlPanel
 title: $:/plugins/mabuqian/TaskHub/ui/config/Config
 caption: Projectify
 
-<<tabs "[all[shadows+tiddlers]tag[$:/plugins/mabuqian/TaskHub/tags/Config]!has[draft.of]]" "$:/plugins/mabuqian/TaskHub/ui/config/Basics" "$:/state/projectify/config">>
+<<tabs "[all[shadows+tiddlers]tag[$:/plugins/mabuqian/TaskHub/tags/Config]!has[draft.of]]" "$:/plugins/mabuqian/TaskHub/ui/config/Basics" "$:/state/TaskHub/config">>

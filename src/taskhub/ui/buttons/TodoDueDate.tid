@@ -2,7 +2,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate
 
 \define lingo-base() $:/language/TaskHub/
 
-<$vars popupTiddler=<<qualify "$:/state/projectify/due-date-dropdown">>>
+<$vars popupTiddler=<<qualify "$:/state/TaskHub/due-date-dropdown">>>
   <$list filter=<<TH-is-overdue>>>
     <$button class="TH-btn TH-due-date TH-overdue" popup=<<popupTiddler>>>
       <$list

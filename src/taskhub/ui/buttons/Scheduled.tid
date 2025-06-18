@@ -5,7 +5,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/Scheduled
 \define lingo-base() $:/language/TaskHub/
 
 <$button
-  popup="$:/state/projectify/scheduled-dropdown"
+  popup="$:/state/TaskHub/scheduled-dropdown"
   tooltip={{$:/language/TaskHub/TodaysTodos}}
   aria-label={{$:/language/TaskHub/TodaysTodos}}
   class={{{ [[desktop-only ]addsuffix<tv-config-toolbar-class>] }}}
@@ -24,7 +24,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/Scheduled
   </$list>
 </$button>
 
-<$reveal state="$:/state/projectify/scheduled-dropdown" type="popup" position="belowleft">
+<$reveal state="$:/state/TaskHub/scheduled-dropdown" type="popup" position="belowleft">
   <div class="tc-drop-down TH-scheduled-drop-down">
     <h4><<ling TodayAndOverdue>></h4>
     <$list

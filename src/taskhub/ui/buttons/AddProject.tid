@@ -4,7 +4,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/AddProject
 
 <$button
   class="TH-btn btn-primary"
-  popup="$:/state/projectify/show-new-project-popup"
+  popup="$:/state/TaskHub/show-new-project-popup"
   tooltip={{$:/language/TaskHub/AddProject/Hint}}
   aria-label={{$:/language/TaskHub/AddProject/Hint}}
 >
@@ -15,7 +15,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/AddProject
 <$reveal
   type="popup"
   class="tc-popup-keep TH-popup"
-  state="$:/state/projectify/show-new-project-popup"
+  state="$:/state/TaskHub/show-new-project-popup"
   position="above"
 >
   <h2> <<lingo NewProject>></h2>

@@ -5,5 +5,4 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/TodoConvert
 <$button class="tc-btn-invisible">
   {{$:/plugins/mabuqian/TaskHub/images/front}} <<lingo ConvertIntoProject>>
   <$action-setfield tmo="Project"/>
-  <$action-sendmessage $message="tm-auto-save-wiki"/>
 </$button>

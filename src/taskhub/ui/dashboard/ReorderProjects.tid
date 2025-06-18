@@ -14,5 +14,5 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ReorderProjects
 
 <$button class="TH-btn">
   <<lingo Close/Caption>>
-  <$action-setfield $tiddler="$:/state/projectify/show-reorder-projects" text="no"/>
+  <$action-setfield $tiddler="$:/state/TaskHub/show-reorder-projects" text="no"/>
 </$button>

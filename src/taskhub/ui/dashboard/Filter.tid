@@ -5,10 +5,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/Everything
 
 {{$:/language/Search/Filter/Hint}}
 
-<$vars stateTiddler="$:/state/projectify/todo-filter">
+<$vars stateTiddler="$:/state/TaskHub/todo-filter">
   <$edit-text class="TH-input input-larger" tiddler=<<stateTiddler>> field="filter"/>
-  <$vars popupTiddler=<<qualify "$:/state/projectify/todo-filter-dropdown">>
-	 todoFilter={{$:/state/projectify/todo-filter!!filter}}
+  <$vars popupTiddler=<<qualify "$:/state/TaskHub/todo-filter-dropdown">>
+	 todoFilter={{$:/state/TaskHub/todo-filter!!filter}}
 	 showProjectLinks="yes">
     <span class="tc-popup-keep">
       <$button popup=<<popupTiddler>> class="tc-btn-invisible">

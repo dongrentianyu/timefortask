@@ -166,26 +166,20 @@ type: text/vnd.tiddlywiki
 [all[current]] -[!days:tmo_dueDate[-1]]
 \end
 
-<!-- 下面几个没有加上中括号，可能出现了问题，后续再查看情况 -->
+<!-- 由原来的可拖放状态改成了列表状态，不需要拖放排序 -->
 
 \procedure TH-unscheduled-todos-subfilter()
-tmo_taskState[todo]!has[tmo_dueDate]
+[tmo_taskState[todo]!has[tmo_dueDate]]
 \end
 
 \procedure TH-scheduled-todos-subfilter()
-tmo_taskState[todo]has[tmo_dueDate]sort[tmo_dueDate]
+[tmo_taskState[todo]has[tmo_dueDate]sort[tmo_dueDate]]
 \end
 
 \procedure TH-is-active-subfilter()
-tmo_taskState[todo]
+[tmo_taskState[todo]]
 \end
 
 \procedure TH-all-projects-and-subprojects-filter()
 [tmo[Project]] [tmo[SubProject]]
-\end
-
-<!-- 下面几个需要再研究，暂不改 -->
-
-\procedure todo-list-drop-tags()
-todo [all[current]tags[]] -Inbox -[tmo[Project]] -[tag[SubProject]] [<__tag__>]
 \end

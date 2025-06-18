@@ -9,13 +9,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     $savetitle="$:/temp/projectify/new-todo"
   />
   <$action-listops $tiddler={{$:/temp/projectify/new-todo}} tmo="Task"/>
-  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} due={{{ [<stateTiddler>get[due]] }}}/>
-  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} priority={{{ [<stateTiddler>get[priority]] }}}/>
+  <$action-setfield $tiddler={{$:/temp/projectify/new-todo}} tmo_dueDate={{{ [<stateTiddler>get[due]] }}}/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="due"/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="priority"/>
-
-  <$action-sendmessage $message="tm-auto-save-wiki"/>
 </$list>
 \end
 

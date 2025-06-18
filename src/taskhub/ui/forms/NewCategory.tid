@@ -4,16 +4,15 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
 
 \define add-project-actions()
   <$action-createtiddler
-    $basetitle={{$:/state/projectify/new-category!!tag_name}}
-    color={{$:/state/projectify/new-category!!color}}
+    $basetitle={{$:/state/TaskHub/new-category!!tag_name}}
+    color={{$:/state/TaskHub/new-category!!color}}
     tags="$:/plugins/mabuqian/TaskHub/tags/Category"/>
   <$action-setfield
-    $tiddler="$:/state/projectify/new-category"
+    $tiddler="$:/state/TaskHub/new-category"
     tag_name=""
     color=""
   />
-  <$action-setfield $tiddler="$:/state/projectify/show-new-category-popup" text=""/>
-  <$action-sendmessage $message="tm-auto-save-wiki"/>
+  <$action-setfield $tiddler="$:/state/TaskHub/show-new-category-popup" text=""/>
 \end
 
 <div class="TH-form">
@@ -24,7 +23,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
       <$edit-text
         class="TH-input"
         focus="true"
-        tiddler="$:/state/projectify/new-category"
+        tiddler="$:/state/TaskHub/new-category"
         field="tag_name"
       />
     </div>
@@ -32,7 +31,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
       <div class="TH-label">{{$:/language/TagManager/Colour/Heading}}</div>
       <$edit-text
         class="TH-input"
-        tiddler="$:/state/projectify/new-category"
+        tiddler="$:/state/TaskHub/new-category"
         field="color"
       />
     </div>
@@ -43,7 +42,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
 	<<lingo Save/Caption>>
     </$button>
     <<lingo Or>>
-    <$button class="TH-btn" set="$:/state/projectify/show-new-category-popup" setTo="">
+    <$button class="TH-btn" set="$:/state/TaskHub/show-new-category-popup" setTo="">
       <<lingo Cancel/Caption>>
     </$button>
   </div>

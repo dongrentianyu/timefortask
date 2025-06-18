@@ -4,7 +4,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/AddCategory
 
 <$button
   class="TH-btn btn-primary"
-  popup="$:/state/projectify/show-new-category-popup"
+  popup="$:/state/TaskHub/show-new-category-popup"
   tooltip={{$:/language/TaskHub/AddCategory/Hint}}
   aria-label={{$:/language/TaskHub/AddCategory/Hint}}
 >
@@ -15,7 +15,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/AddCategory
 <$reveal
   type="popup"
   class="tc-popup-keep TH-popup"
-  state="$:/state/projectify/show-new-category-popup"
+  state="$:/state/TaskHub/show-new-category-popup"
   position="above"
 >
   <h2><<lingo Category>></h2>

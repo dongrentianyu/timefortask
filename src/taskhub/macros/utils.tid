@@ -4,9 +4,9 @@ type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/TaskHub/
 
-\define py-tip(text)
-<div class="py-tip">
-  <span class="py-tip-icon">{{$:/plugins/mabuqian/TaskHub/images/lightbulb}}</span>
+\define TH-tip(text)
+<div class="TH-tip">
+  <span class="TH-tip-icon">{{$:/plugins/mabuqian/TaskHub/images/lightbulb}}</span>
   ''<<lingo Tip>>: ''$text$
 </div>
 \end

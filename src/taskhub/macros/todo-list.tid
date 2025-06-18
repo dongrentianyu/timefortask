@@ -3,36 +3,10 @@ title: $:/plugins/mabuqian/TaskHub/macros/todo-list
 
 \procedure lingo-base() $:/language/TaskHub/
 
-\procedure todo-list-drop-actions(tag)
-<!-- Same as list-tagged-draggable-drop-actions, but removing the item from its old project and adding the todo tag. -->
-<$action-listops $tiddler=<<actionTiddler>> $tags=<<todo-list-drop-tags>>/>
-<!-- Save the current ordering of the tiddlers with this tag -->
-<$set name="order" filter="[<tag>tagging[]]">
-<!-- Remove any list-after or list-before fields from the tiddlers with this tag -->
-<$list filter="[<tag>tagging[]]">
-<$action-deletefield $field="list-before"/>
-<$action-deletefield $field="list-after"/>
-</$list>
-<!-- Save the new order to the Tag Tiddler -->
-<$action-listops $tiddler=<<tag>> $field="list" $filter="+[enlist<order>] +[insertbefore:currentTiddler<actionTiddler>]"/>
-</$set>
-\end
-
 \procedure todo-list-filtered(subFilter)
-  <$vars
-    projectTag={{!!title}}
-    dragHandle="yes"
-    list-tagged-draggable-drop-actions=<<todo-list-drop-actions>>
-  >
-    <div class="TH-todos">
-      <$macrocall
-        $name="list-tagged-draggable"
-        tag=<<projectTag>>
-        subFilter=<<subFilter>>
-        itemTemplate="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
-      />
-    </div>
-  </$vars>
+  <div class="TH-todos">
+  <$list filter=<<subFilter>>  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
+  </div>
 \end
   
 \procedure todo-list(emptyTemplate)

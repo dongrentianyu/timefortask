@@ -9,7 +9,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ArchiveProject
     aria-label={{$:/language/TaskHub/ArchiveProject/Hint}}
   >
     <$action-sendmessage $message="tm-add-tag" $param="done"/>
-    <$action-sendmessage $message="tm-auto-save-wiki"/>
     {{$:/core/images/delete-button}} <<lingo ArchiveProject/Caption>>
   </$button>
 </$fieldmangler>

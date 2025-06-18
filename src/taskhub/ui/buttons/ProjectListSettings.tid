@@ -3,7 +3,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectListSettings
 \define lingo-base() $:/language/TaskHub/
 
 <$button
-  popup="$:/state/projectify/project-list-settings-dropdown"
+  popup="$:/state/TaskHub/project-list-settings-dropdown"
   tooltip={{$:/language/TaskHub/Options/Hint}}
   aria-label={{$:/language/TaskHub/Options/Hint}}
   class="tc-btn-invisible"
@@ -12,7 +12,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectListSettings
   {{$:/core/images/down-arrow}}
 </$button>
 
-<$reveal state="$:/state/projectify/project-list-settings-dropdown" type="popup" position="below" animate="yes" class="tc-drop-down">
+<$reveal state="$:/state/TaskHub/project-list-settings-dropdown" type="popup" position="below" animate="yes" class="tc-drop-down">
   <$vars switchView={{{ [{$:/config/projectify/projects-view}match[list]then[cards]else[list]] }}}>
     <$button class="tc-btn-invisible">
       <$list filter="[<switchView>match[list]]">
@@ -27,6 +27,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectListSettings
 
   <$button class="tc-btn-invisible">
     <<lingo ReorderProjects/Caption>>
-    <$action-setfield $tiddler="$:/state/projectify/show-reorder-projects" text="yes">
+    <$action-setfield $tiddler="$:/state/TaskHub/show-reorder-projects" text="yes">
   </$button>
 </$reveal>

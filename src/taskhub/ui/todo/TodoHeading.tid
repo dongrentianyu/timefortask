@@ -9,7 +9,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority}}
 
-    <$vars popupTiddler=<<qualify "$:/state/projectify/todo-heading-dropdown">>>
+    <$vars popupTiddler=<<qualify "$:/state/TaskHub/todo-heading-dropdown">>>
       <$button
 	popup=<<popupTiddler>>
 	class="TH-btn"
@@ -24,7 +24,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
 	  <$button class="tc-btn-invisible">
       	    {{$:/plugins/mabuqian/TaskHub/images/checklist}} <<lingo AddSubTasks/Caption>>
 	    <$action-listops $tags="[[SubProject]]"/>
-	    <$action-sendmessage $message="tm-auto-save-wiki"/>
 	  </$button>
 	</$list>
 

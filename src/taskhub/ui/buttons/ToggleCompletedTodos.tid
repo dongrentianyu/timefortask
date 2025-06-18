@@ -3,7 +3,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
 \define lingo-base() $:/language/TaskHub/
 
 <$list filter=<<TH-has-completed-todos>> variable="ignore">
-  <$vars stateTiddler=<<qualify "$:/state/projectify/show-completed">>
+  <$vars stateTiddler=<<qualify "$:/state/TaskHub/show-completed">>
 	 default={{$:/config/projectify/ShowCompletedTodos}}>
 
     <$reveal type="nomatch" state=<<stateTiddler>> text="yes" default=<<default>>>

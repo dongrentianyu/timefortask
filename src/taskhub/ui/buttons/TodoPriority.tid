@@ -1,7 +1,7 @@
 title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority
 
 <$vars
-  popupTiddler=<<qualify "$:/state/projectify/due-priority-dropdown">>
+  popupTiddler=<<qualify "$:/state/TaskHub/due-priority-dropdown">>
   cssClass={{{ [[TH-btn TH-priority TH-priority-]addsuffix{!!priority}] }}}
 >
   <$button

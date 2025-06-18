@@ -4,7 +4,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ActiveProjects
   filter=<<TH-has-projects>>
   emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProjects}}
   >
-  <$vars category={{$:/state/projectify/project-category-filter}}>
+  <$vars category={{$:/state/TaskHub/project-category-filter}}>
     <$reveal type="match" state="$:/config/projectify/projects-view" text="list">
       {{$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectList}}
     </$reveal>

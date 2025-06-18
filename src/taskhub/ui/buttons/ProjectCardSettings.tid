@@ -2,7 +2,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ProjectCardSettings
 
 \define lingo-base() $:/language/TaskHub/
 
-<$vars popupTiddler=<<qualify "$:/state/projectify/project-card-settings-dropdown">>>
+<$vars popupTiddler=<<qualify "$:/state/TaskHub/project-card-settings-dropdown">>>
   <$button
     popup=<<popupTiddler>>
     tooltip={{$:/language/TaskHub/CardOptions/Hint}}
