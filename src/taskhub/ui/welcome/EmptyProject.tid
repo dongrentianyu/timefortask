@@ -17,11 +17,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject
       filter=<<TH-is-empty-project>>
       emptyMessage=<<emptyWelcomeMessage>>
       variable="ignore">
-
       <div class="TH-welcome">
-	<div class="icon">{{$:/plugins/mabuqian/TaskHub/images/victory}}</div>
-	<h3>{{$:/language/TaskHub/EmptyProjectTitle}}</h3>
-	{{$:/language/TaskHub/EmptyProjectDescription}}
+      <div class="icon">{{$:/plugins/mabuqian/TaskHub/images/victory}}</div>
+      <h3>{{$:/language/TaskHub/EmptyProjectTitle}}</h3>
+      {{$:/language/TaskHub/EmptyProjectDescription}}
       </div>
     </$list>
 </$reveal>

@@ -35,7 +35,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     <div class="TH-todo-actions">
       <$vars currentTiddler=<<stateTiddler>>>
 	<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate" mode="inline"/>
-	<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority" mode="inline"/>
       </$vars>
     </div>
   </div>
