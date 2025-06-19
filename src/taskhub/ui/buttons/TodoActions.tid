@@ -15,7 +15,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoActions
 
   <$reveal state=<<popupTiddler>> type="popup" position="belowleft" animate="no">
     <div class="tc-drop-down TH-drop-down TH-date-picker TH-todo-actions-drop-down">
-      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoPriority}}
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoTaskState}}
       <hr/>
       {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoDueDate}}
       <hr/>

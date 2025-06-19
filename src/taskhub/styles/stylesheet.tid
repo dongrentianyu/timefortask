@@ -106,7 +106,7 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
   float: right;
 }
 
-.TH-todo .TH-btn.TH-priority {
+.TH-todo .TH-btn.TH-taskState {
   border: none;
 }
 
@@ -135,7 +135,7 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
 }
 
 .TH-todo-actions .TH-btn,
-.TH-todo .TH-btn.TH-priority {
+.TH-todo .TH-btn.TH-taskState {
   color: #999;
   fill: #999;
   padding: 4px 8px;
@@ -162,7 +162,7 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
 
 @media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
   .TH-todo .TH-todo-actions .TH-btn.TH-not-scheduled,
-  .TH-todo .TH-todo-actions .TH-btn.TH-priority- {
+  .TH-todo .TH-todo-actions .TH-btn.TH-taskState- {
     opacity: 0;
     transition: opacity ease-in .14s;
   }
@@ -247,26 +247,26 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
   text-align: center;
 }
 
-.TH-priority-3, .TH-priority-3 svg,
-.TH-drop-down .TH-priority-3,
-.TH-drop-down .TH-priority-3 svg,
-.TH-btn.TH-priority-3 {
+.TH-taskState-breakdown, .TH-taskState-breakdown svg,
+.TH-drop-down .TH-taskState-breakdown,
+.TH-drop-down .TH-taskState-breakdown svg,
+.TH-btn.TH-taskState-breakdown {
   fill: #e73939;
   color: #e73939;
 }
 
-.TH-priority-2, .TH-priority-2 svg,
-.TH-drop-down .TH-priority-2,
-.TH-drop-down .TH-priority-2 svg,
-.TH-btn.TH-priority-2 {
+.TH-taskState-closed, .TH-taskState-closed svg,
+.TH-drop-down .TH-taskState-closed,
+.TH-drop-down .TH-taskState-closed svg,
+.TH-btn.TH-taskState-closed {
   fill: #e77a39;
   color: #e77a39;
 }
 
-.TH-priority-1, .TH-priority-1 svg,
-.TH-drop-down .TH-priority-1,
-.TH-drop-down .TH-priority-1 svg,
-.TH-btn.TH-priority-1 {
+.TH-taskState-done, .TH-taskState-done svg,
+.TH-drop-down .TH-taskState-done,
+.TH-drop-down .TH-taskState-done svg,
+.TH-btn.TH-taskState-done {
   fill: #24cd5e;
   color: #24cd5e;
 }

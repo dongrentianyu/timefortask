@@ -3,9 +3,6 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoItem
 <div class={{{ [all[current]tag[done]then[TH-todo TH-completed]else[TH-todo]] }}}>
   <$checkbox field="tmo_taskState" checked="done" unchecked="todo" >
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/Checkbox}}
-    <$reveal type="nomatch" state="!!priority" text="">
-      {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority}}
-    </$reveal>
     <$link to={{!!title}}>
       {{||$:/plugins/mabuqian/TaskHub/ui/todo/TodoCaption}}
       <$list filter=<<TH-has-todos>> variable="ignore">
@@ -18,6 +15,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoItem
       </$list>
     </$link>
   </$checkbox>
-
-  {{||$:/plugins/mabuqian/TaskHub/ui/todo/TodoActions}}
+    {{||$:/plugins/mabuqian/TaskHub/ui/todo/TodoActions}}
+    <$reveal type="nomatch" state="!!tmo_taskState" text="">
+    <span class="TH-todo-actions">
+      {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoTaskState}}
+    </span>
+    </$reveal>
 </div>

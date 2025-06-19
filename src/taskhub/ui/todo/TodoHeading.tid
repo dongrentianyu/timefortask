@@ -7,7 +7,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
 <$list filter=<<TH-is-todo>>>
   <div class="TH-todo-heading">
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
-    {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoPriority}}
+    {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoTaskState}}
 
     <$vars popupTiddler=<<qualify "$:/state/TaskHub/todo-heading-dropdown">>>
       <$button

@@ -1,0 +1,21 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoTaskState
+
+<$vars
+  popupTiddler=<<qualify "$:/state/TaskHub/due-taskState-dropdown">>
+  cssClass={{{ [[TH-btn TH-taskState TH-taskState-]addsuffix{!!tmo_taskState}] }}}
+>
+  <$button
+    class=<<cssClass>>
+    popup=<<popupTiddler>>
+    tooltip={{$:/language/TaskHub/taskState/Hint}}
+    aria-label={{$:/language/TaskHub/taskState/Hint}}
+  >
+    {{$:/plugins/mabuqian/TaskHub/images/flag}}
+  </$button>
+
+  <$reveal state=<<popupTiddler>> type="popup" position="belowleft" animate="no">
+    <div class="tc-drop-down TH-drop-down">
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoTaskState}}
+    </div>
+  </$reveal>
+</$vars>

@@ -48,7 +48,7 @@ Options/Hint: Options
 Or: or
 OtherTasks: Other tasks
 Overdue: Overdue
-Priority/Hint: Priority
+taskState/Hint: taskState
 ProjectArchived: This project is archived.
 Projects: Projects
 QuickAddTodo: Quick add todo
