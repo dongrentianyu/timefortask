@@ -9,7 +9,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject
   {{$:/language/TaskHub/WelcomeProjectDescription}}
 </div>
 
-<$macrocall $name="TH-tip" text=<<lingo DragTodoTip>>/>
+<$transclude $variable="TH-tip" text=<<lingo DragTodoTip>>/>
 \end
 
 <$reveal type="match" state="$:/config/TaskHub/ShowWelcomeMessages" text="yes">

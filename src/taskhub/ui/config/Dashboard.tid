@@ -7,7 +7,7 @@ caption: {{$:/language/TaskHub/Dashboard}}
 \define projects-view()
 <$select tiddler="$:/config/TaskHub/projects-view">
   <$list filter="list cards">
-    <option value=<<currentTiddler>>><$macrocall $name="lingo" title=<<currentTiddler>>/></option>
+    <option value=<<currentTiddler>>><$transclude $variable="lingo" title=<<currentTiddler>>/></option>
   </$list>
 </$select>
 \end

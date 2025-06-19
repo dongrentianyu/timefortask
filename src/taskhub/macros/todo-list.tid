@@ -15,14 +15,14 @@ title: $:/plugins/mabuqian/TaskHub/macros/todo-list
   </$list>
   <$list filter=<<TH-has-scheduled-todos>> variable="ignore">
     <label class="TH-label"><<lingo Scheduled>></label>
-    <$macrocall $name="TH-todo-list-filtered" subFilter=<<TH-scheduled-todos-subfilter>>/>
+    <$transclude $variable="TH-todo-list-filtered" subFilter=<<TH-scheduled-todos-subfilter>>/>
   </$list>
   <$list filter=<<TH-has-unscheduled-todos>> variable="ignore">
     <$list filter=<<TH-has-scheduled-todos>>>
       <label class="TH-label"><<lingo OtherTasks>></label>
     </$list>
   </$list>
-  <$macrocall $name="TH-todo-list-filtered" subFilter=<<TH-unscheduled-todos-subfilter>>/>
+  <$transclude $variable="TH-todo-list-filtered" subFilter=<<TH-unscheduled-todos-subfilter>>/>
 \end
 
 \procedure TH-todo-list-completed()
