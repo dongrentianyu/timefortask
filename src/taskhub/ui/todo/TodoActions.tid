@@ -7,7 +7,9 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoActions
     </$list>
   </$list>
     
-  <$list filter=<<TH-is-scheduled>>>
-    {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
-  </$list>
+  <%if [<currentTiddler>has[tmo_dueDate]] %>
+  {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
+ <%else%>
+  <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
+  <%endif%>
 </span>

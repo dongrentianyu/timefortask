@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoItem
 
-<div class={{{ [all[current]tag[done]then[TH-todo TH-completed]else[TH-todo]] }}}>
+<div class={{{ [all[current]!tmo_taskState[todo]then[TH-todo TH-completed]else[TH-todo]] }}}>
   <$checkbox field="tmo_taskState" checked="done" unchecked="todo" >
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/Checkbox}}
     <$link to={{!!title}}>

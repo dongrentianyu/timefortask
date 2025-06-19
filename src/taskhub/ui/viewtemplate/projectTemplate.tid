@@ -20,19 +20,19 @@ code-body: yes
 <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]count[]match[0]] %>
 <$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject" />
 <%else%>
-  <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]] %>
+  <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]count[]!match[0]] %>
     <label class="TH-label"><<lingo Scheduled>></label>
     <div class="TH-todos">
-    <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]trim[]!is[blank]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
+    <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]] :filter[get[tmo_dueDate]trim[]!is[blank]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
     </div>
-  <%else%>
+  <%endif%>
+  <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]!has[tmo_dueDate]count[]!match[0]] %>
     <label class="TH-label"><<lingo OtherTasks>></label>
     <div class="TH-todos">
     <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]!has[tmo_dueDate]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
     </div>
   <%endif%>
 <%endif%>
-
 
 {{||$:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos}}
 
