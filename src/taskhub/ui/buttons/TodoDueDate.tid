@@ -2,45 +2,41 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate
 
 \define lingo-base() $:/language/TaskHub/
 
+<$let
+  dueDate={{{ [{!!tmo_dueDate}else<now "YYYY-0MM-0DD">] }}}
+  today=<<now "YYYY-0MM-0DD">>
+  format="[UTC]YYYY-0MM-0DD"
+  oneday={{{ [[24]multiply[60]multiply[60]multiply[1000]] }}}
+  yesterday={{{ [<today>parsedate[unixtime]subtract<oneday>parsedate:unixtime<format>] }}}
+  tomorrow={{{ [<today>parsedate[unixtime]add<oneday>parsedate:unixtime<format>] }}}
+	tmoTime={{{ [<dueDate>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[YYYY-0MM-0DD]] }}}
+>
+<%if [<currentTiddler>has[tmo_dueDate]get[tmo_dueDate]trim[]!is[blank]] %>
+<%if [<dueDate>match<yesterday>] %>
+<span class="TH-btn TH-due-date TH-overdue" >
+  <<lingo Yesterday>>
+</span>
+<%elseif [<dueDate>match<tomorrow>] %>
+<span class="TH-btn TH-due-date TH-due-tomorrow" >
+  <<lingo Tomorrow>>
+</span>
+<%elseif [<dueDate>match<today>] %>
+<span class="TH-btn TH-due-date TH-due-today" >
+  {{$:/plugins/mabuqian/TaskHub/images/calendar}}  <<lingo Today>>
+</span>
+<%elseif [<dueDate>compare:date:gt<tomorrow>] %>
+<span class="TH-btn TH-due-date" >
+  <$text text=<<tmoTime>> />
+</span>
+<%else%>
+<span class="TH-btn TH-due-date TH-overdue" >
+  <$text text=<<tmoTime>> />
+</span>
+<%endif%>
+<%endif%>
+<span>
+</span>
 <$vars popupTiddler=<<qualify "$:/state/TaskHub/due-date-dropdown">>>
-  <$list filter=<<TH-is-overdue>>>
-    <$button class="TH-btn TH-due-date TH-overdue" popup=<<popupTiddler>>>
-      <$list
-        filter=<<TH-is-due-yesterday>>
-        emptyMessage="""<$view field="due" format="relativedate"/>"""
-      >
-	<<lingo Yesterday>>
-      </$list>
-    </$button>
-  </$list>
-  <$list filter=<<TH-is-not-overdue>>>
-    <$list filter=<<TH-is-due-today>>>
-      <$button class="TH-btn TH-due-date TH-due-today" popup=<<popupTiddler>>>
-      {{$:/plugins/mabuqian/TaskHub/images/calendar}} <<lingo Today>>
-    </$button>
-    </$list>
-    <$list filter=<<TH-is-due-later>>>
-      <$button class="TH-btn TH-due-date" popup=<<popupTiddler>>>
-	{{$:/plugins/mabuqian/TaskHub/images/calendar}}
-	<$list
-	  filter=<<TH-is-due-tomorrow>>
-	  emptyMessage="""<$view field="due" format="date" template={{$:/language/TaskHub/DateFormat}}/>"""
-	>
-	  <<lingo Tomorrow>>
-	</$list>
-      </$button>
-    </$list>
-    <$list filter=<<TH-is-not-scheduled>>>
-      <$button class="TH-btn TH-due-date TH-not-scheduled" popup=<<popupTiddler>>>
-	{{$:/plugins/mabuqian/TaskHub/images/calendar}}
-	<<lingo Schedule/Caption>>
-      </$button>
-    </$list>
-  </$list>
-
-  <$reveal state=<<popupTiddler>> type="popup" position="belowleft" animate="no">
-    <div class="tc-drop-down TH-drop-down TH-date-picker">
-      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoDueDate}}
-    </div>
-  </$reveal>
+   <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
 </$vars>
+</$let>

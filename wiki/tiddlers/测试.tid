@@ -1,11 +1,11 @@
 created: 20250618114511022
-modified: 20250618175730453
+modified: 20250619132657009
 tags: 
 title: 测试
 type: text/vnd.tiddlywiki
 
-<$list filter="[subfilter{!!tmo_projectFilter}tmo_taskState[todo]]" >
+<$list filter="[all[current]days:tmo_dueDate[-1]]" >
 
-!!! <$link><<currentTiddler>></$link>
+<<lingo Yesterday>>
 
 </$list>

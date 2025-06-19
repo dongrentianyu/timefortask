@@ -155,6 +155,12 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
   border-color: <<colour primary>>;
 }
 
+.TH-due-date.TH-due-tomorrow {
+  color: blue;
+  fill: blue;
+  border-color: blue;
+}
+
 .TH-todo .TH-todo-actions .TH-btn {
   font-size: .8em;
   margin-left: 6px;

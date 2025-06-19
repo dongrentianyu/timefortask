@@ -1,11 +1,21 @@
 created: 20250618190729050
-modified: 20250618192253939
+modified: 20250619132721261
 tags: 
 title: 新条目 13
 type: text/vnd.tiddlywiki
 
-<$tiddler tiddler="789" >
+<$tiddler tiddler="89" >
+
+<$list filter="[all[current]days:tmo_dueDate[-1]]" >
+
+<<lingo Yesterday>>
+
+</$list>
+
 {{!!tmo_projectFilter}}
+
+<$view field="tmo_dueDate" format="relativedate"/>
+
 <$let a={{{[get[tmo_projectFilter]substitute[]]}}}>
 <<a>>
 <%if [subfilter<a>tmo_taskState[todo]count[]match[0]] %>

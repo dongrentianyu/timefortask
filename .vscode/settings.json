@@ -18,7 +18,10 @@
     "macrocallinline",
     "macrodef",
     "nico",
+    "oneday",
+    "parsedate",
     "projectify",
+    "relativedate",
     "sameday",
     "savetitle",
     "sendmessage",
@@ -32,6 +35,7 @@
     "timefortask",
     "transclude",
     "transcludeinline",
+    "unixtime",
     "yaisog"
   ]
 }

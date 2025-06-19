@@ -3,11 +3,13 @@ code-body: yes
 
 \define lingo-base() $:/language/TaskHub/
 
-<$list filter=<<TH-is-todo>>>
-  <div class="TH-todo-heading">
+<div class="TH-todo-heading">
+<span >
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
+</span>
+<span>
     {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoTaskState}}
-
+</span>
     <$vars popupTiddler=<<qualify "$:/state/TaskHub/todo-heading-dropdown">>>
       <$button
 	popup=<<popupTiddler>>
@@ -30,5 +32,3 @@ code-body: yes
       </$reveal>
     </$vars>
   </div>
-</$list>
-

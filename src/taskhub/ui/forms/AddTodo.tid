@@ -9,11 +9,12 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     $savetitle="$:/temp/TaskHub/new-todo"
     tmo="Task"
     tmo_taskState="todo"
+    tmo_dueDate=""
     tags=<<todo-tags>>
   />
   <$action-listops $tiddler={{$:/temp/TaskHub/new-todo}} />
   <$action-setfield $tiddler={{$:/temp/TaskHub/new-todo}}  $tags=<<todo-tags>> />
-  <$action-setfield $tiddler={{$:/temp/TaskHub/new-todo}} tmo_dueDate={{{ [<stateTiddler>get[due]] }}}/>
+  <$action-setfield $tiddler={{$:/temp/TaskHub/new-todo}} tmo_dueDate={{{ [<stateTiddler>get[tmo_dueDate]] }}}/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="todo-name"/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="tmo_dueDate"/>
   <$action-deletefield $tiddler=<<stateTiddler>> $field="priority"/>
@@ -33,8 +34,8 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     </$keyboard>
 
     <div class="TH-todo-actions">
-      <$vars currentTiddler=<<stateTiddler>>>
-	<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate" mode="inline"/>
+    <$vars currentTiddler=<<stateTiddler>> >
+    <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
       </$vars>
     </div>
   </div>

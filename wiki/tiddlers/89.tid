@@ -1,0 +1,10 @@
+created: 20250619124003531
+modified: 20250619163908296
+tags: 789
+title: 89
+tmo: Task
+tmo_dueDate: 2025-06-04
+tmo_taskState: todo
+type: text/vnd.tiddlywiki
+
+<$view field="tmo_dueDate" format="relativedate"/>

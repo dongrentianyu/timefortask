@@ -151,7 +151,7 @@ codebody: yes
 \end
 
 \procedure TH-is-due-later()
-[all[current]!tmo_dueDate[1]]
+[all[current]!days:tmo_dueDate[1]]
 \end
 
 \procedure TH-is-scheduled()
@@ -163,7 +163,7 @@ codebody: yes
 \end
 
 \procedure TH-is-not-overdue()
-[all[current]] -[!days:tmo_dueDate[-1]]
+[all[current]has[tmo_dueDate]] -[!days:tmo_dueDate[-1]]
 \end
 
 <!-- 由原来的可拖放状态改成了列表状态，不需要拖放排序 -->
