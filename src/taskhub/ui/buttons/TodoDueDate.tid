@@ -12,27 +12,33 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate
 	tmoTime={{{ [<dueDate>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[YYYY-0MM-0DD]] }}}
 >
 <%if [<currentTiddler>has[tmo_dueDate]get[tmo_dueDate]trim[]!is[blank]] %>
-<%if [<dueDate>match<yesterday>] %>
-<span class="TH-btn TH-due-date TH-overdue" >
-  <<lingo Yesterday>>
-</span>
-<%elseif [<dueDate>match<tomorrow>] %>
-<span class="TH-btn TH-due-date TH-due-tomorrow" >
-  <<lingo Tomorrow>>
-</span>
-<%elseif [<dueDate>match<today>] %>
-<span class="TH-btn TH-due-date TH-due-today" >
-  {{$:/plugins/mabuqian/TaskHub/images/calendar}}  <<lingo Today>>
-</span>
-<%elseif [<dueDate>compare:date:gt<tomorrow>] %>
-<span class="TH-btn TH-due-date" >
-  <$text text=<<tmoTime>> />
-</span>
-<%else%>
-<span class="TH-btn TH-due-date TH-overdue" >
-  <$text text=<<tmoTime>> />
-</span>
-<%endif%>
+  <%if [<currentTiddler>tmo_taskState[todo]] %>
+    <%if [<dueDate>match<yesterday>] %>
+    <span class="TH-btn TH-due-date TH-overdue" >
+    <<lingo Yesterday>>
+    </span>
+    <%elseif [<dueDate>match<tomorrow>] %>
+    <span class="TH-btn TH-due-date TH-due-tomorrow" >
+    <<lingo Tomorrow>>
+    </span>
+    <%elseif [<dueDate>match<today>] %>
+    <span class="TH-btn TH-due-date TH-due-today" >
+    {{$:/plugins/mabuqian/TaskHub/images/calendar}}  <<lingo Today>>
+    </span>
+    <%elseif [<dueDate>compare:date:gt<tomorrow>] %>
+    <span class="TH-btn TH-due-date" >
+    <$text text=<<tmoTime>> />
+    </span>
+    <%else%>
+    <span class="TH-btn TH-due-date TH-overdue" >
+    <$text text=<<tmoTime>> />
+    </span>
+    <%endif%>
+  <%else%>
+  <span class="TH-btn TH-due-date TH-due-no-todos" >
+    <$text text={{!!tmo_dueDate}} />
+  </span>
+  <%endif%>
 <%endif%>
 <span>
 </span>

@@ -49,6 +49,7 @@ Or: or
 OtherTasks: Other tasks
 Overdue: Overdue
 taskState/Hint: taskState
+TaskState: Task State
 ProjectArchived: This project is archived.
 Projects: Projects
 QuickAddTodo: Quick add todo
@@ -70,8 +71,10 @@ TodayAndOverdue: Today and overdue
 TodaysTodos: Today's todos
 TodoActions/Hint: Actions
 Todos: Todos
+Projects: Projects
 Tomorrow: Tomorrow
 Upcoming: Upcoming
+Overdue: Overdue
 ViewAsCards: View as cards
 ViewAsList: View as list
 ViewProjectsAs: View projects as

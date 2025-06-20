@@ -1,0 +1,27 @@
+caption: {{$:/plugins/mabuqian/TaskHub/images/sun}} {{$:/language/TaskHub/Overdue}}
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
+tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
+title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Overdue
+
+\define lingo-base() $:/language/TaskHub/
+
+<$let
+  today=<<now "YYYY-0MM-0DD">>
+  format="[UTC]YYYY-0MM-0DD"
+  oneday={{{ [[24]multiply[60]multiply[60]multiply[1000]] }}}
+  yesterday={{{ [<today>parsedate[unixtime]subtract<oneday>parsedate:unixtime<format>] }}}
+>
+<%if [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:lt<today>count[]!match[0]] %>
+<dl>
+      <dt><<lingo Overdue>></dt>
+      <dd>
+      <$list
+      filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]] :filter[get[tmo_dueDate]compare:date:lt<today>]"
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+      </dd>
+    </dl>
+<%else%>
+{{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProjects}}
+<%endif%>
+</$let>

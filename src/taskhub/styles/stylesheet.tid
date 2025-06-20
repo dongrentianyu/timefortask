@@ -161,6 +161,12 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
   border-color: blue;
 }
 
+.TH-due-date.TH-due-no-todos {
+  color: orange;
+  fill: orange;
+  border-color: orange;
+}
+
 .TH-todo .TH-todo-actions .TH-btn {
   font-size: .8em;
   margin-left: 6px;

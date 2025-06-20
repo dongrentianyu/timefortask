@@ -3,45 +3,51 @@ list-after: $:/plugins/mabuqian/TaskHub/ui/NextActions
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/Everything
 
+\define lingo-base() $:/language/TaskHub/
+
+\procedure TH-Button-Filter(name,filter)
+<$button class="tc-btn-invisible">
+  <<name>>
+  <$action-setfield $tiddler=<<stateTiddler>> filter=<<filter>>/>
+</$button>
+\end
+
 {{$:/language/Search/Filter/Hint}}
 
 <$vars stateTiddler="$:/state/TaskHub/todo-filter">
   <$edit-text class="TH-input input-larger" tiddler=<<stateTiddler>> field="filter"/>
-  <$vars popupTiddler=<<qualify "$:/state/TaskHub/todo-filter-dropdown">>
-	 todoFilter={{$:/state/TaskHub/todo-filter!!filter}}
-	 showProjectLinks="yes">
+  <$vars 
+    popupTiddlerTodos="$:/state/TaskHub/todo-filter-dropdown/Todos"
+    popupTiddlerProjects="$:/state/TaskHub/todo-filter-dropdown/Projects"
+    todoFilter={{$:/state/TaskHub/todo-filter!!filter}}
+    showProjectLinks="yes">
     <span class="tc-popup-keep">
-      <$button popup=<<popupTiddler>> class="tc-btn-invisible">
-	{{$:/core/images/down-arrow}}
+      <$button popup=<<popupTiddlerTodos>> class="tc-btn-invisible TH-project-link">
+      <<lingo Todos>>
+      </$button>
+      <$button popup=<<popupTiddlerProjects>> class="tc-btn-invisible TH-project-link">
+      <<lingo Projects>>
       </$button>
     </span>
-
-    <$reveal state=<<popupTiddler>> type="popup" position="belowleft">
-      <div class="tc-drop-down TH-drop-down">
-	<$button class="tc-btn-invisible">
-	  Outstanding
-	  <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]]"/>
-	</$button>
-	<$button class="tc-btn-invisible">
-	  Scheduled
-	  <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]has[due]]"/>
-	</$button>
-	<$button class="tc-btn-invisible">
-	  High priority
-	  <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]priority[3]]"/>
-	</$button>
-	<$button class="tc-btn-invisible">
-	  Medium priority
-	  <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]priority[2]]"/>
-	</$button>
-	<$button class="tc-btn-invisible">
-	  Low priority
-	  <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]priority[1]]"/>
-	</$button>
-	<$button class="tc-btn-invisible">
-	  Completed
-	  <$action-setfield $tiddler=<<stateTiddler>> filter="[tag[done]]"/>
-	</$button>
+  <$reveal state=<<popupTiddlerTodos>> type="popup" position="belowleft">
+    <div class="tc-drop-down TH-drop-down">
+		<span style="margin-left: 0.5em;font-weight: bold;"><<lingo TaskState>></span>
+		<$list filter="[[todo done closed breakdown]enlist-input[]]" variable="todoStateName">
+		<$let a=<<todoStateName>> >
+			<$transclude
+			$variable="TH-Button-Filter"
+			name={{{ [<todoStateName>titlecase[]] }}}
+			filter=`[tmo[Task]tmo_taskState[$(todoStateName)$]]` />
+			</$let>
+		</$list>
+  <$button class="tc-btn-invisible">
+    Scheduled
+    <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]has[due]]"/>
+  </$button>
+  <$button class="tc-btn-invisible">
+    Completed
+    <$action-setfield $tiddler=<<stateTiddler>> filter="[tag[done]]"/>
+  </$button>
       </div>
     </$reveal>
 

@@ -5,16 +5,22 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
 
 \define lingo-base() $:/language/TaskHub/
 
+<$let
+  today=<<now "YYYY-0MM-0DD">>
+>
 <$vars showProjectLinks="yes">
-  <$list filter=<<TH-has-overdue-todos>>>
+  <$list
+  filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]match<today>]"
+  emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProjects}}>
     <dl>
-      <dt><<lingo Overdue>></dt>
-      <dd><<TH-schedule-overdue>></dd>
+      <dt><<lingo Today>></dt>
+      <dd>
+      <$list
+      filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]] :filter[get[tmo_dueDate]match<today>]"
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+      </dd>
     </dl>
   </$list>
-
-  <dl>
-    <dt><<lingo Today>></dt>
-    <dd><<TH-schedule-today>></dd>
-  </dl>
-</$vars>
+  </$vars>
+</$let>

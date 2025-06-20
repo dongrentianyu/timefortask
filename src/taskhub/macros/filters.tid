@@ -83,7 +83,7 @@ codebody: yes
 \end
 
 \procedure TH-filtered-todos()
-[all[tiddlers]subfilter<todoFilter>tmo_taskState[todo]sort[title]]
+[all[tiddlers]subfilter<todoFilter>sort[title]]
 \end
 
 \procedure TH-open-todos()

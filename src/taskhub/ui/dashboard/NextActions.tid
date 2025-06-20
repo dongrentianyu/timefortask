@@ -4,13 +4,21 @@ tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/NextActions
 
 <$list
-  filter=<<TH-has-active-projects>>
-  emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
+  filter="[all[tiddlers]tmo[Project]tmo_projectState[doing]]"
 >
-  <dl>
-    <$list
-      filter=<<TH-active-projects>>
-      template="$:/plugins/mabuqian/TaskHub/ui/project/NextAction"
-      />
-  </dl>
+  <$list-template>
+  <%if [subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]!match[0]] %>
+    <dl>
+    <dt class="TH-project">
+    <$link to={{!!title}}><$view field="title"/></$link> {{||$:/plugins/mabuqian/TaskHub/images/pie}}
+    </dt>
+    <dd>
+    <$list filter="[subfilter{!!tmo_projectFilter}tmo_taskState[todo]]" template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"></$list>
+    </dd>
+    </dl>
+    <%endif%>
+  </$list-template>
+  <$list-empty>
+    {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
+  </$list-empty>
 </$list>

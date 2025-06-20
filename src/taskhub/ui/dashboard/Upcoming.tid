@@ -1,27 +1,36 @@
 caption: {{$:/plugins/mabuqian/TaskHub/images/calendar-checked}} {{$:/language/TaskHub/Upcoming}}
-list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Overdue
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Upcoming
 
 \define lingo-base() $:/language/TaskHub/
 
+<$let
+  dueDate={{{ [{!!tmo_dueDate}else<now "YYYY-0MM-0DD">] }}}
+  today=<<now "YYYY-0MM-0DD">>
+  format="[UTC]YYYY-0MM-0DD"
+  oneday={{{ [[24]multiply[60]multiply[60]multiply[1000]] }}}
+  yesterday={{{ [<today>parsedate[unixtime]subtract<oneday>parsedate:unixtime<format>] }}}
+  tomorrow={{{ [<today>parsedate[unixtime]add<oneday>parsedate:unixtime<format>] }}}
+	tmoTime={{{ [<dueDate>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[YYYY-0MM-0DD]] }}}
+>
 <$vars showProjectLinks="yes">
-  <$list
-    filter=<<TH-has-scheduled-todos-in-projects>>
-    emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyUpcoming}}
-  >
-    <$list filter=<<TH-has-overdue-todos>>>
-      <dl>
-	<dt><<lingo Overdue>></dt>
-	<dd><<TH-schedule-overdue>></dd>
-      </dl>
-    </$list>
-
-    <$list filter=<<TH-upcoming-due-dates>>>
-      <dl>
-	<dt>{{||$:/plugins/mabuqian/TaskHub/ui/dashboard/Date}}</dt>
-	<dd><$transclude $variable="TH-schedule-day" day={{!!due}}/></dd>
-      </dl>
-    </$list>
+<%if [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:gt<today>count[]!match[0]] %>
+  <$list filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:gt<today>unique[]sort[]]" variable="upTask">
+    <dl>
+    <dt>
+    <$text text={{{ [<upTask>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[]] }}} />
+    </dt>
+    <dd>
+      <$list
+      filter="[all[tiddlers]tmo_taskState[todo]] :filter[has[tmo_dueDate]get[tmo_dueDate]match<upTask>]"
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+    </dd>
+    </dl>
   </$list>
+<%else%>
+  {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyUpcoming}}
+<%endif%>
 </$vars>
+</$let>

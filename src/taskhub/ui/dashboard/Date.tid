@@ -1,4 +1,0 @@
-title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Date
-
-<$list filter=<<TH-is-due-today>>>Today -- </$list>
-<$view field="due" format="date" template="DDth MMM"/>
