@@ -63,7 +63,7 @@ codebody: yes
 \end
 
 \procedure TH-has-no-open-todo()
-[subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]]  [all[current]has[tmo_taskState]tmo_taskState[todo]count[]] +[count[]match[0]]
+[subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]]  [tag<currentTiddler>has[tmo_taskState]tmo_taskState[todo]count[]] +[sum[]match[0]]
 \end
 
 \procedure TH-has-scheduled-todos()

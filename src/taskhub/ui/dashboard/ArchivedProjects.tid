@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ArchivedProjects
 
-<$list filter=<<TH-has-archived-projects>> variable="ignore">
+<%if [all[tiddlers]tmo[Project]!title[Inbox]!tmo_projectState[doing]count[]!match[0]] %>
   <$reveal type="match" state="$:/state/TaskHub/show-archived" text="">
     <$button class="tc-btn-invisible TH-link-muted" set="$:/state/TaskHub/show-archived" setTo="show">
       {{$:/plugins/mabuqian/TaskHub/images/eye}} <<lingo ShowArchived/Caption>>
@@ -11,13 +11,12 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ArchivedProjects
     <$button class="tc-btn-invisible TH-link-muted" set="$:/state/TaskHub/show-archived" setTo="">
       {{$:/plugins/mabuqian/TaskHub/images/eyeslash}} <<lingo HideArchived/Caption>>
     </$button>
-
     <h2><<lingo Archive>></h2>
-
     <ul class="TH-projects">
-      <$list filter=<<TH-archived-projects>>>
-	{{||$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectListItem}}
+      <$list
+      filter="[all[tiddlers]tmo[Project]!title[Inbox]!tmo_projectState[doing]sort[title]]">
+      {{||$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectListItem}}
       </$list>
     </ul>
   </$reveal>
-</$list>
+<%endif%>

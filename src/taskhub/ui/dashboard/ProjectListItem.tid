@@ -17,7 +17,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectListItem
       </$list>
     </div>
     <div class="TH-project-infos">
-      <$count filter=<<TH-open-todos>>/> <<lingo OpenTasks>>
+      <$count filter="[subfilter{!!tmo_projectFilter}tmo[Task]tmo_taskState[todo]]"/> <<lingo OpenTasks>>
     </div>
   </li>
 </$vars>

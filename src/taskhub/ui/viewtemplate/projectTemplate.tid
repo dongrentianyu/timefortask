@@ -37,12 +37,14 @@ code-body: yes
 {{||$:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos}}
 
 <%if [{!!tmo_projectState}match[doing]] %>
+  <$set name="tags" filter="[<currentTiddler>]">
     <$vars
       stateTiddler=<<qualify "$:/temp/TaskHub/todo-form">>
       placeholder={{$:/language/TaskHub/AddTodoToProject/Placeholder}}
-      todo-tags=<<currentTiddler>>
+      todo-tags=<<tags>>
     >
       {{||$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}
     </$vars>
+  </$set>
 <%endif%>
 </$let>

@@ -30,7 +30,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/project/Project
     <$vars
       stateTiddler=<<qualify "$:/temp/TaskHub/todo-form">>
       placeholder={{$:/language/TaskHub/AddTodoToProject/Placeholder}}
-      todo-tags=<<currentTiddler>>
+      todo-tags={{{ [<currentTiddler>] }}}
     >
       {{||$:/plugins/mabuqian/TaskHub/ui/forms/AddTodo}}
     </$vars>
