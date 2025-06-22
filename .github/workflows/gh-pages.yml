@@ -40,9 +40,9 @@ jobs:
       - name: Install Dependency
         run: pnpm install
       - name: Building online versions of web pages
-        run: pnpm run buildonline
+        run: pnpm run publish:offline
       - name: Building downloadable offline versions of web pages
-        run: pnpm run buildoffline
+        run: pnpm run publish:offline
       - name: Workbox offline cache
         run: pnpm exec workbox injectManifest workbox-config.js
 
