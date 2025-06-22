@@ -5,12 +5,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
 
 \define lingo-base() $:/language/TaskHub/
 
-<$let
-  today=<<now "YYYY-0MM-0DD">>
->
+<$let today=<<now "YYYY-0MM-0DD">> >
 <$vars showProjectLinks="yes">
 <%if [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]match<today>count[]!match[0]] %>
-    <dl>
+  <dl>
       <dt><<lingo Today>></dt>
       <dd>
       <$list
@@ -18,14 +16,14 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
       template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
       />
       </dd>
-    </dl>
+  </dl>
 <%elseif [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:gt<today>count[]!match[0]] %>
 
 {{$:/plugins/mabuqian/TaskHub/ui/dashbaord/Upcoming}}
 
 <%elseif [all[tiddlers]tmo[Task]tmo_taskState[todo]] :except[all[tiddlers]tmo[Project]!tmo_projectState[doing]subfilter{!!tmo_projectFilter}tmo_taskState[todo]] +[count[]!match[0]] %>
 <!-- todo -->
-    <dl>
+  <dl>
       <dt>尚未完成的</dt>
       <dd>
       <$list
@@ -33,7 +31,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
       template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
       />
       </dd>
-    </dl>
+  </dl>
 <%elseif [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:lt<today>count[]!match[0]] %>
 
 {{$:/plugins/mabuqian/TaskHub/ui/dashbaord/Overdue}}
@@ -43,5 +41,5 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
 {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProjects}}
 
 <%endif%>
-  </$vars>
+</$vars>
 </$let>

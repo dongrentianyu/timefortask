@@ -1,0 +1,5 @@
+caption: {{$:/plugins/mabuqian/TaskHub/images/sun}} {{$:/language/TaskHub/Inbox}}
+tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
+title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Inbox
+
+{{$:/plugins/mabuqian/TaskHub/ui/inbox/Inbox}}

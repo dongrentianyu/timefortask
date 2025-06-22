@@ -1,0 +1,6 @@
+caption: {{$:/plugins/mabuqian/TaskHub/images/collection}} {{$:/language/TaskHub/Projects}}
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashboard/Inbox
+tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Project
+
+{{$:/plugins/mabuqian/TaskHub/ui/dashboard/Projects}}

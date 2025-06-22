@@ -2,9 +2,9 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Dashboard
 
 \define lingo-base() $:/language/TaskHub/
 
-<$macrocall
-  $name="tabs"
-  tabsList="[all[tiddlers+shadows]tag[$:/plugins/mabuqian/TaskHub/tags/dashboard]]"
+<$transclude
+  $variable="tabs"
+  tabsList="[all[tiddlers+shadows]tag[$:/plugins/mabuqian/TaskHub/tags/dashboard]sortby{$:/plugins/mabuqian/TaskHub/tags/dashboard!!list}]"
   default={{$:/config/TaskHub/DefaultDashboardTab}}
   state="$:/state/TaskHub/projects-and-schedule"
   class="TH-tabs"

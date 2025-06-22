@@ -6,6 +6,6 @@ tft: 任务
 title: test2
 tmo_estimatedSpent: 45
 tmo_priority: Medium
-tmo_taskState: New
+tmo_taskState: Completed
 tmo_timeSpent: 30
 type: text/vnd.tiddlywiki
