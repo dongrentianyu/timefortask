@@ -1,24 +1,24 @@
-name: Deploy Tiddlywiki To Github Pages
+name: Make Modern.TiddlyDev Template
 
 on:
   push:
     branches:
       - master
-      - main
-    paths-ignore:
-      # Readme.md should not trigger wiki deploy
-      - "*.md"
 
 jobs:
   deploy:
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Clear
+        run: |
+          mkdir /tmp/moderntiddlydev
+          cp -r * /tmp/moderntiddlydev/
+          find . -maxdepth 1 ! -name .git -exec cp -r -t /tmp/moderntiddlydev/ {} +
+          mv /tmp/moderntiddlydev upload
+          rm -rf upload/.git upload/README.md upload/pnpm-lock.yaml upload/src/doc upload/.github/workflows/make-template.yml
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -32,7 +32,7 @@ jobs:
           run_install: false
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         with:
           path: |
             **/node_modules
@@ -46,14 +46,16 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Build Library and static website
-        run: pnpm run publish
+      - name: Build Plugins
+        run: |
+          pnpm run build
+          cp dist/\$__plugins_Modern.TiddlyDev_doc.json upload/wiki/tiddlers/
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: ./dist
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: template
+          FOLDER: upload
+          SQUASH_HISTORY: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
