@@ -3,11 +3,10 @@ list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Schedule
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/NextActions
 
-<$list
-  filter="[all[tiddlers]tmo[Project]tmo_projectState[doing]]"
->
-  <$list-template>
-  <%if [subfilter{!!tmo_projectFilter}field:tmo_taskState[todo]count[]!match[0]] %>
+<%if [all[tiddlers]tmo[Project]tmo_projectState[doing]count[]!match[0]] %>
+  <%if [tmo[Project]tmo_projectState[doing]] :filter[all[tiddlers]subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]!match[0]] +[count[]!match[0]] %>
+  <$list
+  filter="[tmo[Project]tmo_projectState[doing]] :filter[all[tiddlers]subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]!match[0]]" >
     <dl>
     <dt class="TH-project">
     <$link to={{!!title}}><$view field="title"/></$link> {{||$:/plugins/mabuqian/TaskHub/images/pie}}
@@ -16,11 +15,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/NextActions
     <$list filter="[subfilter{!!tmo_projectFilter}tmo_taskState[todo]]" template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"></$list>
     </dd>
     </dl>
-    <%else%>
-    
-    <%endif%>
-  </$list-template>
-  <$list-empty>
-    {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
-  </$list-empty>
-</$list>
+  </$list>
+  <%else%>
+  {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
+  <%endif%>
+  <%else%>
+  {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
+<%endif%>

@@ -10,16 +10,45 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Upcoming
   today=<<now "YYYY-0MM-0DD">>
   format="[UTC]YYYY-0MM-0DD"
   oneday={{{ [[24]multiply[60]multiply[60]multiply[1000]] }}}
-  yesterday={{{ [<today>parsedate[unixtime]subtract<oneday>parsedate:unixtime<format>] }}}
-  tomorrow={{{ [<today>parsedate[unixtime]add<oneday>parsedate:unixtime<format>] }}}
-	tmoTime={{{ [<dueDate>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[YYYY-0MM-0DD]] }}}
+  nowTIMESTAMP=<<now "TIMESTAMP">>
+  yesterdayTIMESTAMP={{{ [<nowTIMESTAMP>subtract<oneday>format:timestamp[]] }}}
+  tomorrowTIMESTAMP={{{ [<nowTIMESTAMP>add<oneday>format:timestamp[]] }}}
+  yesterday={{{ [<yesterdayTIMESTAMP>format:date[YYYY-0MM-0DD]] }}}
+  tomorrow={{{ [<tomorrowTIMESTAMP>format:date[YYYY-0MM-0DD]] }}}
+  tmoTime={{{ [<dueDate>search-replace:g[-],[]format:relativedate[]] }}}
 >
 <$vars showProjectLinks="yes">
+<%if [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]match<today>count[]!match[0]] %>
+  <dl>
+  <dt>
+  <<lingo Today>>
+  </dt>
+  <dd>
+    <$list
+    filter="[all[tiddlers]tmo_taskState[todo]] :filter[has[tmo_dueDate]get[tmo_dueDate]match<today>]"
+    template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+    />
+  </dd>
+  </dl>
+<%endif%>
 <%if [all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:gt<today>count[]!match[0]] %>
-  <$list filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:gt<today>unique[]sort[]]" variable="upTask">
+  <%if [all[tiddlers]tmo[Task]tmo_taskState[todo]] :filter[has[tmo_dueDate]get[tmo_dueDate]match<tomorrow>count[]!match[0]] %>
     <dl>
     <dt>
-    <$text text={{{ [<upTask>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[]] }}} />
+    <<lingo Tomorrow>>
+    </dt>
+    <dd>
+      <$list
+      filter="[all[tiddlers]tmo_taskState[todo]] :filter[has[tmo_dueDate]get[tmo_dueDate]match<tomorrow>]"
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+    </dd>
+    </dl>
+  <%endif%>
+  <$list filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]has[tmo_dueDate]get[tmo_dueDate]compare:date:gt<tomorrow>unique[]sort[]]" variable="upTask">
+    <dl>
+    <dt>
+    <$text text={{{ [<upTask>search-replace:g[-],[]format:relativedate[]] }}} />
     </dt>
     <dd>
       <$list

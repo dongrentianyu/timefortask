@@ -7,9 +7,12 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate
   today=<<now "YYYY-0MM-0DD">>
   format="[UTC]YYYY-0MM-0DD"
   oneday={{{ [[24]multiply[60]multiply[60]multiply[1000]] }}}
-  yesterday={{{ [<today>parsedate[unixtime]subtract<oneday>parsedate:unixtime<format>] }}}
-  tomorrow={{{ [<today>parsedate[unixtime]add<oneday>parsedate:unixtime<format>] }}}
-	tmoTime={{{ [<dueDate>parsedate[YYYY0MM0DD0hh0mm0ss0XXX]format:relativedate[YYYY-0MM-0DD]] }}}
+  nowTIMESTAMP=<<now "TIMESTAMP">>
+  yesterdayTIMESTAMP={{{ [<nowTIMESTAMP>subtract<oneday>format:timestamp[]] }}}
+  tomorrowTIMESTAMP={{{ [<nowTIMESTAMP>add<oneday>format:timestamp[]] }}}
+  yesterday={{{ [<yesterdayTIMESTAMP>format:date[YYYY-0MM-0DD]] }}}
+  tomorrow={{{ [<tomorrowTIMESTAMP>format:date[YYYY-0MM-0DD]] }}}
+	tmoTime={{{ [<dueDate>search-replace:g[-],[]format:relativedate[]] }}}
 >
 <%if [<currentTiddler>has[tmo_dueDate]get[tmo_dueDate]trim[]!is[blank]] %>
   <%if [<currentTiddler>tmo_taskState[todo]] %>
