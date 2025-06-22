@@ -17,7 +17,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/NextActions
     </dd>
     </dl>
     <%else%>
-    {{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyNextActions}}
+    
     <%endif%>
   </$list-template>
   <$list-empty>
