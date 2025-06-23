@@ -1,0 +1,35 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/edit-date-container
+
+/* 特定样式下的日期输入框样式 */
+.TH-edit-date-container input[type="date"] {
+  color: transparent; /* 隐藏文本 */
+  position: relative;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/* 显示占位文本 */
+.TH-edit-date-container input[type="date"]::before {
+  content: attr(placeholder);
+  color: #999; /* 占位文本颜色 */
+  position: absolute;
+  left: 0px;
+  top: 0%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  display: block;
+}
+
+/* 清除浏览器默认样式 (跨平台兼容) */
+.TH-edit-date-container input[type="date"]::-webkit-datetime-edit,
+.TH-edit-date-container input[type="date"]::-webkit-inner-spin-button,
+.TH-edit-date-container input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+.TH-edit-date-container input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1; /* 保留日历图标 */
+  position: relative;
+  z-index: 1;
+}

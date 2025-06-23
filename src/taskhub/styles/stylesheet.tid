@@ -104,6 +104,8 @@ title: $:/plugins/mabuqian/TaskHub/styles/stylesheet
 
 .TH-todo .TH-todo-actions {
   float: right;
+  display: inline-flex;      /* 使用 flex 布局 */
+  align-items: center;       /* 垂直居中 */
 }
 
 .TH-todo .TH-btn.TH-taskState {

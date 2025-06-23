@@ -36,7 +36,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/AddTodo
     <div class="TH-todo-actions">
     <$vars currentTiddler=<<stateTiddler>> >
     <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
-      </$vars>
+    </$vars>
     </div>
   </div>
   <div class="TH-actions">

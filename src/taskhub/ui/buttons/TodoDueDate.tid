@@ -12,7 +12,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate
   tomorrowTIMESTAMP={{{ [<nowTIMESTAMP>add<oneday>format:timestamp[]] }}}
   yesterday={{{ [<yesterdayTIMESTAMP>format:date[YYYY-0MM-0DD]] }}}
   tomorrow={{{ [<tomorrowTIMESTAMP>format:date[YYYY-0MM-0DD]] }}}
-	tmoTime={{{ [<dueDate>search-replace:g[-],[]format:relativedate[]] }}}
+  tmoTime={{{ [<dueDate>search-replace:g[-],[]format:relativedate[]] }}}
 >
 <%if [<currentTiddler>has[tmo_dueDate]get[tmo_dueDate]trim[]!is[blank]] %>
   <%if [<currentTiddler>tmo_taskState[todo]] %>
@@ -43,9 +43,10 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate
   </span>
   <%endif%>
 <%endif%>
-<span>
-</span>
+
 <$vars popupTiddler=<<qualify "$:/state/TaskHub/due-date-dropdown">>>
-   <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
+  <span class="TH-edit-date-container" >
+  <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
+  </span>
 </$vars>
 </$let>

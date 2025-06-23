@@ -6,10 +6,13 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoActions
       <$link to={{!!title}} overrideClass="TH-project-link"/>
     </$list>
   </$list>
-    
+</span>
+<span class="TH-todo-actions">
   <%if [<currentTiddler>has[tmo_dueDate]] %>
   {{||$:/plugins/mabuqian/TaskHub/ui/buttons/TodoDueDate}}
- <%else%>
+  <%else%>
+  <span class="TH-edit-date-container" >
   <$edit-text tiddler=<<currentTiddler>> field="tmo_dueDate" type="date" class="TH-btn TH-date-picker"  />
+  </span>
   <%endif%>
 </span>

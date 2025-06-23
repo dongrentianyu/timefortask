@@ -27,6 +27,21 @@ title: $:/plugins/mabuqian/TaskHub/styles/utils
   height: 1em;
 }
 
+.TH-due-date {
+  padding: 0;               /* 清除内边距 */
+  line-height: normal;       /* 重置行高 */
+  border-radius: 1.5em;
+  border: 1px solid #ccc;
+  background: <<colour tiddler-background>>;
+  padding: .3em 1em;
+  cursor: pointer;
+  transition: box-shadow ease-in .1s;
+  font-size: .8em;
+  margin-left: 6px;
+  display: inline-flex;      /* 使用 flex 布局 */
+  align-items: center;       /* 垂直居中 */
+}
+
 .TH-label {
   display: block;
   font-size: .8em;
