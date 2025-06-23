@@ -50,6 +50,7 @@ OtherTasks: Other tasks
 Overdue: Overdue
 taskState/Hint: taskState
 TaskState: Task State
+ProjectState: Project State
 ProjectArchived: This project is archived.
 Projects: Projects
 QuickAddTodo: Quick add todo

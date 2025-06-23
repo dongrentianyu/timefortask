@@ -1,4 +1,4 @@
-caption: {{$:/plugins/mabuqian/TaskHub/images/sun}} {{$:/language/TaskHub/Overdue}}
+caption: {{$:/plugins/mabuqian/TaskHub/Images/Overdue}} {{$:/language/TaskHub/Overdue}}
 list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Overdue

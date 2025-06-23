@@ -1,0 +1,22 @@
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/FilterProjectDisplay
+
+<$vars category={{$:/state/TaskHub/project-category-filter}}>
+  <$reveal type="match" state="$:/config/TaskHub/projects-view" text="list">
+    <ul class="TH-projects">
+    <$list filter=<<TH-filtered-todos>> emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProjects}}>
+    <$list filter="[all[current]field:category<category>] [<category>is[blank]] +[limit[1]]" variable="ignore">
+    {{||$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectListItem}}
+    </$list>
+    </$list>
+    </ul>
+  </$reveal>
+  <$reveal type="nomatch" state="$:/config/TaskHub/projects-view" text="list">
+    <div class="TH-cards">
+    <$list filter=<<TH-filtered-todos>> emptyMessage={{$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProjects}}>
+    <$list filter="[all[current]field:category<category>] [<category>is[blank]] +[limit[1]]" variable="ignore">
+    {{||$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectCard}}
+    </$list>
+    </$list>
+    </div>
+  </$reveal>
+</$vars>

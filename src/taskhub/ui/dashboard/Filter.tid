@@ -3,7 +3,7 @@ list-after: $:/plugins/mabuqian/TaskHub/ui/NextActions
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/Everything
 
-\define lingo-base() $:/language/TaskHub/
+\procedure lingo-base() $:/language/TaskHub/
 
 \procedure TH-Button-Filter(name,filter)
 <$button class="tc-btn-invisible">
@@ -22,38 +22,76 @@ title: $:/plugins/mabuqian/TaskHub/ui/Everything
     todoFilter={{$:/state/TaskHub/todo-filter!!filter}}
     showProjectLinks="yes">
     <span class="tc-popup-keep">
-      <$button popup=<<popupTiddlerTodos>> class="tc-btn-invisible TH-project-link">
+      <$button popup=<<popupTiddlerTodos>> class="TH-btn">
       <<lingo Todos>>
       </$button>
-      <$button popup=<<popupTiddlerProjects>> class="tc-btn-invisible TH-project-link">
+      <$button popup=<<popupTiddlerProjects>> class="TH-btn">
       <<lingo Projects>>
       </$button>
+      <$button class="TH-btn">
+      <$action-deletefield $tiddler=<<stateTiddler>>  $field="filter"/>
+      {{$:/core/images/delete-button}}
+      </$button>
     </span>
+    <!-- 项目点开的筛选器展示界面 -->
+  <$reveal state=<<popupTiddlerProjects>> type="popup" position="belowleft">
+    <div class="tc-drop-down TH-drop-down">
+    <span style="margin-left: 0.5em;font-weight: bold;"><<lingo ProjectState>></span>
+    <$list filter="[[doing done closed breakdown]enlist-input[]]" variable="projectStateName">
+      <$transclude
+      $variable="TH-Button-Filter"
+      name={{{ [<projectStateName>titlecase[]] }}}
+      filter=`[tmo[Project]tmo_projectState[$(projectStateName)$]]` />
+    </$list>
+    <span style="margin-left: 0.5em;font-weight: bold;"><<lingo Scheduled>></span>
+  <$button class="tc-btn-invisible">
+    projects and has Scheduled
+    <$action-setfield $tiddler=<<stateTiddler>> filter="[tmo_projectState[doing]has[tmo_dueDate]]"/>
+  </$button>
+  <$button class="tc-btn-invisible">
+    projects and no Scheduled
+    <$action-setfield $tiddler=<<stateTiddler>> filter="[tmo_projectState[doing]!has[tmo_dueDate]]"/>
+  </$button>
+  </div>
+  </$reveal>
+    <!-- 任务点开的筛选器展示界面 -->
   <$reveal state=<<popupTiddlerTodos>> type="popup" position="belowleft">
     <div class="tc-drop-down TH-drop-down">
-		<span style="margin-left: 0.5em;font-weight: bold;"><<lingo TaskState>></span>
-		<$list filter="[[todo done closed breakdown]enlist-input[]]" variable="todoStateName">
-		<$let a=<<todoStateName>> >
-			<$transclude
-			$variable="TH-Button-Filter"
-			name={{{ [<todoStateName>titlecase[]] }}}
-			filter=`[tmo[Task]tmo_taskState[$(todoStateName)$]]` />
-			</$let>
-		</$list>
+    <span style="margin-left: 0.5em;font-weight: bold;"><<lingo TaskState>></span>
+    <$list filter="[[todo done closed breakdown]enlist-input[]]" variable="todoStateName">
+      <$transclude
+      $variable="TH-Button-Filter"
+      name={{{ [<todoStateName>titlecase[]] }}}
+      filter=`[tmo[Task]tmo_taskState[$(todoStateName)$]]` />
+    </$list>
+    <span style="margin-left: 0.5em;font-weight: bold;"><<lingo Scheduled>></span>
   <$button class="tc-btn-invisible">
-    Scheduled
-    <$action-setfield $tiddler=<<stateTiddler>> filter="[!tag[done]has[due]]"/>
+    todo and has Scheduled
+    <$action-setfield $tiddler=<<stateTiddler>> filter="[tmo_taskState[todo]has[tmo_dueDate]]"/>
   </$button>
   <$button class="tc-btn-invisible">
-    Completed
-    <$action-setfield $tiddler=<<stateTiddler>> filter="[tag[done]]"/>
+    todo and no Scheduled
+    <$action-setfield $tiddler=<<stateTiddler>> filter="[tmo_taskState[todo]!has[tmo_dueDate]]"/>
   </$button>
-      </div>
-    </$reveal>
+  </div>
+  </$reveal>
 
-    <dl>
+  <$let
+  taskCount={{{ [subfilter<todoFilter>tmo[Task]count[]] }}}
+  projectCount={{{ [subfilter<todoFilter>tmo[Project]count[]] }}} >
+  <%if [subfilter<TH-filtered-todos>count[]match<taskCount>] %>
+  <dl>
       <$count filter=<<TH-filtered-todos>>/> {{$:/language/Search/Filter/Matches}}
       <$list filter=<<TH-filtered-todos>> template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"></$list>
     </dl>
+  <%elseif [subfilter<TH-filtered-todos>count[]match<projectCount>] %>
+    <dl>
+      <$count filter=<<TH-filtered-todos>>/> {{$:/language/Search/Filter/Matches}}
+      <$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/dashboard/FilterProjectDisplay" TH-filtered-todos=<<TH-filtered-todos>> mode="block"/>
+    </dl>
+  <%else%>
+  <$list filter=<<TH-filtered-todos>> ></$list>
+  <%endif%>
+  </$let>
   </$vars>
 </$vars>
