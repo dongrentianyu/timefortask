@@ -2,7 +2,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectCards
 
 <div class="TH-cards">
   <$list filter=<<TH-active-projects>>>
-    <$list filter="[all[current]field:category<category>] [<category>is[blank]] +[limit[1]]" variable="ignore">
+    <$list filter="[all[current]field:tmo_projectCategory<category>] [<category>is[blank]] +[limit[1]]" variable="ignore">
 	{{||$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectCard}}
     </$list>
   </$list>

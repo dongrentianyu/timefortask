@@ -1,9 +1,8 @@
-category: 
 created: 20250622133538535
-description: 
-modified: 20250622133538535
+modified: 20250624221528431
 title: project-02
 tmo: Project
+tmo_projectCategory: work
 tmo_projectFilter: [tag<currentTiddler>]
 tmo_projectState: doing
 type: text/vnd.tiddlywiki

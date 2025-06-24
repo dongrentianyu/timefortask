@@ -6,7 +6,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewProject
   <$action-createtiddler
     $basetitle={{$:/state/TaskHub/new-project!!project_title}}
     tmo_projectDescription={{$:/state/TaskHub/new-project!!description}}
-    category={{$:/state/TaskHub/new-project!!category}}
+    tmo_projectCategory={{$:/state/TaskHub/new-project!!category}}
     tmo="Project"
     tmo_projectState="doing"
     tmo_projectFilter="[tag<currentTiddler>]"
@@ -43,19 +43,19 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewProject
     <div class="TH-control-group">
       <div class="TH-label"><<lingo NewProjectCategory>></div>
       <$select tiddler="$:/state/TaskHub/new-project" field="category">
-	<$list filter=<<TH-all-categories>>>
-	  <option value=<<currentTiddler>>>
-	    <<currentTiddler>>
-	  </option>
-	</$list>
-	<option value=""></option>	    
+      <$list filter=<<TH-all-categories>>>
+        <option value=<<currentTiddler>>>
+        <<currentTiddler>>
+        </option>
+        </$list>
+        <option value="">Empty!</option>      
       </$select>
     </div>
   </$keyboard>
   <div class="TH-actions">
     <$button class="TH-btn btn-primary">
       <<add-project-actions>>
-	<<lingo Save/Caption>>
+    <<lingo Save/Caption>>
     </$button>
     <<lingo Or>>
     <$button class="TH-btn" set="$:/state/TaskHub/show-new-project-popup" setTo="">
