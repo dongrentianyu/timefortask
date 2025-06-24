@@ -6,7 +6,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/todo/TodoItem
     <$link to={{!!title}}>
       {{||$:/plugins/mabuqian/TaskHub/ui/todo/TodoCaption}}
       <$list filter=<<TH-has-todos>> variable="ignore">
-	{{||$:/plugins/mabuqian/TaskHub/images/pie}}
+      {{||$:/plugins/mabuqian/TaskHub/images/pie}}
       </$list>
       <$list filter="[all[current]!text[]]">
 	<span class="TH-todo-text-icon">

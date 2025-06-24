@@ -10,7 +10,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/TodoTaskState
     tooltip={{$:/language/TaskHub/taskState/Hint}}
     aria-label={{$:/language/TaskHub/taskState/Hint}}
   >
-    {{$:/plugins/mabuqian/TaskHub/images/flag}}
+    {{$:/core/images/star-filled}}
   </$button>
 
   <$reveal state=<<popupTiddler>> type="popup" position="belowleft" animate="no">

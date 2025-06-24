@@ -3,7 +3,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/TodoTaskState
 <div class="TH-priorities">
   <$list filter="done closed breakdown" variable="taskState">
     <$button class={{{ [[tc-btn-invisible TH-taskState-]addsuffix<taskState>] }}}>
-      {{$:/plugins/mabuqian/TaskHub/images/flag}}
+      {{$:/core/images/star-filled}}
       <$action-setfield tmo_taskState=<<taskState>>/>
     </$button>
   </$list>

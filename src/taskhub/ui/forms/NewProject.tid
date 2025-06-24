@@ -5,11 +5,12 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewProject
 \define add-project-actions()
   <$action-createtiddler
     $basetitle={{$:/state/TaskHub/new-project!!project_title}}
-    description={{$:/state/TaskHub/new-project!!description}}
+    tmo_projectDescription={{$:/state/TaskHub/new-project!!description}}
     category={{$:/state/TaskHub/new-project!!category}}
     tmo="Project"
     tmo_projectState="doing"
-    tmo_projectFilter="[tag<currentTiddler>]"/>
+    tmo_projectFilter="[tag<currentTiddler>]"
+    tmo_dueDate=""/>
   <$action-setfield
     $tiddler="$:/state/TaskHub/new-project"
     project_title=""

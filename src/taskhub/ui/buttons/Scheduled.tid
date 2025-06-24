@@ -2,7 +2,7 @@ description: Show all todos scheduled for today
 tags: $:/tags/PageControls
 title: $:/plugins/mabuqian/TaskHub/ui/buttons/Scheduled
 
-\define lingo-base() $:/language/TaskHub/
+\procedure lingo-base() $:/language/TaskHub/
 
 <$button
   popup="$:/state/TaskHub/scheduled-dropdown"
@@ -11,29 +11,44 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/Scheduled
   class={{{ [[desktop-only ]addsuffix<tv-config-toolbar-class>] }}}
   selectedClass="tc-selected"
 >
-  <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+  <%if [<tv-config-toolbar-icons>match[yes]] %>
     <span class="TH-pill-container">
       {{$:/plugins/mabuqian/TaskHub/images/calendar}}
-      <$list filter=<<TH-has-todos-due-today-or-overdue>>>
+      <!-- 用来显示当天任务和过期任务时，会出现一个红点，但我觉得没太必要，就算了 -->
+      <!-- <$list filter=<<TH-has-todos-due-today-or-overdue>>>
         <div class="TH-pill"></div>
-      </$list>
+      </$list> -->
     </span>
-  </$list>
-  <$list filter="[<tv-config-toolbar-text>match[yes]]">
+  <%endif%>
+  <%if [<tv-config-toolbar-text>match[yes]] %>
     <span class="tc-btn-text"><<lingo TodaysTodos>></span>
-  </$list>
+  <%endif%>
 </$button>
 
+<$let
+today=<<now "YYYY-0MM-0DD" >>
+matchToday="[has[tmo_dueDate]get[tmo_dueDate]match<today>]"
+overdueDay="[has[tmo_dueDate]get[tmo_dueDate]compare:date:lt<today>]">
 <$reveal state="$:/state/TaskHub/scheduled-dropdown" type="popup" position="belowleft">
   <div class="tc-drop-down TH-scheduled-drop-down">
-    <h4><<ling TodayAndOverdue>></h4>
-    <$list
-      filter=<<TH-todos-due-today-or-overdue>>
-      emptyMessage="""<div class="clear">🌞 <<lingo AllClear>></div>"""
-    >
-      <$link to={{!!title}}>
-	{{||$:/plugins/mabuqian/TaskHub/ui/todo/TodoCaption}}
-      </$link>
-    </$list>
+    <%if [tmo[Task]filter<matchToday>count[]] [tmo[Task]filter<overdueDay>count[]] [sum[]!match[0]] %>
+      <%if [tmo[Task]filter<matchToday>count[]!match[0]] %>
+      <span style="margin-left: 0.5em;font-weight: bold;"><<lingo Today>></span>
+      <$list
+      filter="[tmo[Task]filter<matchToday>]">
+      <$link><<currentTiddler>></$link>
+      </$list>
+      <%endif%>
+      <%if [tmo[Task]filter<overdueDay>count[]!match[0]] %>
+      <span style="margin-left: 0.5em;font-weight: bold;"><<lingo Overdue>></span>
+      <$list
+      filter="[tmo[Task]filter<overdueDay>]">
+      <$link><<currentTiddler>></$link>
+      </$list>
+      <%endif%>
+    <%else%>
+    <h2><div class="clear">🌞 <<lingo AllClear>></div></h2>
+    <%endif%>
   </div>
 </$reveal>
+</$let>
