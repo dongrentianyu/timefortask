@@ -31,7 +31,7 @@ matchToday="[has[tmo_dueDate]get[tmo_dueDate]match<today>]"
 overdueDay="[has[tmo_dueDate]get[tmo_dueDate]compare:date:lt<today>]">
 <$reveal state="$:/state/TaskHub/scheduled-dropdown" type="popup" position="belowleft">
   <div class="tc-drop-down TH-scheduled-drop-down">
-    <%if [tmo[Task]filter<matchToday>count[]] [tmo[Task]filter<overdueDay>count[]] [sum[]!match[0]] %>
+    <%if [tmo[Task]filter<matchToday>count[]] [tmo[Task]filter<overdueDay>count[]] +[sum[]!match[0]] %>
       <%if [tmo[Task]filter<matchToday>count[]!match[0]] %>
       <span style="margin-left: 0.5em;font-weight: bold;"><<lingo Today>></span>
       <$list
@@ -47,7 +47,7 @@ overdueDay="[has[tmo_dueDate]get[tmo_dueDate]compare:date:lt<today>]">
       </$list>
       <%endif%>
     <%else%>
-    <h2><div class="clear">🌞 <<lingo AllClear>></div></h2>
+    <h4><div class="clear">🌞 <<lingo AllClear>></div></h4>
     <%endif%>
   </div>
 </$reveal>
