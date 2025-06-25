@@ -2,7 +2,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
 
 \define lingo-base() $:/language/TaskHub/
 
-\define add-project-actions()
+\define add-category-actions()
   <$action-setfield
     $tiddler="$:/config/TaskHub/ProjectCategory"
     $index={{$:/state/TaskHub/new-category!!tag_name}}
@@ -18,7 +18,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
 
 <div class="TH-form">
   <$keyboard key="enter">
-    <<add-project-actions>>
+    <<add-category-actions>>
     <div class="TH-control-group">
       <div class="TH-label"><<lingo Category>></div>
       <$edit-text
@@ -39,7 +39,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
   </$keyboard>
   <div class="TH-actions">
     <$button class="TH-btn btn-primary">
-      <<add-project-actions>>
+      <<add-category-actions>>
 	<<lingo Save/Caption>>
     </$button>
     <<lingo Or>>

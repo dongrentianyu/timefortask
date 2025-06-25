@@ -3,47 +3,99 @@ title: $:/plugins/mabuqian/TaskHub/ui/config/Categories
 list-after: $:/plugins/mabuqian/TaskHub/ui/config/Dashboard
 caption: {{$:/language/TaskHub/Categories}}
 
-\define lingo-base() $:/language/TagManager/
+\procedure lingo-base() $:/language/TagManager/
 
-\define category-editor()
-<tr>
-  <td>{{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}</td>
-  <td>
+\procedure category-editor()
+<div style="
+  display: flex; 
+  width: 100%; 
+  align-items: center; 
+  gap: 15px;
+  padding: 6px 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+">
+  <!-- 第一列 - 更宽 -->
+  <div style="
+    width: 200px;  /* 固定宽度 */
+    flex: 0 0 auto; /* 禁止伸缩 */
+    overflow-x: auto; /* 横向滚动 */
+    white-space: nowrap; /* 禁止换行 */
+    scrollbar-width: thin; /* 细滚动条 */
+    font-size: 15px;
+    color: #212529;
+    font-weight: 500;
+    padding: 4px 0;
+  ">
+    <$tiddler tiddler=<<projectCategory>> >
+    <$transclude $tiddler="$:/plugins/mabuqian/TaskHub/ui/category/Category"/>
+    </$tiddler>
+  </div>
+  
+  <!-- 第二列 - 固定宽度 -->
+  <div style="
+    width: 180px;  /* 固定宽度 */
+    flex: 0 0 auto; /* 禁止伸缩 */
+    display: flex;
+    justify-content: center;
+  ">
     <$list filter={{$:/config/TaskHub/DefaultCategoryColours}} variable="colour">
-      <$button class="tc-btn-invisible">
-    {{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
-    <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index=<<currentTiddler>>  $value=<<colour>>/>
+      <$button class="tc-btn-invisible" style="padding: 4px 8px;">
+        {{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
+        <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index=<<projectCategory>> $value=<<colour>>/>
       </$button>
     </$list>
-    <$edit-text tiddler="$:/config/TaskHub/ProjectCategory" index=<<currentTiddler>> tag="input" type="color"/>
-  </td>
-  <td>
+  </div>
+  
+  <!-- 第三列 -->
+  <div style="
+    flex-grow: 1; 
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  ">
+    <$button 
+      popup=<<popupTiddler>> 
+      style="
+        background: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        padding: 6px 12px;
+        color: #495057;
+      "
+    >
+    <$action-setfield $tiddler="$:/state/TaskHub/ProjectCategory" text=<<projectCategory>>/>
+    选择颜色</$button>
+    <$edit-text 
+      tiddler="$:/config/TaskHub/ProjectCategory" 
+      index=<<projectCategory>> 
+      tag="input" 
+      type="color"
+      style="width: 40px; height: 34px;"
+    />
     <$button class="TH-btn btn-danger btn-small">
       {{$:/core/images/delete-button}} {{$:/language/Buttons/Delete/Caption}}
-      <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index=<<currentTiddler>> />
+      <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index=<<projectCategory>> />
     </$button>
-  </td>
-</tr>
+  </div>
+</div>
 \end
 
 !! <$link to="$:/config/TaskHub/ProjectCategory"> {{$:/language/TaskHub/Categories}}</$link>
 
-<table class="TH-project-category-manager-table">
-  <tbody>
-    <tr>
-      <th>{{$:/language/TaskHub/Category}}</th>
-      <th><<lingo Colour/Heading>></th>
-      <th></th>
-    </tr>
-    <$list filter=<<TH-all-categories>>>
-      <<category-editor>>
-    </$list>
-  </tbody>
-</table>
+<$let popupTiddler=<<qualify "$:/state/taskHubs/category-filter-dropdown">> >
+<$list filter=<<TH-all-categories>> variable="projectCategory">
+  <<category-editor>>
+</$list>
+
+<br>
 
 {{$:/plugins/mabuqian/TaskHub/ui/buttons/AddCategory}}
 
-!! <$link to="$:/config/TaskHub/DefaultCategoryColours"> Default category colours </$link>
+<h2><$link to="$:/config/TaskHub/DefaultCategoryColours"> Default category colours </$link></h2>
 
 <table class="TH-project-category-manager-table">
   <tbody>
@@ -59,3 +111,18 @@ caption: {{$:/language/TaskHub/Categories}}
     </tr>
   </tbody>
 </table>
+
+<$reveal type="popup" state=<<popupTiddler>> position="belowright">
+  <div class="tc-drop-down TH-more-color" style="border-radius: 6px; margin-top: 8px;">
+    <$list filter={{$:/config/TaskHub/ProjectCategoryColor}} variable="colour">
+      <span>
+        <$button class="tc-btn-invisible" tooltip=<<colour>> style="padding: 4px;">
+          {{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
+           <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index={{$:/state/TaskHub/ProjectCategory}} $value=<<colour>>/>
+          <$action-setfield $tiddler="$:/state/TaskHub/ProjectCategory" text=""/>
+        </$button>
+      </span>
+    </$list>
+  </div>
+</$reveal>
+</$let>
