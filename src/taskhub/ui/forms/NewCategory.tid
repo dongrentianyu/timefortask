@@ -3,10 +3,11 @@ title: $:/plugins/mabuqian/TaskHub/ui/forms/NewCategory
 \define lingo-base() $:/language/TaskHub/
 
 \define add-project-actions()
-  <$action-createtiddler
-    $basetitle={{$:/state/TaskHub/new-category!!tag_name}}
-    color={{$:/state/TaskHub/new-category!!color}}
-    tags="$:/plugins/mabuqian/TaskHub/tags/Category"/>
+  <$action-setfield
+    $tiddler="$:/config/TaskHub/ProjectCategory"
+    $index={{$:/state/TaskHub/new-category!!tag_name}}
+    $value={{$:/state/TaskHub/new-category!!color}}
+  />
   <$action-setfield
     $tiddler="$:/state/TaskHub/new-category"
     tag_name=""

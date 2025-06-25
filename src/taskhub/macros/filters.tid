@@ -13,7 +13,7 @@ codebody: yes
 \end
 
 \procedure TH-all-categories()
-[all[tiddlers]has[tmo_projectCategory]get[tmo_projectCategory]unique[]sort[title]]
+[[$:/config/TaskHub/ProjectCategory]get[text]jsonindexes[]unique[]sort[title]]
 \end
 
 \procedure TH-has-scheduled-todos-in-projects()

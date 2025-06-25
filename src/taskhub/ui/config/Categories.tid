@@ -7,26 +7,26 @@ caption: {{$:/language/TaskHub/Categories}}
 
 \define category-editor()
 <tr>
-  <td><$link to=<<currentTiddler>>>{{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}</$link></td>
+  <td>{{||$:/plugins/mabuqian/TaskHub/ui/category/Category}}</td>
   <td>
     <$list filter={{$:/config/TaskHub/DefaultCategoryColours}} variable="colour">
       <$button class="tc-btn-invisible">
-	{{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
-	<$action-setfield $field="color" $value=<<colour>>/>
+    {{$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
+    <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index=<<currentTiddler>>  $value=<<colour>>/>
       </$button>
     </$list>
-    <$edit-text field="color" tag="input" type="color"/>
+    <$edit-text tiddler="$:/config/TaskHub/ProjectCategory" index=<<currentTiddler>> tag="input" type="color"/>
   </td>
   <td>
     <$button class="TH-btn btn-danger btn-small">
       {{$:/core/images/delete-button}} {{$:/language/Buttons/Delete/Caption}}
-      <$action-deletetiddler $tiddler=<<currentTiddler>>>
+      <$action-setfield $tiddler="$:/config/TaskHub/ProjectCategory" $index=<<currentTiddler>> />
     </$button>
   </td>
 </tr>
 \end
 
-!! {{$:/language/TaskHub/Categories}}
+!! <$link to="$:/config/TaskHub/ProjectCategory"> {{$:/language/TaskHub/Categories}}</$link>
 
 <table class="TH-project-category-manager-table">
   <tbody>
@@ -35,7 +35,6 @@ caption: {{$:/language/TaskHub/Categories}}
       <th><<lingo Colour/Heading>></th>
       <th></th>
     </tr>
-
     <$list filter=<<TH-all-categories>>>
       <<category-editor>>
     </$list>
@@ -44,21 +43,19 @@ caption: {{$:/language/TaskHub/Categories}}
 
 {{$:/plugins/mabuqian/TaskHub/ui/buttons/AddCategory}}
 
-!! Default category colours
+!! <$link to="$:/config/TaskHub/DefaultCategoryColours"> Default category colours </$link>
 
 <table class="TH-project-category-manager-table">
   <tbody>
     <tr>
       <td><<lingo Colour/Heading>></td>
       <td>
-	<$edit-text
-	  tiddler="$:/config/TaskHub/DefaultCategoryColours"
-	  field="text"
-	  tag="input"
-	/>
+    <$edit-text
+      tiddler="$:/config/TaskHub/DefaultCategoryColours"
+      field="text"
+      tag="input"
+    />
       </td>
     </tr>
   </tbody>
 </table>
-
-

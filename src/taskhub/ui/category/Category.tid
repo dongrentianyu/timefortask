@@ -1,6 +1,6 @@
 title: $:/plugins/mabuqian/TaskHub/ui/category/Category
 
-<$vars colour={{{ [all[current]get[color]] }}}>
+<$vars colour={{{ [[$:/config/TaskHub/ProjectCategory]get[text]jsonget<currentTiddler>] }}}>
   {{||$:/plugins/mabuqian/TaskHub/ui/category/CategoryPill}}
   <$text text={{!!title}}>
 </$vars>

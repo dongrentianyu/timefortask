@@ -7,7 +7,7 @@ background-color: $(background)$;
 \end
 
 <$vars category={{!!tmo_projectCategory}}>
-  <$vars background={{{ [<category>get[color]] }}}>
+  <$vars background={{{ [[$:/config/TaskHub/ProjectCategory]get[text]jsonget<category>else[#F8FFD6]] :filter[<category>!is[blank]] }}}>
     <div class="TH-card-wrapper" style=<<card-style>>>
       <$link overrideClass="TH-card" to={{!!title}}>
       <div class="TH-card-options">
