@@ -1,5 +1,4 @@
 list-after: $:/plugins/mabuqian/TaskHub/ui/todo/TodoHeading
-tags: 
 title: $:/plugins/mabuqian/TaskHub/ui/project/Project
 
 \define lingo-base() $:/language/TaskHub/

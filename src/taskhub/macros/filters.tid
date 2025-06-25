@@ -67,7 +67,7 @@ codebody: yes
 \end
 
 \procedure TH-has-scheduled-todos()
-[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tmo_taskState[todo]has[tmo_dueDate]limit[1]] :else[tmo_taskState[todo]has[tmo_dueDate]limit[1]]
+[all[tiddlers]has[tmo_projectFilter]subfilter{!!tmo_projectFilter}tag[Inbox]tmo_taskState[todo]has[tmo_dueDate]limit[1]] :else[tag[Inbox]tmo_taskState[todo]has[tmo_dueDate]limit[1]]
 \end
 
 \procedure TH-has-unscheduled-todos()

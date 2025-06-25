@@ -19,7 +19,7 @@ caption: {{$:/language/TaskHub/Categories}}
 ">
   <!-- 第一列 - 更宽 -->
   <div style="
-    width: 200px;  /* 固定宽度 */
+    width: 150px;  /* 固定宽度 */
     flex: 0 0 auto; /* 禁止伸缩 */
     overflow-x: auto; /* 横向滚动 */
     white-space: nowrap; /* 禁止换行 */
@@ -36,7 +36,7 @@ caption: {{$:/language/TaskHub/Categories}}
   
   <!-- 第二列 - 固定宽度 -->
   <div style="
-    width: 180px;  /* 固定宽度 */
+    width: 120px;  /* 固定宽度 */
     flex: 0 0 auto; /* 禁止伸缩 */
     display: flex;
     justify-content: center;

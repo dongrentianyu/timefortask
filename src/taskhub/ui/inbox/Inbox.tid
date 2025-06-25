@@ -13,12 +13,12 @@ title: $:/plugins/mabuqian/TaskHub/ui/inbox/Inbox
 
 <h2>{{$:/language/TaskHub/Inbox}} <<inbox-count>></h2>
 
-<$vars currentTiddler="Inbox">
+<$let currentTiddler="Inbox">
   <$transclude 
     $variable="TH-todo-list"
     emptyTemplate="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyInbox"
   />
-</$vars>
+</$let>
 
 <label class="TH-label TH-right-aligned">
   <<lingo AddToInbox/Hint>>
