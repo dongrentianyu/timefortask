@@ -1,5 +1,5 @@
 title: $:/language/TaskHub/EmptyUpcomingDescription
 
 <p>
-  All scheduled tasks will appear here -- [[learn more|$:/plugins/nico/projectify/doc/Schedule]].
+  All scheduled tasks will appear here.
 </p>
