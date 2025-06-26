@@ -1,0 +1,37 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/TH-modal-css
+
+.TH-modal-css .tc-modal,
+.TH-modal-css .tc-modal-header,
+.TH-modal-css .tc-modal-body,
+.TH-modal-css .tc-modal-footer {
+  border: none;
+  background-color: #FAFAFA;
+}.TH-modal-css .tc-modal-header {
+	border-radius: 10px 10px 0 0;
+}.TH-modal-css .tc-modal {
+	border-radius: 10px;
+}.TH-modal-css .tc-modal-footer {
+	border-radius: 0 0 10px 10px;
+}@media (max-width: 500px) {
+.TH-modal-css .tc-modal {
+	width: 95% !important;
+}
+}.TH-modal-css .tc-modal-backdrop {
+  cursor: pointer;
+}
+.TH-modal-css .tc-modal {
+  width: 85vw !important;
+	height: 75vh;
+	top: 45% !important;
+	bottom: 20%;
+	max-height: 80vh;
+  border-radius: 10px;
+}.TH-modal-css .tc-modal-footer {
+  display: none;
+}@media (min-width: 55em) {
+.TH-modal-css .tc-modal-body {
+        overflow-y: auto;
+        max-height: 75vh;
+    }
+}

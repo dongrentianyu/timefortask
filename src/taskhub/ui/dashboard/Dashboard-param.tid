@@ -1,0 +1,23 @@
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Dashboard/param
+class: TH-modal-css tc-modal-centered
+code-body: yes
+subtitle: <div class="TH-right-aligned"><$link to="$:/plugins/mabuqian/TaskHub/doc/Help">{{$:/plugins/mabuqian/TaskHub/images/info}} <<lingo Help>></$link></div>
+mask-closable: yes
+
+<$let dashboardValue={{{ [[$:/state/TaskHub/projects-and-schedule]get[text]else{$:/config/TaskHub/DefaultDashboardTab}] }}} >
+  <div class="TH-nice-button-group" >
+    <$list filter="[all[tiddlers+shadows]tag[$:/plugins/mabuqian/TaskHub/tags/dashboard]sortby{$:/plugins/mabuqian/TaskHub/tags/dashboard!!list}]" variable="thisTitle">
+    <$button class="TH-nice-button">
+    <$action-setfield $tiddler="$:/state/TaskHub/projects-and-schedule" text=<<thisTitle>>/>
+    <%if [<thisTitle>has[caption]] %>
+    <$transclude $tiddler=<<thisTitle>> $field="caption"/>
+    <%else%>
+    <<thisTitle>>
+    <%endif%>
+    </$button>
+    </$list>
+  </div>
+  <div class="TH-nice-button-content" >
+    <$transclude tiddler=<<dashboardValue>> mode="block"/>
+  </div>
+</$let>

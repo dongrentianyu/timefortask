@@ -1,0 +1,29 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/mabuqian/TaskHub/styles/TH-nice-button-group
+
+.TH-nice-button-group {
+    position: fixed;
+    display: flex; /* 使用flexbox布局 */
+    justify-content: space-between; /* 在空间中均匀分布 */
+    width: 80vw;
+    top: 7%;
+}
+.TH-nice-button {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* 文本居中 */
+    flex: 1; /* 每个选项占据相等的空间 */
+    margin: 0 5px; /* 选项之间的间距 */
+    display: inline-block;
+    background: white; /* 默认背景颜色 */
+    color: black;
+    border: none;
+    font-size: 16px;
+}
+.TH-nice-button-content {
+    margin-top: 1cm;
+    overflow: auto;
+    height: 400px;
+}

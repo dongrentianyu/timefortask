@@ -45,6 +45,7 @@
     "transclude",
     "transcludeinline",
     "unixtime",
+    "wikify",
     "yaisog"
   ]
 }

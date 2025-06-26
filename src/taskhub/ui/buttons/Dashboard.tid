@@ -1,0 +1,18 @@
+description: Show TaskHub dashboard
+tags: $:/tags/PageControls
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/Dashboard
+
+\procedure lingo-base() $:/language/TaskHub/
+
+<$button class=<<tv-config-toolbar-class>>>
+  <$action-sendmessage $message="tm-modal" $param="$:/plugins/mabuqian/TaskHub/ui/dashboard/Dashboard/param" />
+  <%if [{$:/state/TaskHub/projects-and-schedule}length[]compare:number:lteq[1]] %>
+  <$action-setfield $tiddler="$:/state/TaskHub/projects-and-schedule" text={{$:/config/TaskHub/DefaultDashboardTab}} />
+  <%endif%>
+  <%if [<tv-config-toolbar-icons>match[yes]] %>
+  {{$:/plugins/mabuqian/TaskHub/images/calendar}}
+  <%endif%>
+  <%if [<tv-config-toolbar-text>match[yes]] %>
+  <span class="tc-btn-text"><<lingo TodaysTodos>></span>
+  <%endif%>
+</$button>
