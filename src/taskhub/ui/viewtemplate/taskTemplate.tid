@@ -12,23 +12,25 @@ code-body: yes
 </span>
     <$vars popupTiddler=<<qualify "$:/state/TaskHub/todo-heading-dropdown">>>
       <$button
-	popup=<<popupTiddler>>
-	class="TH-btn"
-	tooltip={{$:/language/TaskHub/MoreActions/Hint}}
-	aria-label={{$:/language/TaskHub/MoreActions/Hint}}
+      popup=<<popupTiddler>>
+      class="TH-btn"
+      tooltip={{$:/language/TaskHub/MoreActions/Hint}}
+      aria-label={{$:/language/TaskHub/MoreActions/Hint}}
       >
-	<<lingo More>> {{$:/core/images/down-arrow}}
+      <<lingo More>> {{$:/core/images/down-arrow}}
       </$button>
 
       <$reveal state=<<popupTiddler>> type="popup" class="tc-drop-down TH-drop-down" position="below">
-	<$list filter=<<TH-is-not-subproject>>>
-	  <$button class="tc-btn-invisible">
-      	    {{$:/plugins/mabuqian/TaskHub/images/checklist}} <<lingo AddSubTasks/Caption>>
-	    <$action-listops $tags="[[SubProject]]"/>
-	  </$button>
-	</$list>
+      <$list filter=<<TH-is-not-subproject>>>
+        <$button class="tc-btn-invisible">
+                {{$:/plugins/mabuqian/TaskHub/images/checklist}} <<lingo AddSubTasks/Caption>>
+          <$action-listops $tags="[[SubProject]]"/>
+        </$button>
+      </$list>
 
-	{{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoConvert}}
+      {{||$:/plugins/mabuqian/TaskHub/ui/forms/TodoConvert}}
       </$reveal>
     </$vars>
   </div>
+
+<$transclude />

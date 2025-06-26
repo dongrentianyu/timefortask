@@ -1,7 +1,7 @@
 created: 20230729050908881
 creator: LinOnetwo
-modified: 20230729050908881
+modified: 20250626094517704
 title: $:/config/DefaultSidebarTab
 type: text/vnd.tiddlywiki
 
-$:/plugins/mabuqian/time-for-task/Sidebar/IntentionTower
+$:/plugins/mabuqian/TaskHub/ui/sidebar/TaskHub

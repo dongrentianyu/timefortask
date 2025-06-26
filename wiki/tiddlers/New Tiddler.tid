@@ -1,0 +1,14 @@
+created: 20250626095119325
+modified: 20250626095122491
+tags: 
+title: New Tiddler
+type: text/vnd.tiddlywiki
+
+!! 其余修改
+
+* 修改类名，由`py-`前缀改成了`TH-`前缀
+* 修改语言名称，由`$:/language/projectify/`前缀改成了`$:/language/TaskHub/`前缀
+* 修改插件名称前缀，由`$:/plugins/nico/projectify/`前缀改成了`$:/plugins/mabuqian/TaskHub/`前缀
+* 并删除了无用的字段，比如创建时间，修改时间和类型等。
+** 这些字段应该是由开发时留下的，并没有实际作用
+* 更新状态条目，由`$:/state/projectify/`前缀改成了`$:/state/TaskHub/`前缀

@@ -47,4 +47,6 @@ code-body: yes
     </$vars>
   </$set>
 <%endif%>
+
+<$transclude />
 </$let>
