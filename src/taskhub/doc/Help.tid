@@ -1,3 +1,11 @@
 title: $:/plugins/mabuqian/TaskHub/doc/Help
 
-还没想好要具体写什么。
+<%if [{$:/language}search:title[zh]then[zh-Hans]] %>
+
+{{$:/plugins/mabuqian/TaskHub/doc/Help/zh}}
+
+<%else%>
+
+{{$:/plugins/mabuqian/TaskHub/doc/Help/en}}
+
+<%endif%>

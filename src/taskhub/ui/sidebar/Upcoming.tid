@@ -1,8 +1,0 @@
-caption: {{$:/language/TaskHub/Upcoming}}
-list-before: $:/plugins/mabuqian/TaskHub/NotebookSidebar/Projects
-tags: $:/themes/nico/notebook/tags/SidebarSection $:/tags/SideBar
-title: $:/plugins/mabuqian/TaskHub/ui/sidebar/Upcoming
-
-<div class="TH-sidebar-section">
-  {{$:/plugins/mabuqian/TaskHub/ui/dashboard/Upcoming}}
-</div>

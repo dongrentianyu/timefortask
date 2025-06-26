@@ -1,0 +1,11 @@
+caption: TaskHub
+tags:$:/tags/SideBar
+title: $:/plugins/mabuqian/TaskHub/ui/sidebar/TaskHub
+
+<div class="TH-sidebar-section">
+  {{$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectList}}
+</div>
+
+<div class="TH-sidebar-section">
+  {{$:/plugins/mabuqian/TaskHub/ui/dashboard/Upcoming}}
+</div>

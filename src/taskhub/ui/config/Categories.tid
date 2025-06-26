@@ -59,6 +59,8 @@ caption: {{$:/language/TaskHub/Categories}}
   ">
     <$button 
       popup=<<popupTiddler>> 
+      tooltip={{$:/language/TaskHub/SelectColour}}
+      aria-label={{$:/language/TaskHub/SelectColour}}
       style="
         background: #fff;
         border: 1px solid #dee2e6;
@@ -68,7 +70,7 @@ caption: {{$:/language/TaskHub/Categories}}
       "
     >
     <$action-setfield $tiddler="$:/state/TaskHub/ProjectCategory" text=<<projectCategory>>/>
-    选择颜色</$button>
+    {{$:/language/TaskHub/SelectColour}}</$button>
     <$edit-text 
       tiddler="$:/config/TaskHub/ProjectCategory" 
       index=<<projectCategory>> 

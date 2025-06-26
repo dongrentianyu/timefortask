@@ -1,0 +1,25 @@
+title: $:/plugins/mabuqian/TaskHub/doc/Help/en
+
+!! Plugin Definition Fields
+
+The plugin provides a series of custom fields with field names from the `$:/plugins/linonetwo/tmo` plugin, which allows users to share the same fields across plugins. However, there may be conflicts, so it is best to use one plugin.
+
+* tmo
+** Indicates that this entry is a task management related entry, values are Task, Project, SubProject
+* tmo_taskState
+** Indicates the task state, value is todo, done, closed, breakdown.
+** todo means the task is new or in progress.
+** done means the task is finished
+** closed means the task is closed, usually means it is not really done, but it is closed later because it is not suitable, if it is closed, it can be opened again.
+** breakdown, means failure, there will be a prompt, that this entry has failed, it is best to re-create an entry. Failed entries indicate that they went ahead and did it, but failed as a result. Whatever the reason for the failure, it points to the connotation of failure.
+* There is no priority field, this plugin does not do other priority processing, and there is no task four elephant item type of item processing
+* tmo_dueDate
+** indicates the deadline date, applies to the task and the project between, is a common field
+** The storage format of tmo_dueDate is `YYYYY-0MM-0DD`, this format is constant.
+* tmo_projectCategory
+** Indicates the category of the project, in fact, the project can have other forms of classification, but this plugin also provides a classification field.
+* tmo_projectFilter
+** Filter field under project, can be modified and adjusted, default value is `[tag<currentTiddler>]`, can be changed
+* tmo_projectState
+** Project state field, values are doing, done, closed, breakdown
+** Interpretation is the same as task, except todo is replaced by doing.

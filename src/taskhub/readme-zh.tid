@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/TaskHub/readme/zh
+
+修改自`$:/plugins/nico/projectify`插件，重度使用了里面绝大多数的设计和代码，在此表示感谢。 但同样做了足够多的修改，因此作为新插件发布。本插件采用了TiddlyWiki最新版本（5.3.6）的语法，在旧的TiddlyWiki上可能无法使用。
+
+目前本插件没有做移动端适配，因而移动端可能会出现意料之外的问题。

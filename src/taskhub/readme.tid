@@ -1,31 +1,27 @@
 title: $:/plugins/mabuqian/TaskHub/readme
 
+
+* `$:/plugins/mabuqian/TaskHub`
+* code: https://github.com/dongrentianyu/timefortask
+* demo: https://dongrentianyu.github.io/timefortask/
+
+<%if [{$:/language}search:title[zh]then[zh-Hans]] %>
+
+{{$:/plugins/mabuqian/TaskHub/readme/zh}}
+
+<%else%>
+
+{{$:/plugins/mabuqian/TaskHub/readme/en}}
+
+<%endif%>
+
 ! 任务管理插件
 
 修改自`$:/plugins/nico/projectify`插件，重度使用了里面绝大多数的设计，并采取TiddlyWiki最新版本的语法。
 
-!! 自定义字段
 
-插件提供了一系列自定义字段，字段来自`$:/plugins/linonetwo/tmo`插件，可以让用户在不同插件中共用相同的字段。
 
-* tmo
-** 表示此条目为任务管理相关的条目，值为Task，Project，SubProject
-* tmo_taskState
-** 表示任务状态，值为todo，done，closed，breakdown
-** todo表示任务已新建或正在进行中
-** done表示任务已完成
-** closed表示任务关闭，通常是指没有真的去做，后面又觉得不太合适而关闭了，关闭了的可以再打开
-** breakdown，表示失败，会有一个提示，表示这个条目已经失败了，最好重新建立一个条目。失败的条目表示去做了，但结果失败了。不管因为何种原因失败的，其指向的都是失败这个内涵。
-* 没有优先级字段，本插件不做其他优先级处理，也没有任务四象项一类的项目处理
-* tmo_dueDate
-** 表示截止日期，适用于任务和项目之间，是一个共用的字段
-* tmo_projectCategory
-** 表示项目的分类，其实项目可以有其他分类形式，但本插件也提供一个分类字段
-* tmo_projectFilter
-** 项目下的筛选器字段，可以修改和调整，默认值为`[tag<currentTiddler>]`，可以修改
-* tmo_projectState
-** 项目状态字段，值有doing，done，closed，breakdown
-** 解释和任务一样，只是todo换成了doing
+
 
 !! 其余修改
 

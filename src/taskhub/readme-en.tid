@@ -1,0 +1,5 @@
+title: $:/plugins/mabuqian/TaskHub/readme/en
+
+Modified from the `$:/plugins/nico/projectify` plugin, heavily using the vast majority of the design and code in it, with appreciation. But again, enough changes were made to release it as a new plugin. This plugin uses the syntax of the latest version of TiddlyWiki (5.3.6) and may not work on older TiddlyWikis.
+
+Currently this plugin is not mobile-adapted, and thus unexpected problems may occur on mobile.

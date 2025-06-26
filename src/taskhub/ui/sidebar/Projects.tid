@@ -1,8 +1,0 @@
-caption: {{$:/language/TaskHub/Projects}}
-list-before: $:/plugins/nico/notebook/Sidebar/Open
-tags: $:/themes/nico/notebook/tags/SidebarSection $:/tags/SideBar
-title: $:/plugins/mabuqian/TaskHub/ui/sidebar/Projects
-
-<div class="TH-sidebar-section">
-  {{$:/plugins/mabuqian/TaskHub/ui/dashboard/ProjectList}}
-</div>
