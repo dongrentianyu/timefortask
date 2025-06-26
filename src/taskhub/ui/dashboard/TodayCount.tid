@@ -1,4 +1,4 @@
-title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/TodayCount
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/TodayCount
 
 <$list filter=<<TH-has-todos-due-today-or-overdue>>>
   <span class="TH-count">

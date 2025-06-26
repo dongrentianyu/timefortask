@@ -1,5 +1,5 @@
 caption: {{$:/plugins/mabuqian/TaskHub/images/stack}} {{$:/language/TaskHub/Next}}
-list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Schedule
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashboard/Schedule
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/NextActions
 

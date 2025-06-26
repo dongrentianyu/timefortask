@@ -4,5 +4,5 @@ DefaultCategoryColours: [[#ffffd9]] [[#ffd9ff]] [[#ffebd9]] [[#d9ffeb]] [[#d9d9f
 ShowWelcomeMessages: yes
 ShowCompletedTodos: no
 FirstDayOfWeek: 1
-DefaultDashboardTab: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Inbox
+DefaultDashboardTab: $:/plugins/mabuqian/TaskHub/ui/dashboard/Inbox
 projects-view: cards

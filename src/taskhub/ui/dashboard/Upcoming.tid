@@ -1,7 +1,7 @@
 caption: {{$:/plugins/mabuqian/TaskHub/images/calendar-checked}} {{$:/language/TaskHub/Upcoming}}
-list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Overdue
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashboard/Overdue
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
-title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Upcoming
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Upcoming
 
 \define lingo-base() $:/language/TaskHub/
 

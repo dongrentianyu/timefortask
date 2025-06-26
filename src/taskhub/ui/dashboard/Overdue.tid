@@ -1,7 +1,7 @@
 caption: {{$:/plugins/mabuqian/TaskHub/Images/Overdue}} {{$:/language/TaskHub/Overdue}}
-list-after: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Today
+list-after: $:/plugins/mabuqian/TaskHub/ui/dashboard/Today
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
-title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Overdue
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Overdue
 
 \define lingo-base() $:/language/TaskHub/
 

@@ -1,5 +1,5 @@
 caption: {{$:/plugins/mabuqian/TaskHub/images/collection}} {{$:/language/TaskHub/Inbox}}
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
-title: $:/plugins/mabuqian/TaskHub/ui/dashbaord/Inbox
+title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Inbox
 
 {{$:/plugins/mabuqian/TaskHub/ui/inbox/Inbox}}

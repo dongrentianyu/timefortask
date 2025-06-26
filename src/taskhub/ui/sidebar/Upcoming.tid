@@ -4,5 +4,5 @@ tags: $:/themes/nico/notebook/tags/SidebarSection $:/tags/SideBar
 title: $:/plugins/mabuqian/TaskHub/ui/sidebar/Upcoming
 
 <div class="TH-sidebar-section">
-  {{$:/plugins/mabuqian/TaskHub/ui/dashbaord/Upcoming}}
+  {{$:/plugins/mabuqian/TaskHub/ui/dashboard/Upcoming}}
 </div>
