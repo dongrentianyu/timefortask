@@ -48,5 +48,5 @@ code-body: yes
   </$set>
 <%endif%>
 
-<$transclude />
+<$transclude mode="block"/>
 </$let>

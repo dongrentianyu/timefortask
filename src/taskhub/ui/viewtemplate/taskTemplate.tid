@@ -33,4 +33,4 @@ code-body: yes
     </$vars>
   </div>
 
-<$transclude />
+<$transclude mode="block"/>
