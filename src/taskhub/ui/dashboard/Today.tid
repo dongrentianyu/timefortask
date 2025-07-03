@@ -3,7 +3,7 @@ list-after: $:/plugins/mabuqian/TaskHub/ui/dashboard/InboxAndProjects
 tags: $:/plugins/mabuqian/TaskHub/tags/dashboard
 title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Today
 
-\define lingo-base() $:/language/TaskHub/
+\procedure lingo-base() $:/language/TaskHub/
 
 <$let today=<<now "YYYY-0MM-0DD">> >
 <$vars showProjectLinks="yes">
@@ -24,7 +24,7 @@ title: $:/plugins/mabuqian/TaskHub/ui/dashboard/Today
 <%elseif [all[tiddlers]tmo[Task]tmo_taskState[todo]] :except[all[tiddlers]tmo[Project]!tmo_projectState[doing]subfilter{!!tmo_projectFilter}tmo_taskState[todo]] +[count[]!match[0]] %>
 <!-- todo -->
   <dl>
-      <dt>尚未完成的</dt>
+      <dt><<lingo Unfinished>></dt>
       <dd>
       <$list
       filter="[all[tiddlers]tmo[Task]tmo_taskState[todo]] :except[all[tiddlers]tmo[Project]!tmo_projectState[doing]subfilter{!!tmo_projectFilter}tmo_taskState[todo]]"
