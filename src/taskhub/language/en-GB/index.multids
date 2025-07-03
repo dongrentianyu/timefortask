@@ -19,6 +19,7 @@ CardOptions/Hint: Card options
 Clear: Clear
 Close/Caption: Close
 Completed/Caption: Completed
+NoCompleted/Caption: No Completed
 ConvertIntoProject: Convert into project
 Calendar: Calendar
 Category: Category
@@ -34,6 +35,7 @@ Help: Need help?
 HelpSearch/Placeholder: Search...
 HideArchived/Caption: Hide archived
 HideCompleted/Caption: Hide completed
+HideNoCompleted/Caption: Hide no completed
 Inbox: Inbox
 More: More
 MoreActions/Hint: More actions

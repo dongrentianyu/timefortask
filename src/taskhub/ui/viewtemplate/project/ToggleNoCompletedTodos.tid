@@ -1,0 +1,30 @@
+title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleNoCompletedTodos
+
+\procedure lingo-base() $:/language/TaskHub/
+
+<%if [subfilter{!!tmo_projectFilter}tmo_taskState[todo]count[]!match[0]] %>
+<$vars stateTiddler=<<qualify "$:/state/TaskHub/show-no-completed">>
+  default={{$:/config/TaskHub/ShowNoCompletedTodos}}>
+
+    <$reveal type="nomatch" state=<<stateTiddler>> text="yes" default=<<default>>>
+      <$button class="tc-btn-invisible TH-link-muted" set=<<stateTiddler>> setTo="yes">
+        {{$:/plugins/mabuqian/TaskHub/images/eye}}
+    <$count filter="[subfilter<tmo_projectFilter-x>has[tmo_taskState]tmo_taskState[todo]]" /> <<lingo NoCompleted/Caption>>
+      </$button>
+    </$reveal>
+
+    <$reveal type="match" state=<<stateTiddler>> text="yes" default=<<default>>>
+      <div class="TH-actions">
+        <$button class="tc-btn-invisible TH-link-muted" set=<<stateTiddler>> setTo="no">
+          {{$:/plugins/mabuqian/TaskHub/images/eyeslash}} <<lingo HideNoCompleted/Caption>>
+        </$button>
+      </div>
+      <div class="TH-todos TH-completed-todos">
+      <$list
+      filter="[subfilter<tmo_projectFilter-x>has[tmo_taskState]tmo_taskState[todo]]"
+      template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem"
+      />
+      </div>
+    </$reveal>
+  </$vars>
+<%endif%>

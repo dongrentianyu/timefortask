@@ -1,0 +1,19 @@
+title: $:/plugins/mabuqian/TaskHub/ui/project/displayTodos
+
+<h2><<lingo Todos>> {{||$:/plugins/mabuqian/TaskHub/images/pie}}</h2>
+<%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]count[]match[0]] %>
+<$transclude tiddler="$:/plugins/mabuqian/TaskHub/ui/welcome/EmptyProject" />
+<%else%>
+  <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]count[]!match[0]] %>
+    <label class="TH-label"><<lingo Scheduled>></label>
+    <div class="TH-todos">
+    <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]has[tmo_dueDate]] :filter[get[tmo_dueDate]trim[]!is[blank]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
+    </div>
+  <%endif%>
+  <%if [subfilter<tmo_projectFilter-x>tmo_taskState[todo]!has[tmo_dueDate]count[]!match[0]] %>
+    <label class="TH-label"><<lingo OtherTasks>></label>
+    <div class="TH-todos">
+    <$list filter="[subfilter<tmo_projectFilter-x>tmo_taskState[todo]!has[tmo_dueDate]]"  template="$:/plugins/mabuqian/TaskHub/ui/todo/TodoItem" />
+    </div>
+  <%endif%>
+<%endif%>
