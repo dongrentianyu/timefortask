@@ -1,7 +1,8 @@
 title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
 
-\define lingo-base() $:/language/TaskHub/
+\procedure lingo-base() $:/language/TaskHub/
 
+<%if [subfilter{!!tmo_projectFilter}!tmo_taskState[todo]count[]!match[0]] %>
 <$vars stateTiddler=<<qualify "$:/state/TaskHub/show-completed">>
   default={{$:/config/TaskHub/ShowCompletedTodos}}>
 
@@ -26,3 +27,4 @@ title: $:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos
       </div>
     </$reveal>
   </$vars>
+<%endif%>
