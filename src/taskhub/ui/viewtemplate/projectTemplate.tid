@@ -22,7 +22,9 @@ code-body: yes
 {{||$:/plugins/mabuqian/TaskHub/ui/buttons/ToggleNoCompletedTodos}}
 <%endif%>
 
+<%if [subfilter{!!tmo_projectFilter}has[tmo_taskState]!tmo_taskState[todo]count[]match[0]] %>
 {{||$:/plugins/mabuqian/TaskHub/ui/buttons/ToggleCompletedTodos}}
+<%endif%>
 
 <%if [{!!tmo_projectState}match[doing]] %>
   <$set name="tags" filter="[<currentTiddler>]">
